@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="refresh" content="60;URL=livebetssh.php?livebets[]=2503768">
+	<link rel="stylesheet" href="/style_new.css?vv12" type="text/css" media="all" />
+	<link rel="stylesheet" href="/css/ui.css?v15" type="text/css" media="all" />
+	<style type="text/css">
+		ul#but a.act {background-color:#EAF6FF;border:1px solid #EAF6FF;color:#000000;}
+		ul#but {height:20px;margin:0px;}
+		#dt {margin:3px;}
+		#r {font-weight:normal;color:#CC0000;}
+		#dt td{text-align:center;padding: 0px;}
+		#dt .tdh{font-size:9px;}
+		#dt .n{text-align:left;}
+		#dt a{color:#2274B0;}
+		#dt2 a{color:#2274B0;}
+		#dt td:first-child {text-align:left;white-space:nowrap;}
+		ul#but li {display:inline;}
+		ul#but a {float:right;font:bold 12px tahoma;padding:2px 12px 2px 12px;border:1px solid #EAF6FF;text-decoration:none;color:#CC3333;}
+		ul#but a:hover {background-color:#7BADD2;border:1px solid #7BADD2;color:#CC3333;}
+		.lbk td {text-align: center;}
+		.lbk td a {color: #069; text-decoration: underline}
+		.lbh td {text-align: center;}
+		.vid {position: absolute; margin: 2px 0 0 3px; border:0;}
+		.vdt {margin-left: 21px; text-decoration: underline; color: #c00;}
+
+		.btn.refresh .ico{float: left;}
+		table{border-spacing: 5px;border-collapse: separate;}
+	</style>
+	<script src="_inc/alert.js"></script>
+	<script src="jqueryc.js"></script>
+	<script>
+
+		st=(new Date()).getTime();
+		jQuery(function(){
+			st= parseInt(((new Date()).getTime()-st)/10);
+			var ut=(new Date()).getTime();
+			jQuery.get('/img/p.gif?r'+(new Date()).getTime(), function(){
+				ut=parseInt(((new Date()).getTime()-ut)/10);
+				jQuery.get('/img/s.gif?ut='+ut+'&st='+st);
+			});
+		});
+		//top.center.left.document.location.href+=''
+		$(function(){
+			$('.tlivemenu li[@class!=active]').hover(
+				function(){
+					$(this).addClass('hover')
+				},
+				function(){
+					$(this).removeClass('hover')
+				}
+			)
+//			$('.tlivemenu li').corner("tl tr 5px");
+			$('.refresh a').click(function(){
+				window.location.href +='';
+				return false;
+			})
+			$('.tlivemenu li[@class!=active]').hover(
+				function(){
+					$(this).addClass('hover')
+				},
+				function(){
+					$(this).removeClass('hover')
+				}
+			)
+			$('.tip_b').click(
+				function(){
+					$('.tip',$(this).parent()).show();
+					return false;
+				}
+			)
+			$('.tip')
+				.hover(
+				function(){},
+				function(){$(this).hide();}
+			)
+				.click(function(event){$(this).hide();event.stopPropagation();});
+
+
+
+		})
+	</script>
+	<base target="left">
+</head>
+<body>
+<div class="tlivemenu">
+	<ul>
+		<li class="active"><a href="live/line.php"  target="middle"><span>Live-ставки</span></a></li>
+		<li><a href="wflive/live_bets_2.php" target="middle"><span>Live-ставки (Flash версия)<span></a></li>
+		<li><a href="live/soon.php" target="middle"><span>Live-календарь</span></a></li>
+		<li><a href="live/results.php" target="middle"><span>Live-результаты</span></a></li>
+	</ul>
+	<div class="clr"></div>
+</div>
+<div class="refresh">
+	<a class="btn refresh" href="#" target="middle"><span class="ico refresh"></span><span class="r">Обновить</span></a>
+</div>
+
+<div class="all">
+<script>
+	function al () {
+		alert('Чтобы сделать ставку, необходимо зарегистрироваться или воспользоваться "гостевым входом"'); return false;
+	}
+
+	$(function(){
+		$('a[@href~=livebet\=]').click(function(){
+			bet = this.href.match(/livebet\=([\d\.]+)/i)[1];
+			parent.left.addLiveBet(bet)
+			return false;
+		})
+	})
+</script>
+
+Футбол. Чемпионaт Вьетнaмa (до 21 годa)<br><table style="border: 0;border-collapse: collapse;min-width:600px;"><tr class="lbh"><td nowrap width="25">Время</td><td nowrap>Команда&nbsp;1</td><td nowrap width="25">Команда&nbsp;2</td><td nowrap width="25"><b>1</b></td><td nowrap><b>X</b></td><td nowrap width="25"><b>2</b></td><td nowrap width="25">1X</td><td nowrap width="25">12</td><td nowrap width="25">X2</td><td nowrap width="25">Фора&nbsp;1</td><td nowrap width="25">Кф</td><td nowrap width="25">Фора&nbsp;2</td><td nowrap width="25">Кф</td><td nowrap width="25">Тотал</td><td nowrap width="25">Мен</td><td nowrap width="25">Бол</td></tr><tr class="lbk"><td nowrap>14:30</td><td nowrap><strong><font style="color: #2274B0; text-decoration: none;"><b>Санна Кханьхоа (мол)</b></font></strong></td><td nowrap><font style="color: #2274B0; text-decoration: none;"><b>Биньзыонг (мол)</b></font></td><td><a href="#" a onClick="al(); return false;"><font style="color: #CC0000; text-decoration: underline;">1.13</font></a></td><td><a href="#" a onClick="al(); return false;"><font style="color: #CC0000; text-decoration: underline;">7.4</font></a></td><td><a href="#" a onClick="al(); return false;"><font style="color: #CC0000; text-decoration: underline;">12.6</font></a></td><td></td><td><a href="#" a onClick="al(); return false;"><font style="color: #2274B0; text-decoration: underline;">1.06</font></a></td><td><a href="#" a onClick="al(); return false;"><font style="color: #2274B0; text-decoration: underline;">5.01</font></a></td><td nowrap><b>-2</b></td><td><a href="#" a onClick="al(); return false;"><font style="color: #2274B0; text-decoration: underline;">1.98</font></a></td><td nowrap><b>+2</b></td><td><a href="#" a onClick="al(); return false;"><font style="color: #2274B0; text-decoration: underline;">1.73</font></a></td><td nowrap><b>5.0</b></td><td><a href="#" a onClick="al(); return false;"><font style="color: #2274B0; text-decoration: underline;">1.01</font></a></td><td><a href="#" a onClick="al(); return false;"><font style="color: #2274B0; text-decoration: underline;">2.4</font></a></td></tr><tr><td colspan="16"><div id="dt2" ><b>Дополнительные форы:</b> <b>Санна Кханьхоа (мол)</b>: (-3) <a href="#" onClick="return al();">4.65</a>; <b>Биньзыонг (мол)</b>: (+3) <a href="#" onClick="return al();">1.15</a>;</div><div id="dt2" ><b>Дополнительные форы:</b> <b>Санна Кханьхоа (мол)</b>: (-2.5) <a href="#" onClick="return al();">2.71</a>; <b>Биньзыонг (мол)</b>: (+2.5) <a href="#" onClick="return al();">1.4</a>;</div><div id="dt2" ><b>Дополнительные форы:</b> <b>Санна Кханьхоа (мол)</b>: (-1.5) <a href="#" onClick="return al();">1.52</a>; <b>Биньзыонг (мол)</b>: (+1.5) <a href="#" onClick="return al();">2.37</a>;</div><div id="dt2" ><b>Дополнительные тоталы:</b> (5.5) Мен <a href="#" onClick="return al();">1.45</a>; Бол <a href="#" onClick="return al();">2.57</a>;</div><div id="dt2" ><b>Дополнительные тоталы:</b> (6.5) Мен <a href="#" onClick="return al();">1.13</a>; Бол <a href="#" onClick="return al();">5.06</a>;</div><div id="dt2" ><b>Дополнительные тоталы:</b> (3.5) Мен <a href="#" onClick="return al();">6.41</a>; Бол <a href="#" onClick="return al();">1.08</a>;</div><div id="dt2" ><b>Индивидуальный тотал:</b> <b>Санна Кханьхоа (мол)</b>: (2.5) Мен <a href="#" onClick="return al();">3.85</a>; Бол <a href="#" onClick="return al();">1.22</a>; <b>Биньзыонг (мол)</b>: (1.5) Мен <a href="#" onClick="return al();">1.69</a>; Бол <a href="#" onClick="return al();">2.04</a>;</div><div id="dt2" ><b>Индивидуальный тотал:</b> <b>Санна Кханьхоа (мол)</b>: (3.5) Мен <a href="#" onClick="return al();">1.67</a>; Бол <a href="#" onClick="return al();">2.07</a>; <b>Биньзыонг (мол)</b>: (2.5) Мен <a href="#" onClick="return al();">1.08</a>; Бол <a href="#" onClick="return al();">6.47</a>;</div><div id="dt2" ><b>Индивидуальный тотал:</b> <b>Санна Кханьхоа (мол)</b>: (4.5) Мен <a href="#" onClick="return al();">1.17</a>; Бол <a href="#" onClick="return al();">4.36</a>;</div><div id="dt2" ><b>Кто забьет гол:</b> 4-й гол 1к: <a href="#" onClick="return al();">1.46</a>; 4-й гол Ни одна: <a href="#" onClick="return al();">6.41</a>; 4-й гол 2к: <a href="#" onClick="return al();">3.67</a>;</div><div id="dt2" ><b>Чет/Нечет тотала:</b> Чет: <a href="#" onClick="return al();">1.88</a>; Нечет: <a href="#" onClick="return al();">1.82</a>;</div></td></tr><tr><td class=red colspan="16">45 мин Счёт: 2:1</td></tr><tr><td class=red colspan="16">online    </td></tr><tr><td height="8" colspan="16"></td></tr></table><br>Наша организация не несёт ответственности за неточности в текущих результатах событий, на которые принимаются live-ставки.<br>Пользуйтесь, пожалуйста, независимыми источниками информации.</div>
+<br>
+
+</body>
+</html>
