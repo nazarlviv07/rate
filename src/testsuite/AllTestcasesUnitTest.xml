@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Testcases Unit Tests" parallel="false">
+	<test name="all" preserve-order="false">
+		<classes>
+			<class name="test.KoefTest"></class>
+			<class name="test.SearchForkGeneralKoefTest"></class>
+			<class name="test.SearchForkFirstTimeKoefTest"></class>
+			<class name="test.SearchForkInRealFilesTest"></class>
+			
+		</classes>
+	</test>
+</suite>
