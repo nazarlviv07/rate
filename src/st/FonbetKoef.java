@@ -10,11 +10,27 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
+
+
+
+//==============================
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.URL;
+import java.nio.charset.Charset;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 public class FonbetKoef extends Koef {
 
 	public FonbetKoef() {
 		file = "fonbet.html";
-		link_to_download_file = "https://live.fonbet.com/live/currentLine/ru/?"
+		//link_to_download_file = "https://www.favbet.com/live/markets/event/";
+		link_to_download_file = "http://live.fonbet.com/live/currentLine/ru/?"
 				+ Math.random();
 		name_of_kontora = "Fonbet";
 	}
@@ -23,7 +39,7 @@ public class FonbetKoef extends Koef {
 	public int id_perwuy_time = 0;
 	public int num_of_event;
 
-	public String getKoef() {
+	public String getKoef(){
 
 		setKoefToZero();
 		InputStream fis = null;
@@ -46,7 +62,28 @@ public class FonbetKoef extends Koef {
 		 * = Json.createReaderFactory(null); jsonReader =
 		 * factory.createReader(fis);
 		 */
-
+//===============================================
+		JSONObject json = null;
+		try {
+			//json = readJsonFromUrl("https://graph.facebook.com/19292868552");
+			json = readJsonFromUrl("http://live.fonbet.com/live/currentLine/ru/?0.67535345345345345345345353068247");
+		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	    System.out.println(json.toString());
+	    System.out.println(json.get("id"));
+		
+		
+		//=====================================================
+		
+		
+		
+		
+		
 		// get JsonObject from JsonReader
 		JsonObject jsonObject = jsonReader.readObject();
 
@@ -974,4 +1011,25 @@ public class FonbetKoef extends Koef {
 		}
 	}
 
+	private static String readAll(Reader rd) throws IOException {
+	    StringBuilder sb = new StringBuilder();
+	    int cp;
+	    while ((cp = rd.read()) != -1) {
+	      sb.append((char) cp);
+	    }
+	    return sb.toString();
+	  }
+
+	  public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+	    InputStream is = new URL(url).openStream();
+	    try {
+	      //BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+	    	BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("WINDOWS-1251")));
+	      String jsonText = readAll(rd);
+	      JSONObject json = new JSONObject(jsonText);
+	      return json;
+	    } finally {
+	      is.close();
+	    }
+	  }
 }
