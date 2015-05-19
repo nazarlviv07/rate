@@ -422,11 +422,11 @@ public class BetcityKoef extends Koef {
 		// Dodatkovi Foru
 
 		int numFora = 1;
-		while (strTotal.indexOf("Дополнительные форы:", pos) < strTotal
+		while (strTotal.indexOf("Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С„РѕСЂС‹:", pos) < strTotal
 				.length()
-				&& strTotal.indexOf("Дополнительные форы:", pos) != -1) {
+				&& strTotal.indexOf("Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С„РѕСЂС‹:", pos) != -1) {
 
-			pos_start = strTotal.indexOf("Дополнительные форы:", pos);
+			pos_start = strTotal.indexOf("Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С„РѕСЂС‹:", pos);
 
 			// name Fora1
 			pos_start = strTotal.indexOf("</b>: (", pos_start) + 7;
@@ -468,10 +468,10 @@ public class BetcityKoef extends Koef {
 
 		// Dodatkovi Totalu
 		int numTotal = 1;
-		while (strTotal.indexOf("Дополнительные тоталы:", pos) < strTotal
+		while (strTotal.indexOf("Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С‚РѕС‚Р°Р»С‹:", pos) < strTotal
 				.length()
-				&& strTotal.indexOf("Дополнительные тоталы:", pos) != -1) {
-			pos = strTotal.indexOf("Дополнительные тоталы:", pos);
+				&& strTotal.indexOf("Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С‚РѕС‚Р°Р»С‹:", pos) != -1) {
+			pos = strTotal.indexOf("Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ С‚РѕС‚Р°Р»С‹:", pos);
 
 			// name Total
 			pos_start = pos + 28;
@@ -501,10 +501,10 @@ public class BetcityKoef extends Koef {
 
 		// Induvidyalni Totalu
 		numTotal = 0;
-		while (strTotal.indexOf("Индивидуальный тотал:", pos) < strTotal
+		while (strTotal.indexOf("РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ С‚РѕС‚Р°Р»:", pos) < strTotal
 				.length()
-				&& strTotal.indexOf("Индивидуальный тотал:", pos) != -1) {
-			pos = strTotal.indexOf("Индивидуальный тотал:", pos);
+				&& strTotal.indexOf("РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ С‚РѕС‚Р°Р»:", pos) != -1) {
+			pos = strTotal.indexOf("РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ С‚РѕС‚Р°Р»:", pos);
 
 			// name Total
 			pos += 29;
