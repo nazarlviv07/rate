@@ -63,7 +63,7 @@ public class FonbetKoef extends Koef {
 		 * factory.createReader(fis);
 		 */
 //===============================================
-		JSONObject json = null;
+	/*	JSONObject json = null;
 		try {
 			//json = readJsonFromUrl("https://graph.facebook.com/19292868552");
 			json = readJsonFromUrl("http://live.fonbet.com/live/currentLine/ru/?0.67535345345345345345345353068247");
@@ -75,7 +75,7 @@ public class FonbetKoef extends Koef {
 			e1.printStackTrace();
 		}
 	    System.out.println(json.toString());
-	    System.out.println(json.get("id"));
+	    System.out.println(json.get("id"));*/
 		
 		
 		//=====================================================
@@ -99,7 +99,7 @@ public class FonbetKoef extends Koef {
 		// Retrieve data from JsonObject
 
 		if (jsonObject.isEmpty())
-			return "Немає коефіцієнтів";
+			return "РџСЂРёР·СѓРїРёРЅРµРЅС– РєРѕРµС„С–С†С–С”РЅС‚Рё";
 
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("events");
 
@@ -118,7 +118,7 @@ public class FonbetKoef extends Koef {
 				if (jsArrOutComes.getJsonObject(i).containsKey("parentId")) {
 					if (jsArrOutComes.getJsonObject(i).getInt("parentId") == id) {
 						if (jsArrOutComes.getJsonObject(i).getString("name")
-								.equals("1-й тайм"))
+								.equals("1-Р№ С‚Р°Р№Рј"))
 
 							id_perwuy_time = jsArrOutComes.getJsonObject(i)
 									.getInt("id");
@@ -135,7 +135,7 @@ public class FonbetKoef extends Koef {
 
 						if (jsArrOutComes.getJsonObject(i).getString("state")
 								.equals("blocked")) {
-							return "Призупинені коефіцієнти";
+							return "РџСЂРёР·СѓРїРёРЅРµРЅС– РєРѕРµС„С–С†С–С”РЅС‚Рё";
 						}
 					}
 				}
@@ -525,7 +525,7 @@ public class FonbetKoef extends Koef {
 
 					if (jsArrOutComes.getJsonObject(i).getString("state")
 							.equals("blocked")) {
-						return "Призупинені коефіцієнти";
+						return "РџСЂРёР·СѓРїРёРЅРµРЅС– РєРѕРµС„С–С†С–С”РЅС‚Рё";
 					}
 				}
 			}
