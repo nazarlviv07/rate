@@ -4,6 +4,40 @@
 	<groupId>st</groupId>
 	<artifactId>st</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<name>Rate</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+<dependencies>
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>20140107</version>
+				
+				<!-- <version>20141113</version> -->
+			</dependency>
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>org.json</artifactId>
+				<version>chargebee-1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>6.9.4</version>
+			</dependency>
+			<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+		</dependencies>
+		
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
@@ -16,6 +50,7 @@
 		</resources>
 		<plugins>
 			<plugin>
+			<groupId>org.apache.maven.plugins</groupId> 
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
@@ -23,18 +58,9 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-		</plugins>
-		<dependencies>
-			<dependency>
-				<groupId>org.json</groupId>
-				<artifactId>json</artifactId>
-				<version>20141113</version>
-			</dependency>
-			<dependency>
-				<groupId>org.json</groupId>
-				<artifactId>org.json</artifactId>
-				<version>chargebee-1.0</version>
-			</dependency>
-		</dependencies>
+			</plugins>
+		
+
+	<!-- 	<finalName>Rate</finalName> -->
 	</build>
 </project>
