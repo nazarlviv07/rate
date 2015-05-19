@@ -57,7 +57,7 @@ public class FavbetKoef extends Koef {
 		// Retrieve data from JsonObject
 
 		if (jsonObject.isEmpty())
-			return "Немає коефіцієнтів";
+			return "РќРµРјР°С” РєРѕРµС„С–С†С–С”РЅС‚С–РІ";
 		String nameOfTeams = jsonObject.getString("event_name");
 		int lastIndex = nameOfTeams.lastIndexOf(" - ");
 		name_of_command1 = nameOfTeams.substring(0, lastIndex);
@@ -81,7 +81,7 @@ public class FavbetKoef extends Koef {
 								.getJsonObject(i).getJsonNumber("outcome_coef")
 								.toString());
 					} else if (jsArrOutComes.getJsonObject(i)
-							.getString("outcome_name").equals("Ничья")) {
+							.getString("outcome_name").equals("РќРёС‡СЊСЏ")) {
 
 						name_X = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonNumber("outcome_coef")
@@ -103,7 +103,7 @@ public class FavbetKoef extends Koef {
 
 			for (int i = 0; i < jsArrResultTypes.size(); i++) {
 				if (jsArrResultTypes.getJsonObject(i)
-						.getString("result_type_name").equals("Основное время")) {
+						.getString("result_type_name").equals("РћСЃРЅРѕРІРЅРѕРµ РІСЂРµРјСЏ")) {
 					JsonArray jsArrMarketGroups = jsArrResultTypes
 							.getJsonObject(i).getJsonArray("market_groups");
 
@@ -111,7 +111,7 @@ public class FavbetKoef extends Koef {
 
 						if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Двойной исход")) {
+								.equals("Р”РІРѕР№РЅРѕР№ РёСЃС…РѕРґ")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -161,7 +161,7 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Фора")) {
+								.getString("market_name").equals("Р¤РѕСЂР°")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -207,7 +207,7 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Тотал")) {
+								.getString("market_name").equals("РўРѕС‚Р°Р»")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -250,7 +250,7 @@ public class FavbetKoef extends Koef {
 
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Обе команды забьют")) {
+								.equals("РћР±Рµ РєРѕРјР°РЅРґС‹ Р·Р°Р±СЊСЋС‚")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -269,7 +269,7 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Да")) {
+									if (temp_string.equals("Р”Р°")) {
 										name_dvi_komandu_zabjytj_tak = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
@@ -288,7 +288,7 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Нет")) {
+									if (temp_string.equals("РќРµС‚")) {
 										name_dvi_komandu_zabjytj_ni = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(1)
@@ -300,7 +300,7 @@ public class FavbetKoef extends Koef {
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Тотал Нечет / Чёт")) {
+								.equals("РўРѕС‚Р°Р» РќРµС‡РµС‚ / Р§С‘С‚")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -319,7 +319,7 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Нечет")) {
+									if (temp_string.equals("РќРµС‡РµС‚")) {
 										name_total_parnuy_ni = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
@@ -338,7 +338,7 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Чет")) {
+									if (temp_string.equals("Р§РµС‚")) {
 										name_total_parnuy_tak = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(1)
@@ -350,7 +350,7 @@ public class FavbetKoef extends Koef {
 							}
 						}else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Индивидуальный тотал")) {
+								.equals("РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ С‚РѕС‚Р°Р»")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -434,7 +434,7 @@ public class FavbetKoef extends Koef {
 						}
 					}
 				} else if ((jsArrResultTypes.getJsonObject(i).getString(
-						"result_type_name").equals("1 Тайм"))) {
+						"result_type_name").equals("1 РўР°Р№Рј"))) {
 
 					JsonArray jsArrMarketGroups = jsArrResultTypes
 							.getJsonObject(i).getJsonArray("market_groups");
@@ -442,7 +442,7 @@ public class FavbetKoef extends Koef {
 					for (int j = 0; j < jsArrMarketGroups.size(); j++) {
 
 						if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Победа")) {
+								.getString("market_name").equals("РџРѕР±РµРґР°")) {
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
 							if (!jsArrMarkets.isEmpty()) {
@@ -467,7 +467,7 @@ public class FavbetKoef extends Koef {
 										} else if (jsArrOutComes
 												.getJsonObject(z)
 												.getString("outcome_name")
-												.equals("Ничья")) {
+												.equals("РќРёС‡СЊСЏ")) {
 
 											name_X_perwuy = Float
 													.parseFloat(jsArrOutComes
@@ -493,7 +493,7 @@ public class FavbetKoef extends Koef {
 
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Двойной исход")) {
+								.equals("Р”РІРѕР№РЅРѕР№ РёСЃС…РѕРґ")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -543,7 +543,7 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Фора")) {
+								.getString("market_name").equals("Р¤РѕСЂР°")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -589,7 +589,7 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Тотал")) {
+								.getString("market_name").equals("РўРѕС‚Р°Р»")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -634,7 +634,7 @@ public class FavbetKoef extends Koef {
 						
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Тотал Нечет / Чёт")) {
+								.equals("РўРѕС‚Р°Р» РќРµС‡РµС‚ / Р§С‘С‚")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -653,7 +653,7 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Нечет")) {
+									if (temp_string.equals("РќРµС‡РµС‚")) {
 										name_total_parnuy_ni_perwuy = Float  /////////
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
@@ -672,7 +672,7 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Чет")) {
+									if (temp_string.equals("Р§РµС‚")) {
 										name_total_parnuy_tak_perwuy = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(1)
@@ -684,7 +684,7 @@ public class FavbetKoef extends Koef {
 							}
 						}else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Индивидуальный тотал")) {
+								.equals("РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Р№ С‚РѕС‚Р°Р»")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
