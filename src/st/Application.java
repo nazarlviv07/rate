@@ -49,21 +49,21 @@ public class Application extends Applet implements Runnable {
 	private Object event = new Object();
 
 	public JLabel labelVersionOfProgram = new JLabel(
-			"¬ÂÒ≥ˇ œÓ„‡ÏË #: 1      ƒ‡Ú‡ ÓÌÓ‚ÎÂÌÌˇ ÔÓ„‡ÏË: 06-10-2014 ");
+			"–í–µ—Ä—Å—ñ—è –ü—Ä–æ–≥—Ä–∞–º–∏ #: 1      –î–∞—Ç–∞ –æ–Ω–æ–≤–ª–µ–Ω–Ω—è –ø—Ä–æ–≥—Ä–∞–º–∏: 06-10-2014 ");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
 	public String kontora1Number = new String();
 	public String kontora2Number = new String();
 	public String percentageNumber = new String("1");
-	public JLabel labelPercentage = new JLabel("œÓˆÂÌÚ ‚Ë„‡¯Û % ");
+	public JLabel labelPercentage = new JLabel("–ü—Ä–æ—Ü–µ–Ω—Ç –≤–∏–≥—Ä–∞—à—É % ");
 
-	public JLabel labelFork = new JLabel("¬ËÎÍ‡");
-	public JLabel labelNameOfFork = new JLabel(" Õ‡Á‚‡ ÍÓÂÙ≥ˆ≥∫ÌÚ‡");
-	public JLabel labelKoefForFork = new JLabel("  ÓÂÙ≥ˆ≥∫ÌÚ");
-	public JLabel labelStavka = new JLabel(" —Ú‡‚Í‡");
-	public JLabel labelVugraw = new JLabel(" ¬Ë„‡¯");
-	public JLabel label4ustuyVugraw = new JLabel(" ◊ËÒÚËÈ ‚Ë„‡¯");
+	public JLabel labelFork = new JLabel("–í–∏–ª–∫–∞");
+	public JLabel labelNameOfFork = new JLabel(" –ù–∞–∑–≤–∞ –∫–æ–µ—Ñ—ñ—Ü—ñ—î–Ω—Ç–∞");
+	public JLabel labelKoefForFork = new JLabel(" –ö–æ–µ—Ñ—ñ—Ü—ñ—î–Ω—Ç");
+	public JLabel labelStavka = new JLabel(" –°—Ç–∞–≤–∫–∞");
+	public JLabel labelVugraw = new JLabel(" –í–∏–≥—Ä–∞—à");
+	public JLabel label4ustuyVugraw = new JLabel(" –ß–∏—Å—Ç–∏–π –≤–∏–≥—Ä–∞—à");
 	public JLabel labelResultFork = new JLabel("------");
 	public JLabel labelResultNameOfKoefKontora1 = new JLabel("------");
 	public JLabel labelResultNameOfKoefKontora2 = new JLabel("------");
@@ -84,7 +84,7 @@ public class Application extends Applet implements Runnable {
 	public JLabel label4ustuyVugrawKontora1 = new JLabel("------");
 	public JLabel label4ustuyVugrawKontora2 = new JLabel("------");
 	public JLabel labelProgres = new JLabel(
-			"œÓ„ÂÒ --> œÓ„‡Ï‡ ÒÚ‡ÚÛ‚‡Î‡ ÛÒÔ≥¯ÌÓ");
+			"–ü—Ä–æ–≥—Ä–µ—Å --> –ü—Ä–æ–≥—Ä–∞–º–∞ —Å—Ç–∞—Ä—Ç—É–≤–∞–ª–∞ —É—Å–ø—ñ—à–Ω–æ");
 
 	public JButton startButton = new JButton("Start");
 	public JButton stopButton = new JButton("Stop");
@@ -100,10 +100,10 @@ public class Application extends Applet implements Runnable {
 	// Koefizientu
 	public JLabel label_kontora1 = new JLabel("---");
 	public JLabel label_kontora2 = new JLabel("---");
-	public JLabel label_name_of_command_1 = new JLabel(" ÓÏ‡Ì‰‡1");
+	public JLabel label_name_of_command_1 = new JLabel("–ö–æ–º–∞–Ω–¥–∞1");
 	public JLabel label_name_of_command_1_kontora1 = new JLabel("---");
 	public JLabel label_name_of_command_1_kontora2 = new JLabel("---");
-	public JLabel label_name_of_command_2 = new JLabel(" ÓÏ‡Ì‰‡2");
+	public JLabel label_name_of_command_2 = new JLabel("–ö–æ–º–∞–Ω–¥–∞2");
 	public JLabel label_name_of_command_2_kontora1 = new JLabel("---");
 	public JLabel label_name_of_command_2_kontora2 = new JLabel("---");
 	public JLabel label_1 = new JLabel("1");
@@ -124,82 +124,82 @@ public class Application extends Applet implements Runnable {
 	public JLabel label_X2 = new JLabel("X2");
 	public JLabel label_X2_kontora1 = new JLabel("---");
 	public JLabel label_X2_kontora2 = new JLabel("---");
-	public JLabel label_Total_1 = new JLabel("“ÓÚ‡Î");
-	public JLabel label_Total_2 = new JLabel("“ÓÚ‡Î");
+	public JLabel label_Total_1 = new JLabel("–¢–æ—Ç–∞–ª");
+	public JLabel label_Total_2 = new JLabel("–¢–æ—Ç–∞–ª");
 	public JLabel label_Total_1_kontora1 = new JLabel("---");
 	public JLabel label_Total_2_kontora1 = new JLabel("---");
 	public JLabel label_Total_1_kontora2 = new JLabel("---");
 	public JLabel label_Total_2_kontora2 = new JLabel("---");
-	public JLabel label_Total_Menwe_1 = new JLabel("ÃÂÌ¯Â");
-	public JLabel label_Total_Menwe_2 = new JLabel("ÃÂÌ¯Â");
+	public JLabel label_Total_Menwe_1 = new JLabel("–ú–µ–Ω—à–µ");
+	public JLabel label_Total_Menwe_2 = new JLabel("–ú–µ–Ω—à–µ");
 	public JLabel label_Total_Menwe_1_kontora1 = new JLabel("---");
 	public JLabel label_Total_Menwe_2_kontora1 = new JLabel("---");
 	public JLabel label_Total_Menwe_1_kontora2 = new JLabel("---");
 	public JLabel label_Total_Menwe_2_kontora2 = new JLabel("---");
-	public JLabel label_Total_Bilwe_1 = new JLabel("¡≥Î¸¯Â");
-	public JLabel label_Total_Bilwe_2 = new JLabel("¡≥Î¸¯Â");
+	public JLabel label_Total_Bilwe_1 = new JLabel("–ë—ñ–ª—å—à–µ");
+	public JLabel label_Total_Bilwe_2 = new JLabel("–ë—ñ–ª—å—à–µ");
 	public JLabel label_Total_Bilwe_1_kontora1 = new JLabel("---");
 	public JLabel label_Total_Bilwe_2_kontora1 = new JLabel("---");
 	public JLabel label_Total_Bilwe_1_kontora2 = new JLabel("---");
 	public JLabel label_Total_Bilwe_2_kontora2 = new JLabel("---");
-	public JLabel label_Fora1_1 = new JLabel("‘Ó‡1");
-	public JLabel label_Fora1_2 = new JLabel("‘Ó‡1");
+	public JLabel label_Fora1_1 = new JLabel("–§–æ—Ä–∞1");
+	public JLabel label_Fora1_2 = new JLabel("–§–æ—Ä–∞1");
 	public JLabel label_Fora1_1_kontora1 = new JLabel("---");
 	public JLabel label_Fora1_2_kontora1 = new JLabel("---");
 	public JLabel label_Fora1_1_kontora2 = new JLabel("---");
 	public JLabel label_Fora1_2_kontora2 = new JLabel("---");
-	public JLabel label_Koef_For_Fora1_1 = new JLabel(" ÓÂÙ");
-	public JLabel label_Koef_For_Fora1_2 = new JLabel(" ÓÂÙ");
+	public JLabel label_Koef_For_Fora1_1 = new JLabel("–ö–æ–µ—Ñ");
+	public JLabel label_Koef_For_Fora1_2 = new JLabel("–ö–æ–µ—Ñ");
 	public JLabel label_Koef_For_Fora1_1_kontora1 = new JLabel("---");
 	public JLabel label_Koef_For_Fora1_2_kontora1 = new JLabel("---");
 	public JLabel label_Koef_For_Fora1_1_kontora2 = new JLabel("---");
 	public JLabel label_Koef_For_Fora1_2_kontora2 = new JLabel("---");
-	public JLabel label_Fora2_1 = new JLabel("‘Ó‡2");
-	public JLabel label_Fora2_2 = new JLabel("‘Ó‡2");
+	public JLabel label_Fora2_1 = new JLabel("–§–æ—Ä–∞2");
+	public JLabel label_Fora2_2 = new JLabel("–§–æ—Ä–∞2");
 	public JLabel label_Fora2_1_kontora1 = new JLabel("---");
 	public JLabel label_Fora2_2_kontora1 = new JLabel("---");
 	public JLabel label_Fora2_1_kontora2 = new JLabel("---");
 	public JLabel label_Fora2_2_kontora2 = new JLabel("---");
-	public JLabel label_Koef_For_Fora2_1 = new JLabel(" ÓÂÙ");
-	public JLabel label_Koef_For_Fora2_2 = new JLabel(" ÓÂÙ");
+	public JLabel label_Koef_For_Fora2_1 = new JLabel("–ö–æ–µ—Ñ");
+	public JLabel label_Koef_For_Fora2_2 = new JLabel("–ö–æ–µ—Ñ");
 	public JLabel label_Koef_For_Fora2_1_kontora1 = new JLabel("---");
 	public JLabel label_Koef_For_Fora2_2_kontora1 = new JLabel("---");
 	public JLabel label_Koef_For_Fora2_1_kontora2 = new JLabel("---");
 	public JLabel label_Koef_For_Fora2_2_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_1_command1 = new JLabel("≤Ì‰ ÚÓÚ ÍÓÏ1");
+	public JLabel label_Ind_Total_1_command1 = new JLabel("–Ü–Ω–¥ —Ç–æ—Ç –∫–æ–º1");
 	public JLabel label_Ind_Total_1_command1_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_1_command1_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_1_command1_Menwe = new JLabel("ÃÂÌ¯Â");
+	public JLabel label_Ind_Total_1_command1_Menwe = new JLabel("–ú–µ–Ω—à–µ");
 	public JLabel label_Ind_Total_1_command1_Menwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_1_command1_Menwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_1_command1_Bilwe = new JLabel("¡≥Î¸¯Â");
+	public JLabel label_Ind_Total_1_command1_Bilwe = new JLabel("–ë—ñ–ª—å—à–µ");
 	public JLabel label_Ind_Total_1_command1_Bilwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_1_command1_Bilwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_1_command2 = new JLabel("≤Ì‰ ÚÓÚ ÍÓÏ2");
+	public JLabel label_Ind_Total_1_command2 = new JLabel("–Ü–Ω–¥ —Ç–æ—Ç –∫–æ–º2");
 	public JLabel label_Ind_Total_1_command2_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_1_command2_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_1_command2_Menwe = new JLabel("ÃÂÌ¯Â");
+	public JLabel label_Ind_Total_1_command2_Menwe = new JLabel("–ú–µ–Ω—à–µ");
 	public JLabel label_Ind_Total_1_command2_Menwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_1_command2_Menwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_1_command2_Bilwe = new JLabel("¡≥Î¸¯Â");
+	public JLabel label_Ind_Total_1_command2_Bilwe = new JLabel("–ë—ñ–ª—å—à–µ");
 	public JLabel label_Ind_Total_1_command2_Bilwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_1_command2_Bilwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_2_command1 = new JLabel("≤Ì‰ ÚÓÚ ÍÓÏ1");
+	public JLabel label_Ind_Total_2_command1 = new JLabel("–Ü–Ω–¥ —Ç–æ—Ç –∫–æ–º1");
 	public JLabel label_Ind_Total_2_command1_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_2_command1_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_2_command1_Menwe = new JLabel("ÃÂÌ¯Â");
+	public JLabel label_Ind_Total_2_command1_Menwe = new JLabel("–ú–µ–Ω—à–µ");
 	public JLabel label_Ind_Total_2_command1_Menwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_2_command1_Menwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_2_command1_Bilwe = new JLabel("¡≥Î¸¯Â");
+	public JLabel label_Ind_Total_2_command1_Bilwe = new JLabel("–ë—ñ–ª—å—à–µ");
 	public JLabel label_Ind_Total_2_command1_Bilwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_2_command1_Bilwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_2_command2 = new JLabel("≤Ì‰ ÚÓÚ ÍÓÏ2");
+	public JLabel label_Ind_Total_2_command2 = new JLabel("–Ü–Ω–¥ —Ç–æ—Ç –∫–æ–º2");
 	public JLabel label_Ind_Total_2_command2_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_2_command2_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_2_command2_Menwe = new JLabel("ÃÂÌ¯Â");
+	public JLabel label_Ind_Total_2_command2_Menwe = new JLabel("–ú–µ–Ω—à–µ");
 	public JLabel label_Ind_Total_2_command2_Menwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_2_command2_Menwe_kontora2 = new JLabel("---");
-	public JLabel label_Ind_Total_2_command2_Bilwe = new JLabel("¡≥Î¸¯Â");
+	public JLabel label_Ind_Total_2_command2_Bilwe = new JLabel("–ë—ñ–ª—å—à–µ");
 	public JLabel label_Ind_Total_2_command2_Bilwe_kontora1 = new JLabel("---");
 	public JLabel label_Ind_Total_2_command2_Bilwe_kontora2 = new JLabel("---");
 
@@ -377,7 +377,7 @@ public class Application extends Applet implements Runnable {
 		stopButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				labelProgres.setText("œÓ„ÂÒ --> œÓ„‡ÏÛ ÁÛÔËÌÂÌÓ");
+				labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> –ü—Ä–æ–≥—Ä–∞–º—É –∑—É–ø–∏–Ω–µ–Ω–æ");
 				changeStateToWaiting();
 				clearLabel();
 				playMusic();
@@ -442,12 +442,12 @@ public class Application extends Applet implements Runnable {
 	public void initTestButton() {
 		testButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				labelProgres.setText("œÓ„ÂÒ --> “ÂÒÚ ÓÁÔÓ˜‡ÚÓ");
+				labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> –¢–µ—Å—Ç —Ä–æ–∑–ø–æ—á–∞—Ç–æ");
 
 				analyze();
 				analyze();
 				// ====================================================================
-				labelProgres.setText("œÓ„ÂÒ --> “ÂÒÚ Á‡Í≥Ì˜ÂÌÓ ÛÒÔ≥¯ÌÓ");
+				labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> –¢–µ—Å—Ç –∑–∞–∫—ñ–Ω—á–µ–Ω–æ —É—Å–ø—ñ—à–Ω–æ");
 			}
 		});
 	}
@@ -1317,8 +1317,8 @@ public class Application extends Applet implements Runnable {
 		String temp_str = new String();
 		temp_str = koef_kontora1.getKoef();
 		if (temp_str != "") {
-			labelProgres.setText("œÓ„ÂÒ --> " + koef_kontora1.name_of_kontora
-					+ " œÓÏËÎÍ‡ - " + temp_str);
+			labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> " + koef_kontora1.name_of_kontora
+					+ " –ü–æ–º–∏–ª–∫–∞ - " + temp_str);
 			try {
 
 				TimeUnit.MILLISECONDS.sleep(10000);
@@ -1328,13 +1328,13 @@ public class Application extends Applet implements Runnable {
 			}
 		}
 
-		labelProgres.setText("œÓ„ÂÒ --> « " + koef_kontora1.name_of_kontora
-				+ "  ÓÂÙ≥ˆ≥∫ÌÚË ÓÚËÏ‡Ì≥");
+		labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> –ó " + koef_kontora1.name_of_kontora
+				+ " –ö–æ–µ—Ñ—ñ—Ü—ñ—î–Ω—Ç–∏ –æ—Ç—Ä–∏–º–∞–Ω—ñ");
 
 		temp_str = koef_kontora2.getKoef();
 		if (temp_str != "") {
-			labelProgres.setText("œÓ„ÂÒ --> " + koef_kontora2.name_of_kontora
-					+ " œÓÏËÎÍ‡ - " + temp_str);
+			labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> " + koef_kontora2.name_of_kontora
+					+ " –ü–æ–º–∏–ª–∫–∞ - " + temp_str);
 
 			try {
 				TimeUnit.MILLISECONDS.sleep(10000);
@@ -1343,8 +1343,8 @@ public class Application extends Applet implements Runnable {
 				e.printStackTrace();
 			}
 		} else {
-			labelProgres.setText("Progress --> « "
-					+ koef_kontora2.name_of_kontora + "  ÓÂÙ≥ˆ≥∫ÌÚË ÓÚËÏ‡Ì≥");
+			labelProgres.setText("Progress --> –ó "
+					+ koef_kontora2.name_of_kontora + " –ö–æ–µ—Ñ—ñ—Ü—ñ—î–Ω—Ç–∏ –æ—Ç—Ä–∏–º–∞–Ω—ñ");
 
 			Calc calculation = new Calc();
 
@@ -1365,7 +1365,7 @@ public class Application extends Applet implements Runnable {
 	}
 
 	public void run() {
-		labelProgres.setText("œÓ„ÂÒ --> –ÓÁÔÓ˜‡ÚÓ ÔÓ¯ÛÍ ‚ËÎÓÍ");
+		labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> –†–æ–∑–ø–æ—á–∞—Ç–æ –ø–æ—à—É–∫ –≤–∏–ª–æ–∫");
 
 		Files files = new Files();
 
@@ -1382,8 +1382,8 @@ public class Application extends Applet implements Runnable {
 		synchronized (event) {
 			while (isRunning) {
 				if (!isWaiting) {
-					labelProgres.setText("œÓ„ÂÒ --> ¬ËÍÓÌ‡ÌÓ " + p
-							+ " ÒÔÓ· ÔÓ¯ÛÍÛ ‚ËÎÓÍ");
+					labelProgres.setText("–ü—Ä–æ–≥—Ä–µ—Å --> –í–∏–∫–æ–Ω–∞–Ω–æ " + p
+							+ " —Å–ø—Ä–æ–± –ø–æ—à—É–∫—É –≤–∏–ª–æ–∫");
 
 					try {
 						TimeUnit.MILLISECONDS.sleep(3000);
