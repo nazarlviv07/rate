@@ -40,7 +40,7 @@ import javax.swing.event.DocumentListener;
 import st.type.Result;
 
 public class Application extends Applet implements Runnable {
-	String[] kontoraStrings = { "Betcity", "Favbet", "Fonbet" };
+	String[] kontoraStrings = { "betcity", "favbet", "fonbet" };
 
 	public static final long serialVersionUID = 42L;
 	public boolean isRunning = true;
@@ -393,13 +393,13 @@ public class Application extends Applet implements Runnable {
 			public void actionPerformed(ActionEvent e) {
 				JComboBox cb = (JComboBox) e.getSource();
 
-				if (cb.getSelectedItem() == "Betcity") {
+				if (cb.getSelectedItem() == "betcity") {
 					kontora1List.setSelectedIndex(0);
 					koef_kontora1 = new BetcityKoef();
-				} else if (cb.getSelectedItem() == "Favbet") {
+				} else if (cb.getSelectedItem() == "favbet") {
 					kontora1List.setSelectedIndex(1);
 					koef_kontora1 = new FavbetKoef();
-				} else if (cb.getSelectedItem() == "Fonbet") {
+				} else if (cb.getSelectedItem() == "fonbet") {
 					kontora1List.setSelectedIndex(2);
 					koef_kontora1 = new FonbetKoef();
 					((FonbetKoef) koef_kontora1).id = Integer
@@ -418,15 +418,15 @@ public class Application extends Applet implements Runnable {
 			public void actionPerformed(ActionEvent e) {
 				JComboBox cb = (JComboBox) e.getSource();
 
-				if (cb.getSelectedItem() == "Betcity") {
+				if (cb.getSelectedItem() == "betcity") {
 					kontora2List.setSelectedIndex(0);
 					koef_kontora2 = new BetcityKoef();
 
-				} else if (cb.getSelectedItem() == "Favbet") {
+				} else if (cb.getSelectedItem() == "favbet") {
 					kontora2List.setSelectedIndex(1);
 					koef_kontora2 = new FavbetKoef();
 
-				} else if (cb.getSelectedItem() == "Fonbet") {
+				} else if (cb.getSelectedItem() == "fonbet") {
 					kontora2List.setSelectedIndex(2);
 					koef_kontora2 = new FonbetKoef();
 					((FonbetKoef) koef_kontora2).id = Integer
@@ -1095,11 +1095,11 @@ public class Application extends Applet implements Runnable {
 	}
 
 	public void writeNumOfEventForFonbet() {
-		if (koef_kontora1.name_of_kontora == "Fonbet") {
+		if (koef_kontora1.name_of_kontora == "fonbet") {
 			((FonbetKoef) koef_kontora1).num_of_event = Integer
 					.parseInt(kontora1Number);
 		}
-		if (koef_kontora2.name_of_kontora == "Fonbet") {
+		if (koef_kontora2.name_of_kontora == "fonbet") {
 			((FonbetKoef) koef_kontora2).num_of_event = Integer
 					.parseInt(kontora2Number);
 		}
