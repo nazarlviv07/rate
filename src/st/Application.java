@@ -1426,7 +1426,7 @@ public class Application extends Applet implements Runnable {
 	void playMusic() {
 		try {
 			AudioInputStream audio = AudioSystem.getAudioInputStream(new File(
-					"sound.wav"));
+					"music/sound.wav"));
 
 			Clip clip = AudioSystem.getClip();
 			clip.open(audio);

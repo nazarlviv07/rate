@@ -32,7 +32,7 @@ public class FonbetKoef extends Koef {
 		//link_to_download_file = "https://www.favbet.com/live/markets/event/";
 		link_to_download_file = "http://live.fonbet.com/live/currentLine/ru/?"
 				+ Math.random();
-		name_of_kontora = "Fonbet";
+		name_of_kontora = "fonbet";
 	}
 
 	public int id = 0;
