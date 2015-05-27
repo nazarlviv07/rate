@@ -56,34 +56,7 @@ public class FonbetKoef extends Koef {
 
 		// create JsonReader object
 		JsonReader jsonReader = Json.createReader(fis);
-
-		/**
-		 * We can create JsonReader from Factory also JsonReaderFactory factory
-		 * = Json.createReaderFactory(null); jsonReader =
-		 * factory.createReader(fis);
-		 */
-//===============================================
-	/*	JSONObject json = null;
-		try {
-			//json = readJsonFromUrl("https://graph.facebook.com/19292868552");
-			json = readJsonFromUrl("http://live.fonbet.com/live/currentLine/ru/?0.67535345345345345345345353068247");
-		} catch (JSONException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-	    System.out.println(json.toString());
-	    System.out.println(json.get("id"));*/
-		
-		
-		//=====================================================
-		
-		
-		
-		
-		
+	
 		// get JsonObject from JsonReader
 		JsonObject jsonObject = jsonReader.readObject();
 

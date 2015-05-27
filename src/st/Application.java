@@ -49,7 +49,7 @@ public class Application extends Applet implements Runnable {
 	private Object event = new Object();
 
 	public JLabel labelVersionOfProgram = new JLabel(
-			"Версія Програми #: 1      Дата оновлення програми: 06-10-2014 ");
+			"Версія Програми #: 1      Дата оновлення програми: 28-05-2015 ");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
