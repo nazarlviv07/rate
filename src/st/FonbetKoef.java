@@ -78,12 +78,14 @@ public class FonbetKoef extends Koef {
 
 		if (!jsArrOutComes.isEmpty()) {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
-				if (jsArrOutComes.getJsonObject(i).getInt("num") == num_of_event) {
+				//if (jsArrOutComes.getJsonObject(i).getInt("num") == num_of_event) {
+					if (jsArrOutComes.getJsonObject(i).getInt("id") == num_of_event) {
 					name_of_command1 = jsArrOutComes.getJsonObject(i)
 							.getString("team1");
 					name_of_command2 = jsArrOutComes.getJsonObject(i)
 							.getString("team2");
-					id = jsArrOutComes.getJsonObject(i).getInt("id");
+					//id = jsArrOutComes.getJsonObject(i).getInt("id");
+					id = num_of_event;
 				}
 			}
 
