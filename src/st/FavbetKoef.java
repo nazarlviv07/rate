@@ -168,8 +168,10 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Фора")) {
-
+								.getString("market_name").equals("Фора")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Handicap")) {
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
 
@@ -214,7 +216,10 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Тотал")) {
+								.getString("market_name").equals("Тотал")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Over/Under")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -257,7 +262,10 @@ public class FavbetKoef extends Koef {
 
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Обе команды забьют")) {
+								.equals("Обе команды забьют")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Both Teams to Score")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -276,7 +284,8 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Да")) {
+									if (temp_string.equals("Да")
+											|| temp_string.equals("Yes")) {
 										name_dvi_komandu_zabjytj_tak = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
@@ -295,7 +304,8 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Нет")) {
+									if (temp_string.equals("Нет")
+											|| temp_string.equals("No")) {
 										name_dvi_komandu_zabjytj_ni = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(1)
@@ -306,8 +316,10 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name")
-								.equals("Тотал Нечет / Чёт")) {
+								.getString("market_name").equals("Нечет / Чёт")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Odd / Even")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -326,7 +338,8 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Нечет")) {
+									if (temp_string.equals("Нечет")
+											|| temp_string.equals("Odd")) {
 										name_total_parnuy_ni = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
@@ -345,7 +358,8 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Чет")) {
+									if (temp_string.equals("Чет")
+											|| temp_string.equals("Even")) {
 										name_total_parnuy_tak = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(1)
@@ -357,7 +371,10 @@ public class FavbetKoef extends Koef {
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Индивидуальный тотал")) {
+								.equals("Индивидуальный тотал")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Team total")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -553,8 +570,10 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Фора")) {
-
+								.getString("market_name").equals("Фора")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Handicap")) {
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
 
@@ -599,7 +618,10 @@ public class FavbetKoef extends Koef {
 								}
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Тотал")) {
+								.getString("market_name").equals("Тотал")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Over/Under")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -641,8 +663,10 @@ public class FavbetKoef extends Koef {
 							}
 
 						} else if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name")
-								.equals("Тотал Нечет / Чёт")) {
+								.getString("market_name").equals("Нечет / Чёт")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Odd / Even")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -661,7 +685,8 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Нечет")) {
+									if (temp_string.equals("Нечет")
+											|| temp_string.equals("Odd")) {
 										name_total_parnuy_ni_perwuy = Float // ///////
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
@@ -680,7 +705,8 @@ public class FavbetKoef extends Koef {
 											.getJsonString("outcome_name")
 											.toString();
 
-									if (temp_string.equals("Чет")) {
+									if (temp_string.equals("Чет")
+											|| temp_string.equals("Even")) {
 										name_total_parnuy_tak_perwuy = Float
 												.parseFloat(jsArrOutComes
 														.getJsonObject(1)
@@ -692,7 +718,10 @@ public class FavbetKoef extends Koef {
 							}
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Индивидуальный тотал")) {
+								.equals("Индивидуальный тотал")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Team total")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -790,4 +819,8 @@ public class FavbetKoef extends Koef {
 		str = str.substring(pos_start + 1, pos_end);
 		return Float.parseFloat(str);
 	}
+
+	// Результат без ничьи - Draw no bet
+	// Кто выиграет остаток матча? - Who will win the rest of the match?
+
 }
