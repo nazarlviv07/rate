@@ -81,7 +81,9 @@ public class FavbetKoef extends Koef {
 								.getJsonObject(i).getJsonNumber("outcome_coef")
 								.toString());
 					} else if (jsArrOutComes.getJsonObject(i)
-							.getString("outcome_name").equals("Ничья")) {
+							.getString("outcome_name").equals("Ничья")
+							|| jsArrOutComes.getJsonObject(i)
+									.getString("outcome_name").equals("Draw")) {
 
 						name_X = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonNumber("outcome_coef")
@@ -103,7 +105,10 @@ public class FavbetKoef extends Koef {
 
 			for (int i = 0; i < jsArrResultTypes.size(); i++) {
 				if (jsArrResultTypes.getJsonObject(i)
-						.getString("result_type_name").equals("Основное время")) {
+						.getString("result_type_name").equals("Основное время")
+						|| jsArrResultTypes.getJsonObject(i)
+								.getString("result_type_name")
+								.equals("Full Time")) {
 					JsonArray jsArrMarketGroups = jsArrResultTypes
 							.getJsonObject(i).getJsonArray("market_groups");
 
@@ -111,8 +116,10 @@ public class FavbetKoef extends Koef {
 
 						if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Двойной исход")) {
-
+								.equals("Двойной исход")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Double chance")) {
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
 							if (!jsArrMarkets.isEmpty()) {
@@ -348,7 +355,7 @@ public class FavbetKoef extends Koef {
 									}
 								}
 							}
-						}else if (jsArrMarketGroups.getJsonObject(j)
+						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
 								.equals("Индивидуальный тотал")) {
 
@@ -433,8 +440,11 @@ public class FavbetKoef extends Koef {
 							}
 						}
 					}
-				} else if ((jsArrResultTypes.getJsonObject(i).getString(
-						"result_type_name").equals("1 Тайм"))) {
+				} else if (jsArrResultTypes.getJsonObject(i)
+						.getString("result_type_name").equals("1 Тайм")
+						|| jsArrResultTypes.getJsonObject(i)
+								.getString("result_type_name")
+								.equals("1st Half")) {
 
 					JsonArray jsArrMarketGroups = jsArrResultTypes
 							.getJsonObject(i).getJsonArray("market_groups");
@@ -629,9 +639,7 @@ public class FavbetKoef extends Koef {
 													.toString());
 								}
 							}
-						
-						
-						
+
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
 								.equals("Тотал Нечет / Чёт")) {
@@ -654,7 +662,7 @@ public class FavbetKoef extends Koef {
 											.toString();
 
 									if (temp_string.equals("Нечет")) {
-										name_total_parnuy_ni_perwuy = Float  /////////
+										name_total_parnuy_ni_perwuy = Float // ///////
 												.parseFloat(jsArrOutComes
 														.getJsonObject(0)
 														.getJsonNumber(
@@ -682,7 +690,7 @@ public class FavbetKoef extends Koef {
 									}
 								}
 							}
-						}else if (jsArrMarketGroups.getJsonObject(j)
+						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
 								.equals("Индивидуальный тотал")) {
 
