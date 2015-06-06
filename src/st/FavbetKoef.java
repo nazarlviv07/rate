@@ -187,7 +187,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									name_FORA1[z] = cutInsideBrackets(temp_string);
 
@@ -205,7 +205,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 									name_FORA2[z] = cutInsideBrackets(temp_string);
 									name_koef_for_FORA2[z] = Float
 											.parseFloat(jsArrOutComes
@@ -236,7 +236,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									name_TOTAL[z] = cutInsideBrackets(temp_string);
 
@@ -282,7 +282,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.equals("Да")
 											|| temp_string.equals("Yes")) {
@@ -302,7 +302,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.equals("Нет")
 											|| temp_string.equals("No")) {
@@ -336,7 +336,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.equals("Нечет")
 											|| temp_string.equals("Odd")) {
@@ -356,7 +356,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.equals("Чет")
 											|| temp_string.equals("Even")) {
@@ -394,7 +394,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.endsWith(name_of_command1)) {
 										name_IndTotalOfCommand1[num_com1] = cutInsideBrackets(temp_string);
@@ -430,7 +430,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.endsWith(name_of_command1)) {
 										name_IndTotalOfCommand1[num_com1 - 1] = cutInsideBrackets(temp_string);
@@ -520,9 +520,10 @@ public class FavbetKoef extends Koef {
 
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Двойной исход") || jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name")
-								.equals("Double chance") ) {
+								.equals("Двойной исход")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Double chance")) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
@@ -591,7 +592,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									name_FORA1_perwuy[z] = cutInsideBrackets(temp_string);
 
@@ -609,7 +610,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 									name_FORA2_perwuy[z] = cutInsideBrackets(temp_string);
 									name_koef_for_FORA2_perwuy[z] = Float
 											.parseFloat(jsArrOutComes
@@ -640,7 +641,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									name_TOTAL_perwuy[z] = cutInsideBrackets(temp_string);
 
@@ -685,7 +686,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.equals("Нечет")
 											|| temp_string.equals("Odd")) {
@@ -705,7 +706,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.equals("Чет")
 											|| temp_string.equals("Even")) {
@@ -743,7 +744,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(0)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.endsWith(name_of_command1)) {
 										name_IndTotalOfCommand1_perwuy[num_com1] = cutInsideBrackets(temp_string);
@@ -779,7 +780,7 @@ public class FavbetKoef extends Koef {
 									String temp_string = jsArrOutComes
 											.getJsonObject(1)
 											.getJsonString("outcome_name")
-											.toString();
+											.getString();
 
 									if (temp_string.endsWith(name_of_command1)) {
 										name_IndTotalOfCommand1_perwuy[num_com1 - 1] = cutInsideBrackets(temp_string);
