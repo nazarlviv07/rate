@@ -10,6 +10,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,6 +18,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import javax.sound.sampled.AudioInputStream;
@@ -49,7 +52,7 @@ public class Application extends Applet implements Runnable {
 	private Object event = new Object();
 
 	public JLabel labelVersionOfProgram = new JLabel(
-			"Версія Програми #: 1      Дата оновлення програми: 28-05-2015 ");
+			"Версія Програми #: 1      Дата оновлення програми: 06-06-2015 ");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
@@ -1424,24 +1427,23 @@ public class Application extends Applet implements Runnable {
 	}
 
 	void playMusic() {
-		try {
-			AudioInputStream audio = AudioSystem.getAudioInputStream(new File(
-						"./src/resources/music/sound.wav"));
-
-			Clip clip = AudioSystem.getClip();
-			clip.open(audio);
-			clip.start();
-		}
-
-		catch (UnsupportedAudioFileException uae) {
-			System.out.println(uae);
-		} catch (IOException ioe) {
-			System.out.println(ioe);
-		} catch (LineUnavailableException lua) {
-			System.out.println(lua);
-		}
+		
+			Clip clip;
+			try {
+				clip = AudioSystem.getClip();
+				try {
+					clip.open(AudioSystem.getAudioInputStream(
+						    new BufferedInputStream(getClass().getResourceAsStream("/st/sound.wav"))));
+				} catch (IOException | UnsupportedAudioFileException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				clip.start( );
+			} catch (LineUnavailableException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}		
 	};
-
 	void clearLabel() {
 		label_name_of_command_1_kontora1.setText("---");
 		label_name_of_command_1_kontora2.setText("---");
