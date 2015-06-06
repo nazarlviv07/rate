@@ -35,14 +35,14 @@ public class Files {
 		url = new URL(webSite);
 		File destination = new File(kontora + ".html");
 
-	if (kontora.equalsIgnoreCase("Fonbet")){
+	/*if (kontora.equalsIgnoreCase("Fonbet")){*/
 		 BufferedWriter writer = new BufferedWriter(new FileWriter(kontora +".html"));
 
          writer.write(downloadHtml(webSite));
          writer.newLine();
       
       writer.close();
-	}else{
+	/*}else{
 		try {
 
 			FileUtils.copyURLToFile(url, destination);
@@ -53,7 +53,7 @@ public class Files {
 			return false;
 		}
 		
-	}  
+	}  */
 		return true;
 	}
 	

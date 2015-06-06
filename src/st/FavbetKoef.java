@@ -520,7 +520,9 @@ public class FavbetKoef extends Koef {
 
 						} else if (jsArrMarketGroups.getJsonObject(j)
 								.getString("market_name")
-								.equals("Двойной исход")) {
+								.equals("Двойной исход") || jsArrMarketGroups.getJsonObject(j)
+								.getString("market_name")
+								.equals("Double chance") ) {
 
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
