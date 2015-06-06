@@ -10,9 +10,6 @@ import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
-
-
-
 //==============================
 
 import java.io.BufferedReader;
@@ -25,11 +22,12 @@ import java.nio.charset.Charset;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 public class FonbetKoef extends Koef {
 
 	public FonbetKoef() {
 		file = "fonbet.html";
-		//link_to_download_file = "https://www.favbet.com/live/markets/event/";
+		// link_to_download_file = "https://www.favbet.com/live/markets/event/";
 		link_to_download_file = "http://live.fonbet.com/live/currentLine/ru/?"
 				+ Math.random();
 		name_of_kontora = "fonbet";
@@ -39,7 +37,7 @@ public class FonbetKoef extends Koef {
 	public int id_perwuy_time = 0;
 	public int num_of_event;
 
-	public String getKoef(){
+	public String getKoef() {
 
 		setKoefToZero();
 		InputStream fis = null;
@@ -56,7 +54,7 @@ public class FonbetKoef extends Koef {
 
 		// create JsonReader object
 		JsonReader jsonReader = Json.createReader(fis);
-	
+
 		// get JsonObject from JsonReader
 		JsonObject jsonObject = jsonReader.readObject();
 
@@ -78,13 +76,14 @@ public class FonbetKoef extends Koef {
 
 		if (!jsArrOutComes.isEmpty()) {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
-				//if (jsArrOutComes.getJsonObject(i).getInt("num") == num_of_event) {
-					if (jsArrOutComes.getJsonObject(i).getInt("id") == num_of_event) {
+				// if (jsArrOutComes.getJsonObject(i).getInt("num") ==
+				// num_of_event) {
+				if (jsArrOutComes.getJsonObject(i).getInt("id") == num_of_event) {
 					name_of_command1 = jsArrOutComes.getJsonObject(i)
 							.getString("team1");
 					name_of_command2 = jsArrOutComes.getJsonObject(i)
 							.getString("team2");
-					//id = jsArrOutComes.getJsonObject(i).getInt("id");
+					// id = jsArrOutComes.getJsonObject(i).getInt("id");
 					id = num_of_event;
 				}
 			}
@@ -157,7 +156,7 @@ public class FonbetKoef extends Koef {
 						case 927:
 							name_FORA1[0] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA1[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -165,7 +164,7 @@ public class FonbetKoef extends Koef {
 						case 928:
 							name_FORA2[0] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA2[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -173,7 +172,7 @@ public class FonbetKoef extends Koef {
 						case 910:
 							name_FORA1[1] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA1[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -181,7 +180,7 @@ public class FonbetKoef extends Koef {
 						case 912:
 							name_FORA2[1] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA2[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -189,7 +188,7 @@ public class FonbetKoef extends Koef {
 						case 989:
 							name_FORA1[2] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA1[2] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -197,7 +196,7 @@ public class FonbetKoef extends Koef {
 						case 991:
 							name_FORA2[2] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA2[2] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -205,7 +204,7 @@ public class FonbetKoef extends Koef {
 						case 1569:
 							name_FORA1[3] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA1[3] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -213,7 +212,7 @@ public class FonbetKoef extends Koef {
 						case 1572:
 							name_FORA2[3] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_koef_for_FORA2[3] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -221,7 +220,7 @@ public class FonbetKoef extends Koef {
 						case 930:
 							name_TOTAL[0] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_TOTAL_bilwe[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -234,7 +233,7 @@ public class FonbetKoef extends Koef {
 						case 1696:
 							name_TOTAL[1] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_TOTAL_bilwe[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -247,7 +246,7 @@ public class FonbetKoef extends Koef {
 						case 1727:
 							name_TOTAL[2] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_TOTAL_bilwe[2] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -260,7 +259,7 @@ public class FonbetKoef extends Koef {
 						case 1730:
 							name_TOTAL[3] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_TOTAL_bilwe[4] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -273,7 +272,7 @@ public class FonbetKoef extends Koef {
 						case 1733:
 							name_TOTAL[4] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
-									.toString());
+									.getString());
 							name_TOTAL_bilwe[4] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -286,7 +285,7 @@ public class FonbetKoef extends Koef {
 						case 1810:
 							name_IndTotalOfCommand1[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalMenweOfCommand1[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -294,7 +293,7 @@ public class FonbetKoef extends Koef {
 						case 1809:
 							name_IndTotalOfCommand1[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalBilweOfCommand1[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -302,7 +301,7 @@ public class FonbetKoef extends Koef {
 						case 1813:
 							name_IndTotalOfCommand1[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalMenweOfCommand1[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -310,7 +309,7 @@ public class FonbetKoef extends Koef {
 						case 1812:
 							name_IndTotalOfCommand1[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalBilweOfCommand1[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -318,7 +317,7 @@ public class FonbetKoef extends Koef {
 						case 1871:
 							name_IndTotalOfCommand2[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalMenweOfCommand2[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -326,7 +325,7 @@ public class FonbetKoef extends Koef {
 						case 1854:
 							name_IndTotalOfCommand2[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalBilweOfCommand2[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -334,7 +333,7 @@ public class FonbetKoef extends Koef {
 						case 1874:
 							name_IndTotalOfCommand2[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalMenweOfCommand2[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -342,7 +341,7 @@ public class FonbetKoef extends Koef {
 						case 1873:
 							name_IndTotalOfCommand2[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
-											.getJsonString("pt").toString());
+											.getJsonString("pt").getString());
 							name_IndTotalBilweOfCommand2[1] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
@@ -402,68 +401,69 @@ public class FonbetKoef extends Koef {
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1007:
 							name_time_match_P1_P1 = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1008:
 							name_time_match_P1_N = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1009:
 							name_time_match_P1_P2 = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1010:
 							name_time_match_N_P1 = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1011:
 							name_time_match_N_N = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1012:
 							name_time_match_N_P2 = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1013:
 							name_time_match_P2_P1 = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1014:
 							name_time_match_P2_N = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						case 1015:
 							name_time_match_P2_P2 = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
-							
+
 						default:
 
-						
-							  System.out.println("f == " + temp + " v= " +
-							  jsArrOutComes.getJsonObject(i)
-							  .getJsonNumber("v").toString());
-							 
+							System.out.println("f == "
+									+ temp
+									+ " v= "
+									+ jsArrOutComes.getJsonObject(i)
+											.getJsonNumber("v").toString());
+
 						}
 					}
 
@@ -547,7 +547,7 @@ public class FonbetKoef extends Koef {
 					case 927:
 						name_FORA1_perwuy[0] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA1_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -555,7 +555,7 @@ public class FonbetKoef extends Koef {
 					case 928:
 						name_FORA2_perwuy[0] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA2_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -563,7 +563,7 @@ public class FonbetKoef extends Koef {
 					case 910:
 						name_FORA1_perwuy[1] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA1_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -571,7 +571,7 @@ public class FonbetKoef extends Koef {
 					case 912:
 						name_FORA2_perwuy[1] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA2_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -579,7 +579,7 @@ public class FonbetKoef extends Koef {
 					case 989:
 						name_FORA1_perwuy[2] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA1_perwuy[2] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -587,7 +587,7 @@ public class FonbetKoef extends Koef {
 					case 991:
 						name_FORA2_perwuy[2] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA2_perwuy[2] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -595,7 +595,7 @@ public class FonbetKoef extends Koef {
 					case 1569:
 						name_FORA1_perwuy[3] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA1_perwuy[3] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -603,7 +603,7 @@ public class FonbetKoef extends Koef {
 					case 1572:
 						name_FORA2_perwuy[3] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_koef_for_FORA2_perwuy[3] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -611,7 +611,7 @@ public class FonbetKoef extends Koef {
 					case 930:
 						name_TOTAL_perwuy[0] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_TOTAL_bilwe_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -637,7 +637,7 @@ public class FonbetKoef extends Koef {
 					case 1727:
 						name_TOTAL_perwuy[2] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_TOTAL_bilwe_perwuy[2] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -650,7 +650,7 @@ public class FonbetKoef extends Koef {
 					case 1730:
 						name_TOTAL_perwuy[3] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_TOTAL_bilwe_perwuy[4] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -663,7 +663,7 @@ public class FonbetKoef extends Koef {
 					case 1733:
 						name_TOTAL_perwuy[4] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_TOTAL_bilwe_perwuy[4] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -676,7 +676,7 @@ public class FonbetKoef extends Koef {
 					case 1810:
 						name_IndTotalOfCommand1_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalMenweOfCommand1_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -684,7 +684,7 @@ public class FonbetKoef extends Koef {
 					case 1809:
 						name_IndTotalOfCommand1_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalBilweOfCommand1_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -692,7 +692,7 @@ public class FonbetKoef extends Koef {
 					case 1813:
 						name_IndTotalOfCommand1_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalMenweOfCommand1_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -700,7 +700,7 @@ public class FonbetKoef extends Koef {
 					case 1812:
 						name_IndTotalOfCommand1_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalBilweOfCommand1_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -708,7 +708,7 @@ public class FonbetKoef extends Koef {
 					case 1871:
 						name_IndTotalOfCommand2_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalMenweOfCommand2[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -716,7 +716,7 @@ public class FonbetKoef extends Koef {
 					case 1854:
 						name_IndTotalOfCommand2_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalBilweOfCommand2_perwuy[0] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -724,7 +724,7 @@ public class FonbetKoef extends Koef {
 					case 1874:
 						name_IndTotalOfCommand2_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalMenweOfCommand2_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -732,7 +732,7 @@ public class FonbetKoef extends Koef {
 					case 1873:
 						name_IndTotalOfCommand2_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
-										.getJsonString("pt").toString());
+										.getJsonString("pt").getString());
 						name_IndTotalBilweOfCommand2_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
@@ -987,24 +987,27 @@ public class FonbetKoef extends Koef {
 	}
 
 	private static String readAll(Reader rd) throws IOException {
-	    StringBuilder sb = new StringBuilder();
-	    int cp;
-	    while ((cp = rd.read()) != -1) {
-	      sb.append((char) cp);
-	    }
-	    return sb.toString();
-	  }
+		StringBuilder sb = new StringBuilder();
+		int cp;
+		while ((cp = rd.read()) != -1) {
+			sb.append((char) cp);
+		}
+		return sb.toString();
+	}
 
-	  public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-	    InputStream is = new URL(url).openStream();
-	    try {
-	      //BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-	    	BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("WINDOWS-1251")));
-	      String jsonText = readAll(rd);
-	      JSONObject json = new JSONObject(jsonText);
-	      return json;
-	    } finally {
-	      is.close();
-	    }
-	  }
+	public static JSONObject readJsonFromUrl(String url) throws IOException,
+			JSONException {
+		InputStream is = new URL(url).openStream();
+		try {
+			// BufferedReader rd = new BufferedReader(new InputStreamReader(is,
+			// Charset.forName("UTF-8")));
+			BufferedReader rd = new BufferedReader(new InputStreamReader(is,
+					Charset.forName("WINDOWS-1251")));
+			String jsonText = readAll(rd);
+			JSONObject json = new JSONObject(jsonText);
+			return json;
+		} finally {
+			is.close();
+		}
+	}
 }
