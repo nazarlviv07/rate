@@ -1433,7 +1433,7 @@ public class Application extends Applet implements Runnable {
 				clip = AudioSystem.getClip();
 				try {
 					clip.open(AudioSystem.getAudioInputStream(
-						    new BufferedInputStream(getClass().getResourceAsStream("/st/sound.wav"))));
+						    new BufferedInputStream(getClass().getResourceAsStream("/resources/music/sound.wav"))));
 				} catch (IOException | UnsupportedAudioFileException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
