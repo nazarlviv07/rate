@@ -61,7 +61,7 @@ public class Koef {
 	public float name_time_match_P2_N;
 	public float name_time_match_P2_P2;
 
-	// Перший тайм
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 	public float name_1_perwuy;
 	public float name_X_perwuy;
@@ -121,7 +121,7 @@ public class Koef {
 	}
 
 	public void setKoefToZero() {
-		// ======== Коефіцієнти загальні ==============
+		// ======== пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ==============
 		hour = 0;
 		minute = 0;
 		name_of_command1 = "";
@@ -176,7 +176,7 @@ public class Koef {
 		name_time_match_P2_N = 0;
 		name_time_match_P2_P2 = 0;
 
-		// Перший тайм
+		// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 		name_1_perwuy = 0;
 		name_X_perwuy = 0;
@@ -218,7 +218,25 @@ public class Koef {
 		System.out.println("name_X  == " + name_X);
 		System.out.println("name_2  == " + name_2);
 		System.out.println("name_1X  == " + name_1X);
-
+		
+		System.out.println("============================");
+		System.out.println("    IndTotalOfCommand1");
+		System.out.println("----------------------------");
+		System.out.println(" #  | Total | Р‘С–Р»СЊС€Рµ | РњРµРЅС€Рµ");
+		System.out.println("============================");
+		for (int i = 0; i < maxNumOfIndTotal; i++) {
+			System.out.println(" " + i + "  |  " + name_IndTotalOfCommand1[i] + "  | " + name_IndTotalBilweOfCommand1[i] + "    | " + name_IndTotalMenweOfCommand1[i]);
+		}
+		
+		System.out.println("============================");
+		System.out.println("    IndTotalOfCommand2");
+		System.out.println("----------------------------");
+		System.out.println(" #  | Total | Р‘С–Р»СЊС€Рµ | РњРµРЅС€Рµ");
+		System.out.println("============================");
+		for (int i = 0; i < maxNumOfIndTotal; i++) {
+			System.out.println(" " + i + "  |  " + name_IndTotalOfCommand2[i] + "  | " + name_IndTotalBilweOfCommand2[i] + "    | " + name_IndTotalMenweOfCommand2[i]);
+		}
+		
 	}
 
 }

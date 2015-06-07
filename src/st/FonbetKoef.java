@@ -315,6 +315,22 @@ public class FonbetKoef extends Koef {
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
+						case 976:
+							name_IndTotalOfCommand1[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonString("pt").getString());
+							name_IndTotalMenweOfCommand1[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonNumber("v").toString());
+							break;
+						case 974:
+							name_IndTotalOfCommand1[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonString("pt").getString());
+							name_IndTotalBilweOfCommand1[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonNumber("v").toString());
+							break;
 						case 1871:
 							name_IndTotalOfCommand2[0] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
@@ -344,6 +360,22 @@ public class FonbetKoef extends Koef {
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonString("pt").getString());
 							name_IndTotalBilweOfCommand2[1] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonNumber("v").toString());
+							break;
+						case 978:
+							name_IndTotalOfCommand2[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonString("pt").getString());
+							name_IndTotalBilweOfCommand2[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonNumber("v").toString());
+							break;
+						case 980:
+							name_IndTotalOfCommand2[2] = Float
+									.parseFloat(jsArrOutComes.getJsonObject(i)
+											.getJsonString("pt").getString());
+							name_IndTotalMenweOfCommand2[2] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
@@ -457,6 +489,16 @@ public class FonbetKoef extends Koef {
 											.getJsonNumber("v").toString());
 							break;
 
+						case 572:
+						case 573:
+						case 831:
+						case 832:
+						case 833:
+						case 889:
+						case 890:
+						case 891:
+						case 907:
+						case 908:
 						case 1085:
 						case 1086:
 						case 1087:
@@ -465,6 +507,17 @@ public class FonbetKoef extends Koef {
 						case 1100:
 						case 1741:
 						case 1742:
+						case 1744:
+						case 1745:
+						case 1953:
+						case 1955:
+						case 1957:
+						case 2324:
+						case 2325:
+						case 2327:
+						case 2328:
+						case 2349:
+						case 2350:
 						case 3090:
 						case 3091:
 						case 3093:
@@ -843,7 +896,7 @@ public class FonbetKoef extends Koef {
 			}
 
 		}
-
+		print();
 		return "";
 	}
 
