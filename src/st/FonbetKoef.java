@@ -499,6 +499,23 @@ public class FonbetKoef extends Koef {
 						case 891:
 						case 907:
 						case 908:
+						case 1051:
+						case 1052:
+						case 1053:
+						case 1908:
+						case 1910:
+						case 1912:
+						case 2079:
+						case 2081:
+						case 2082:
+						case 2092:
+						case 2093:
+						case 2094:
+						case 2103:
+						case 2104:
+						case 2105:
+						case 2114:
+						case 2115:
 						case 1085:
 						case 1086:
 						case 1087:
@@ -516,6 +533,8 @@ public class FonbetKoef extends Koef {
 						case 2325:
 						case 2327:
 						case 2328:
+						case 2343:
+						case 2344:
 						case 2349:
 						case 2350:
 						case 3090:
