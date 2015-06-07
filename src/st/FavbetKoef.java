@@ -469,7 +469,9 @@ public class FavbetKoef extends Koef {
 					for (int j = 0; j < jsArrMarketGroups.size(); j++) {
 
 						if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Победа")) {
+								.getString("market_name").equals("Победа") ||
+								jsArrMarketGroups.getJsonObject(j)
+								.getString("market_name").equals("Money Line")) {
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
 							if (!jsArrMarkets.isEmpty()) {
@@ -494,7 +496,11 @@ public class FavbetKoef extends Koef {
 										} else if (jsArrOutComes
 												.getJsonObject(z)
 												.getString("outcome_name")
-												.equals("Ничья")) {
+												.equals("Ничья") ||
+												jsArrOutComes
+												.getJsonObject(z)
+												.getString("outcome_name")
+												.equals("Draw")) {
 
 											name_X_perwuy = Float
 													.parseFloat(jsArrOutComes

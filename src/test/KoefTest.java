@@ -23,64 +23,108 @@ public class KoefTest {
 			e.printStackTrace();
 		}
 		koef_favbet.getKoef();
-
-		Assert.assertEquals(koef_favbet.name_1, 2.95f);
-		Assert.assertEquals(koef_favbet.name_X, 1.53f);
-		Assert.assertEquals(koef_favbet.name_2, 9.0f);
-		Assert.assertEquals(koef_favbet.name_1X, 1.01f);
-		Assert.assertEquals(koef_favbet.name_12, 2.25f);
-		Assert.assertEquals(koef_favbet.name_X2, 1.32f);
-		Assert.assertEquals(koef_favbet.name_TOTAL[0], 0.5f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[0], 1.95f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[0], 1.77f);
-		Assert.assertEquals(koef_favbet.name_TOTAL[1], 1f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[1], 3.75f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[1], 1.23f);
-		Assert.assertEquals(koef_favbet.name_TOTAL[2], 1.5f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[2], 5f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[2], 1.14f);
-		Assert.assertEquals(koef_favbet.name_TOTAL[3], 2f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[3], 10f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[3], 1.02f);
+		Assert.assertEquals(koef_favbet.name_of_command1, "Queensland Lions");
+		Assert.assertEquals(koef_favbet.name_of_command2, "Logan Lightning");
+		
+		Assert.assertEquals(koef_favbet.name_1, 2.7f);
+		Assert.assertEquals(koef_favbet.name_X, 3.4f);
+		Assert.assertEquals(koef_favbet.name_2, 2.25f);
+		Assert.assertEquals(koef_favbet.name_1X, 1.52f);
+		Assert.assertEquals(koef_favbet.name_12, 1.25f);
+		Assert.assertEquals(koef_favbet.name_X2, 1.37f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[0], 1.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[0], 1.09f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[0], 6.15f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[1], 2f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[1], 1.14f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[1], 5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[2], 2.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[2], 1.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[2], 2.4f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[3], 3f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[3], 1.9f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[3], 1.8f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[4], 3.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[4], 2.55f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[4], 1.45f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[5], 4f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[5], 4f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[5], 1.2f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[6], 4.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[6], 4.75f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[6], 1.15f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[7], 5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[7], 8.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[7], 1.04f);
+		Assert.assertEquals(koef_favbet.name_TOTAL[8], 5.5f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe[8], 9f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe[8], 1.03f);
 		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[0], 0.5f);
-		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[0], 2.37f);
-		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[0], 1.52f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[0], 1.22f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[0], 3.85f);
 		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[1], 1f);
-		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[1], 5.5f);
-		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[1], 1.11f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[1], 1.39f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[1], 2.77f);
 		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[2], 1.5f);
-		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[2], 7f);
-		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[2], 1.07f);
-		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand2[0], 0.5f);
-		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand2[0], 4.45f);
-		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand2[0], 1.17f);
-		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand2[1], 0f);
-		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand2[1], 0f);
-		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand2[1], 0f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[2], 2.05f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[2], 1.7f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[3], 2.0f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[3], 3.2f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[3], 1.3f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[4], 2.5f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[4], 4f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[4], 1.2f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[5], 3.0f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[5], 7.7f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[5], 1.05f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1[6], 3.5f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1[6], 9f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1[6], 1.03f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand2[0], 1.5f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand2[0], 2.1f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand2[0], 1.65f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand2[1], 2f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand2[1], 4.75f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand2[1], 1.15f);
+		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand2[2], 2.5f);
+		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand2[2], 6.15f);
+		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand2[2], 1.09f);
 
 		// Fora
 		Assert.assertEquals(koef_favbet.name_FORA1[0], -0.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[0], 2.95f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[0], 2.7f);
 		Assert.assertEquals(koef_favbet.name_FORA2[0], 0.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[0], 1.32f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[0], 1.37f);
 		Assert.assertEquals(koef_favbet.name_FORA1[1], -1f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[1], 6.15f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[1], 4.75f);
 		Assert.assertEquals(koef_favbet.name_FORA2[1], 1f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[1], 1.09f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[1], 1.15f);
 		Assert.assertEquals(koef_favbet.name_FORA1[2], -1.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[2], 7.3f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[2], 5.5f);
 		Assert.assertEquals(koef_favbet.name_FORA2[2], 1.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[2], 1.06f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[2], 1.11f);
 		Assert.assertEquals(koef_favbet.name_FORA1[3], 0f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[3], 1.23f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[3], 2.05f);
 		Assert.assertEquals(koef_favbet.name_FORA2[3], 0f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[3], 3.75f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[3], 1.7f);
+		Assert.assertEquals(koef_favbet.name_FORA1[4], 0.5f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[4], 1.52f);
+		Assert.assertEquals(koef_favbet.name_FORA2[4], -0.5f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[4], 2.25f);
+		Assert.assertEquals(koef_favbet.name_FORA1[5], 1f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[5], 1.18f);
+		Assert.assertEquals(koef_favbet.name_FORA2[5], -1f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[5], 4.3f);
+		Assert.assertEquals(koef_favbet.name_FORA1[6], 1.5f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1[6], 1.11f);
+		Assert.assertEquals(koef_favbet.name_FORA2[6], -1.5f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2[6], 5.5f);
 		
-		Assert.assertEquals(koef_favbet.name_total_parnuy_ni, 2.45f);
-		Assert.assertEquals(koef_favbet.name_total_parnuy_tak, 1.49f);
+		Assert.assertEquals(koef_favbet.name_total_parnuy_ni, 1.83f);
+		Assert.assertEquals(koef_favbet.name_total_parnuy_tak, 1.87f);
 		
-		Assert.assertEquals(koef_favbet.name_dvi_komandu_zabjytj_ni, 1.05f);
-		Assert.assertEquals(koef_favbet.name_dvi_komandu_zabjytj_tak, 7.7f);
+		Assert.assertEquals(koef_favbet.name_dvi_komandu_zabjytj_ni, 3.85f);
+		Assert.assertEquals(koef_favbet.name_dvi_komandu_zabjytj_tak, 1.22f);
 		
 		
 		// Perwuy time
@@ -94,48 +138,45 @@ public class KoefTest {
 		}
 		koef_favbet.getKoef();
 
-		Assert.assertEquals(koef_favbet.name_1_perwuy, 4.8f);
-		Assert.assertEquals(koef_favbet.name_X_perwuy, 1.31f);
-		Assert.assertEquals(koef_favbet.name_2_perwuy, 6.75f);
-		Assert.assertEquals(koef_favbet.name_1X_perwuy, 1.03f);
-		Assert.assertEquals(koef_favbet.name_12_perwuy, 2.8f);
-		Assert.assertEquals(koef_favbet.name_X2_perwuy, 1.09f);
+		Assert.assertEquals(koef_favbet.name_of_command1, "Sydney Olympic");
+		Assert.assertEquals(koef_favbet.name_of_command2, "Parramatta Eagles");
+		
+		Assert.assertEquals(koef_favbet.name_1_perwuy, 2.15f);
+		Assert.assertEquals(koef_favbet.name_X_perwuy, 1.9f);
+		Assert.assertEquals(koef_favbet.name_2_perwuy, 7.5f);
+		Assert.assertEquals(koef_favbet.name_1X_perwuy, 1.01f);
+		Assert.assertEquals(koef_favbet.name_12_perwuy, 1.69f);
+		Assert.assertEquals(koef_favbet.name_X2_perwuy, 1.53f);
 		Assert.assertEquals(koef_favbet.name_TOTAL_perwuy[0], 0.5f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe_perwuy[0], 3.1f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe_perwuy[0], 1.32f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe_perwuy[0], 1.55f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe_perwuy[0], 2.3f);
 		Assert.assertEquals(koef_favbet.name_TOTAL_perwuy[1], 1f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe_perwuy[1], 10f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe_perwuy[1], 1.02f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe_perwuy[1], 2.45f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe_perwuy[1], 1.49f);
 		Assert.assertEquals(koef_favbet.name_TOTAL_perwuy[2], 1.5f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe_perwuy[2], 11f);
-		Assert.assertEquals(koef_favbet.name_TOTAL_menwe_perwuy[2], 1.01f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_bilwe_perwuy[2], 3.65f);
+		Assert.assertEquals(koef_favbet.name_TOTAL_menwe_perwuy[2], 1.24f);
+		
 		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand1_perwuy[0], 0.5f);
 		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand1_perwuy[0],
-				4.6f);
+				1.87f);
 		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand1_perwuy[0],
-				1.16f);
+				1.83f);
 		Assert.assertEquals(koef_favbet.name_IndTotalOfCommand2_perwuy[0], 0.5f);
 		Assert.assertEquals(koef_favbet.name_IndTotalBilweOfCommand2_perwuy[0],
-				5.85f);
+				3.9f);
 		Assert.assertEquals(koef_favbet.name_IndTotalMenweOfCommand2_perwuy[0],
-				1.1f);
+				1.21f);
 
 		// Fora
 		Assert.assertEquals(koef_favbet.name_FORA1_perwuy[0], -0.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1_perwuy[0], 4.8f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1_perwuy[0], 2.15f);
 		Assert.assertEquals(koef_favbet.name_FORA2_perwuy[0], 0.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2_perwuy[0], 1.09f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2_perwuy[0], 1.53f);
 		Assert.assertEquals(koef_favbet.name_FORA1_perwuy[1], 0f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1_perwuy[1], 1.58f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA1_perwuy[1], 1.19f);
 		Assert.assertEquals(koef_favbet.name_FORA2_perwuy[1], 0f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2_perwuy[1], 2.25f);
-		Assert.assertEquals(koef_favbet.name_FORA1_perwuy[2], 0.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA1_perwuy[2], 1.03f);
-		Assert.assertEquals(koef_favbet.name_FORA2_perwuy[2], -0.5f);
-		Assert.assertEquals(koef_favbet.name_koef_for_FORA2_perwuy[2], 6.75f);
-		
-		Assert.assertEquals(koef_favbet.name_total_parnuy_ni_perwuy, 3.55f);
-		Assert.assertEquals(koef_favbet.name_total_parnuy_tak_perwuy, 1.25f);
+		Assert.assertEquals(koef_favbet.name_koef_for_FORA2_perwuy[1], 4.15f);
 	}
 
 	@Test
