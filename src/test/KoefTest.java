@@ -191,7 +191,10 @@ public class KoefTest {
 			e.printStackTrace();
 		}
 		koef_fonbet.getKoef();
-
+		
+		Assert.assertEquals(koef_fonbet.name_of_command1, "Gerena");
+		Assert.assertEquals(koef_fonbet.name_of_command2, "San Juan");
+		
 		Assert.assertEquals(koef_fonbet.name_1, 2f);
 		Assert.assertEquals(koef_fonbet.name_X, 3.05f);
 		Assert.assertEquals(koef_fonbet.name_2, 3.95f);
