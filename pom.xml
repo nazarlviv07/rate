@@ -41,10 +41,11 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.4</version>
 		</dependency>
+
 		<dependency>
-			<groupId>javax.json</groupId>
-			<artifactId>javax.json-api</artifactId>
-			<version>1.0</version>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.0.4</version>
 		</dependency>
 	</dependencies>
 
@@ -57,14 +58,9 @@
 					<exclude>**/*.java</exclude>
 				</excludes>
 			</resource>
-			<!--  <resource>
-		<directory>${project.basedir}/src/resources</directory> 
-	
-				<includes>
-					<include>**/*.*</include>
-				</includes>
-				<targetPath>${project.build.directory}/classes</targetPath> 
-			</resource>  -->
+			<!-- <resource> <directory>${project.basedir}/src/resources</directory> 
+				<includes> <include>**/*.*</include> </includes> <targetPath>${project.build.directory}/classes</targetPath> 
+				</resource> -->
 		</resources>
 		<plugins>
 			<plugin>
