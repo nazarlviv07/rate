@@ -183,7 +183,7 @@ public class KoefTest {
 	public void testKoefFonbet() {
 		Koef koef_fonbet = new FonbetKoef();
 		koef_fonbet.file = "Test/koef/fonbet/fonbet1.html";
-		((FonbetKoef) koef_fonbet).num_of_event = 533;
+		((FonbetKoef) koef_fonbet).num_of_event = 4327333;
 		try {
 			koef_fonbet.readFromFile();
 		} catch (IOException e) {
@@ -192,27 +192,35 @@ public class KoefTest {
 		}
 		koef_fonbet.getKoef();
 
-		Assert.assertEquals(koef_fonbet.name_1, 2.15f);
-		Assert.assertEquals(koef_fonbet.name_X, 2.50f);
-		Assert.assertEquals(koef_fonbet.name_2, 4.50f);
-		Assert.assertEquals(koef_fonbet.name_1X, 1.16f);
-		Assert.assertEquals(koef_fonbet.name_12, 1.47f);
-		Assert.assertEquals(koef_fonbet.name_X2, 1.62f);
+		Assert.assertEquals(koef_fonbet.name_1, 2f);
+		Assert.assertEquals(koef_fonbet.name_X, 3.05f);
+		Assert.assertEquals(koef_fonbet.name_2, 3.95f);
+		Assert.assertEquals(koef_fonbet.name_1X, 1.20f);
+		Assert.assertEquals(koef_fonbet.name_12, 1.33f);
+		Assert.assertEquals(koef_fonbet.name_X2, 1.72f);
 		Assert.assertEquals(koef_fonbet.name_TOTAL[0], 1.5f);
-		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[0], 2.08f);
-		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[0], 1.67f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[0], 1.6f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[0], 2.2f);
 		Assert.assertEquals(koef_fonbet.name_TOTAL[1], 0.5f);
-		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[1], 1.22f);
-		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[1], 3.85f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[1], 1.11f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[1], 5.6f);
 		Assert.assertEquals(koef_fonbet.name_TOTAL[2], 2.5f);
-		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[2], 4.40f);
-		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[2], 1.17f);
-		Assert.assertEquals(koef_fonbet.name_IndTotalOfCommand1[0], 1.5f);
-		Assert.assertEquals(koef_fonbet.name_IndTotalBilweOfCommand1[0], 3.70f);
-		Assert.assertEquals(koef_fonbet.name_IndTotalMenweOfCommand1[0], 1.23f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[2], 2.80f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[2], 1.38f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL[3], 3.5f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_bilwe[3], 5.5f);
+		Assert.assertEquals(koef_fonbet.name_TOTAL_menwe[3], 1.11f);
+		
+		// Ind Total
+		Assert.assertEquals(koef_fonbet.name_IndTotalOfCommand1[0], 2.5f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalBilweOfCommand1[0], 6.10f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalMenweOfCommand1[0], 1.09f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalOfCommand1[1], 1.5f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalBilweOfCommand1[1], 2.70f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalMenweOfCommand1[1], 1.40f);
 		Assert.assertEquals(koef_fonbet.name_IndTotalOfCommand2[0], 1.5f);
-		Assert.assertEquals(koef_fonbet.name_IndTotalBilweOfCommand2[0], 6.6f);
-		Assert.assertEquals(koef_fonbet.name_IndTotalMenweOfCommand2[0], 1.08f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalBilweOfCommand2[0], 4.6f);
+		Assert.assertEquals(koef_fonbet.name_IndTotalMenweOfCommand2[0], 1.16f);
 
 		// Fora
 		Assert.assertEquals(koef_fonbet.name_FORA1[0], -1.5f);

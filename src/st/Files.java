@@ -1,59 +1,27 @@
 package st;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.SecureRandom;
-import java.security.cert.X509Certificate;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
 import java.util.zip.InflaterInputStream;
-
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 
 public class Files {
 	public boolean downloadFile(String kontora, String webSite)
 			throws IOException {
 		System.out.println("download file ");
 
-		URL url;
-		url = new URL(webSite);
-		File destination = new File(kontora + ".html");
-
-	/*if (kontora.equalsIgnoreCase("Fonbet")){*/
 		 BufferedWriter writer = new BufferedWriter(new FileWriter(kontora +".html"));
 
          writer.write(downloadHtml(webSite));
          writer.newLine();
       
       writer.close();
-	/*}else{
-		try {
-
-			FileUtils.copyURLToFile(url, destination);
-
-		} catch (MalformedURLException e) {
-
-			e.printStackTrace();
-			return false;
-		}
-		
-	}  */
 		return true;
 	}
 	
