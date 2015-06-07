@@ -261,7 +261,7 @@ public class FonbetKoef extends Koef {
 							name_TOTAL[3] = Float.parseFloat(jsArrOutComes
 									.getJsonObject(i).getJsonString("pt")
 									.getString());
-							name_TOTAL_bilwe[4] = Float
+							name_TOTAL_bilwe[3] = Float
 									.parseFloat(jsArrOutComes.getJsonObject(i)
 											.getJsonNumber("v").toString());
 							break;
