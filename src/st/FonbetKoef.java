@@ -457,6 +457,23 @@ public class FonbetKoef extends Koef {
 											.getJsonNumber("v").toString());
 							break;
 
+						case 1085:
+						case 1086:
+						case 1087:
+						case 1088:
+						case 1099:
+						case 1100:
+						case 1741:
+						case 1742:
+						case 3090:
+						case 3091:
+						case 3093:
+						case 3094:
+						case 3096:
+						case 3097:
+						case 3099:
+						case 3100:
+							break;
 						default:
 
 							System.out.println("f == "
