@@ -37,10 +37,10 @@ public class Events extends Koef {
 		name_of_kontora = "fonbet";
 	}
 
-	public String getAllEvents(String kindOfSport) {
+	public List<Koef> getAllEvents(String kindOfSport) {
 
 		InputStream fis = null;
-
+        List<Koef> fonbetEventsList = new ArrayList<Koef>();
 		try {
 			fis = new FileInputStream(file);
 			// fis = new FileInputStream(JSON_FILE);
@@ -69,7 +69,7 @@ public class Events extends Koef {
 		// Retrieve data from JsonObject
 
 		if (jsonObject.isEmpty())
-			return "Призупинені коефіцієнти";
+			return null;
 
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("sports");
 		Integer segmentId = null;
@@ -114,6 +114,12 @@ public class Events extends Koef {
 				if (jsArrOutComes.getJsonObject(i).getInt("sportId") == listOfSportId
 						.get(k)) {
 					if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
+						FonbetKoef fonbet = new FonbetKoef();
+						fonbet.name_of_command1 = jsArrOutComes.getJsonObject(i)
+								.getString("team1");
+						fonbet.name_of_command2 = jsArrOutComes.getJsonObject(i)
+								.getString("team2");
+						fonbetEventsList.add(fonbet);
 					System.out.println(jsArrOutComes.getJsonObject(i)
 							.getString("team1"));
 					System.out.println(jsArrOutComes.getJsonObject(i)
@@ -123,7 +129,7 @@ public class Events extends Koef {
 				}
 			}
 		}
-		return "";
+		return fonbetEventsList;
 	}
 
 }
