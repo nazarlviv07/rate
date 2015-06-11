@@ -918,7 +918,7 @@ public class FonbetKoef extends Koef {
 			}
 
 		}
-		print();
+	/*	print();*/
 		return "";
 	}
 

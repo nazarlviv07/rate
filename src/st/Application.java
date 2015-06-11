@@ -20,6 +20,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.sound.sampled.AudioInputStream;
@@ -1316,7 +1317,7 @@ public class Application extends Applet implements Runnable {
 	}
 
 	public void analyze() {
-		writeNumOfEventForFonbet();
+		/*writeNumOfEventForFonbet();*/
 		String temp_str = new String();
 		temp_str = koef_kontora1.getKoef();
 		if (temp_str != "") {
@@ -1405,7 +1406,32 @@ public class Application extends Applet implements Runnable {
 									koef_kontora2.link_to_download_file
 											+ kontora2Number + "/") == true) {
 
-								analyze();
+								/*analyze();*/
+								// =======================================================
+								Events events = new Events();
+								
+                                List<Koef> fonbetKoefList = events.getAllEvents("Football");
+								
+								for (int i = 0; i < fonbetKoefList.size(); i++) {
+									System.out.println(fonbetKoefList.get(i).name_of_command1);
+									System.out.println(fonbetKoefList.get(i).name_of_command2);
+									System.out.println(((FonbetKoef) fonbetKoefList.get(i)).num_of_event);
+									
+									koef_kontora1 = fonbetKoefList.get(i);
+									koef_kontora2 = fonbetKoefList.get(i);
+									
+									analyze();
+									
+									try {
+										TimeUnit.MILLISECONDS.sleep(3000);
+									} catch (InterruptedException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								
+								}
+								
+								// =======================================================
 
 								p += 1;
 							}
