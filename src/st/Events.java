@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public class Events extends Koef {
 
 	public Events() {
-		
+
 		file = "fonbet.html";
 		// link_to_download_file = "https://www.favbet.com/live/markets/event/";
 		// link_to_download_file =
@@ -41,15 +41,18 @@ public class Events extends Koef {
 
 	public List<Koef> getAllEvents(String kindOfSport) {
 		Files files = new Files();
-        try {
-			files.downloadFile("fonbet","http://live.fonbet.com/live/currentLine/en/?" + Math.random());
+		try {
+			files.downloadFile(
+					"fonbet",
+					"http://live.fonbet.com/live/currentLine/en/?"
+							+ Math.random());
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		InputStream fis = null;
-        List<Koef> fonbetEventsList = new ArrayList<Koef>();
+		List<Koef> fonbetEventsList = new ArrayList<Koef>();
 		try {
 			fis = new FileInputStream(file);
 			// fis = new FileInputStream(JSON_FILE);
@@ -91,12 +94,14 @@ public class Events extends Koef {
 				if (jsArrOutComes.getJsonObject(i).getJsonString("name")
 						.getString().equalsIgnoreCase(kindOfSport)) {
 					segmentId = jsArrOutComes.getJsonObject(i).getInt("id");
-					/*System.out.println(jsArrOutComes.getJsonObject(i).getInt(
-							"id"));*/
+					/*
+					 * System.out.println(jsArrOutComes.getJsonObject(i).getInt(
+					 * "id"));
+					 */
 
 				}
 			}
-		/*	System.out.print("==================");*/
+			/* System.out.print("=================="); */
 			if (segmentId != null) {
 				for (int i = 0; i < jsArrOutComes.size(); i++) {
 					if (jsArrOutComes.getJsonObject(i).getJsonString("kind")
@@ -104,8 +109,10 @@ public class Events extends Koef {
 						if (jsArrOutComes.getJsonObject(i).getInt("parentId") == segmentId) {
 							listOfSportId.add(jsArrOutComes.getJsonObject(i)
 									.getInt("id"));
-							/*System.out.println(jsArrOutComes.getJsonObject(i)
-									.getInt("id"));*/
+							/*
+							 * System.out.println(jsArrOutComes.getJsonObject(i)
+							 * .getInt("id"));
+							 */
 						}
 					}
 				}
@@ -119,27 +126,112 @@ public class Events extends Koef {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
 
 				for (int k = 0; k < listOfSportId.size(); k++) {
-				
-				if (jsArrOutComes.getJsonObject(i).getInt("sportId") == listOfSportId
-						.get(k)) {
-					if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
-						FonbetKoef fonbet = new FonbetKoef();
-						fonbet.num_of_event = jsArrOutComes.getJsonObject(i).getInt("id");
-						fonbet.name_of_command1 = jsArrOutComes.getJsonObject(i)
-								.getString("team1");
-						fonbet.name_of_command2 = jsArrOutComes.getJsonObject(i)
-								.getString("team2");
-						fonbetEventsList.add(fonbet);
-					/*System.out.println(jsArrOutComes.getJsonObject(i)
-							.getString("team1"));
-					System.out.println(jsArrOutComes.getJsonObject(i)
-							.getString("team2"));*/
+
+					if (jsArrOutComes.getJsonObject(i).getInt("sportId") == listOfSportId
+							.get(k)) {
+						if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
+							FonbetKoef fonbet = new FonbetKoef();
+							fonbet.num_of_event = jsArrOutComes
+									.getJsonObject(i).getInt("id");
+							fonbet.name_of_command1 = jsArrOutComes
+									.getJsonObject(i).getString("team1");
+							fonbet.name_of_command2 = jsArrOutComes
+									.getJsonObject(i).getString("team2");
+							fonbetEventsList.add(fonbet);
+							/*
+							 * System.out.println(jsArrOutComes.getJsonObject(i)
+							 * .getString("team1"));
+							 * System.out.println(jsArrOutComes.getJsonObject(i)
+							 * .getString("team2"));
+							 */
+						}
 					}
-				}
 				}
 			}
 		}
 		return fonbetEventsList;
+	}
+
+	public List<Koef> getAllEventsFavbet(String kindOfSport) {
+		Files files = new Files();
+		/*
+		 * try { files.downloadFile("favbetAllEvents",
+		 * "https://www.favbet.com/live/markets/?0.5" + Math.random()); } catch
+		 * (IOException e1) { // TODO Auto-generated catch block
+		 * e1.printStackTrace(); }
+		 */
+
+		InputStream fis = null;
+		List<Koef> favbetEventsList = new ArrayList<Koef>();
+		try {
+			fis = new FileInputStream("favbetAllEvents.html");
+			// fis = new FileInputStream(JSON_FILE);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+			// return 1;
+		}
+
+		// create JsonReader object
+		JsonReader jsonReader = Json.createReader(fis);
+
+		// get JsonObject from JsonReader
+		JsonObject jsonObject = jsonReader.readObject();
+
+		// we can close IO resource and JsonReader now
+		jsonReader.close();
+		try {
+			fis.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		// Retrieve data from JsonObject
+
+		if (jsonObject.isEmpty())
+			return null;
+
+		/* System.exit(1); */
+
+		JsonArray jsArrOutComes = jsonObject.getJsonArray("markets");
+		Integer segmentId = null;
+		Integer evendId = null;
+
+		for (int i = 0; i < jsArrOutComes.size(); i++) {
+
+			if (jsArrOutComes.getJsonObject(i).getString("sport_name")
+					.equals("Soccer")) {
+
+				JsonArray jsArrMarkets = jsArrOutComes.getJsonObject(i)
+						.getJsonArray("tournaments");
+				if (!jsArrMarkets.isEmpty()) {
+
+					for (int j = 0; j < jsArrMarkets.size(); j++) {
+
+						JsonArray jsArrMarkets2 = jsArrMarkets.getJsonObject(j).getJsonArray("events");
+						
+						System.out.println("jsArrMarkets.size() =" + jsArrMarkets.size());
+						for (int k = 0; k < jsArrMarkets2.size(); k++) {
+							
+							System.out.println("k =" + k);
+						FavbetKoef favbet = new FavbetKoef();
+						// favbet.num_of_event =
+						// jsArrOutComes.getJsonObject(i).getInt("id");
+						favbet.name_of_command1 = jsArrMarkets2.getJsonObject(k)
+								.getJsonString("event_name").getString();
+						favbet.name_of_command2 = jsArrMarkets2.getJsonObject(k)
+								.getJsonString("event_name").getString();
+
+						favbetEventsList.add(favbet);
+						}
+					}
+				}
+			}
+		}
+
+		return favbetEventsList;
 	}
 
 }
