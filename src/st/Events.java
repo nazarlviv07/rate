@@ -12,7 +12,6 @@ import javax.json.JsonReader;
 
 //==============================
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -154,12 +153,13 @@ public class Events extends Koef {
 
 	public List<Koef> getAllEventsFavbet(String kindOfSport) {
 		Files files = new Files();
-		/*
-		 * try { files.downloadFile("favbetAllEvents",
-		 * "https://www.favbet.com/live/markets/?0.5" + Math.random()); } catch
-		 * (IOException e1) { // TODO Auto-generated catch block
-		 * e1.printStackTrace(); }
-		 */
+
+		try {
+			files.downloadFile("favbetAllEvents",
+					"https://www.favbet.com/live/markets/?0." + Math.random());
+		} catch (IOException e1) { // TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		InputStream fis = null;
 		List<Koef> favbetEventsList = new ArrayList<Koef>();
@@ -210,21 +210,23 @@ public class Events extends Koef {
 
 					for (int j = 0; j < jsArrMarkets.size(); j++) {
 
-						JsonArray jsArrMarkets2 = jsArrMarkets.getJsonObject(j).getJsonArray("events");
-						
-						System.out.println("jsArrMarkets.size() =" + jsArrMarkets.size());
-						for (int k = 0; k < jsArrMarkets2.size(); k++) {
-							
-							System.out.println("k =" + k);
-						FavbetKoef favbet = new FavbetKoef();
-						// favbet.num_of_event =
-						// jsArrOutComes.getJsonObject(i).getInt("id");
-						favbet.name_of_command1 = jsArrMarkets2.getJsonObject(k)
-								.getJsonString("event_name").getString();
-						favbet.name_of_command2 = jsArrMarkets2.getJsonObject(k)
-								.getJsonString("event_name").getString();
+						JsonArray jsArrMarkets2 = jsArrMarkets.getJsonObject(j)
+								.getJsonArray("events");
 
-						favbetEventsList.add(favbet);
+						for (int k = 0; k < jsArrMarkets2.size(); k++) {
+
+							FavbetKoef favbet = new FavbetKoef();
+
+							String nameOfTeams = jsArrMarkets2.getJsonObject(k)
+									.getJsonString("event_name").getString();
+
+							int lastIndex = nameOfTeams.lastIndexOf(" - ");
+							favbet.name_of_command1 = nameOfTeams.substring(0,
+									lastIndex);
+							favbet.name_of_command2 = nameOfTeams
+									.substring(lastIndex + 3);
+
+							favbetEventsList.add(favbet);
 						}
 					}
 				}
