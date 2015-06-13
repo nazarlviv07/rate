@@ -20,13 +20,6 @@ public class Events extends Koef {
 
 	public Events() {
 
-		file = "fonbet.html";
-		// link_to_download_file = "https://www.favbet.com/live/markets/event/";
-		// link_to_download_file =
-		// "http://live.fonbet.com/live/currentLine/ru/?"
-		link_to_download_file = "http://live.fonbet.com/live/currentLine/en/?"
-				+ Math.random();
-		name_of_kontora = "fonbet";
 	}
 
 	public List<Koef> getAllEvents(Sport kindOfSport) {
@@ -34,8 +27,7 @@ public class Events extends Koef {
 		try {
 			files.downloadFile(
 					Kontora.FONBET.getName(),
-					"http://live.fonbet.com/live/currentLine/en/?"
-							+ Math.random());
+					Kontora.FONBET.getLinkAllEvents());
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -44,7 +36,7 @@ public class Events extends Koef {
 		InputStream fis = null;
 		List<Koef> fonbetEventsList = new ArrayList<Koef>();
 		try {
-			fis = new FileInputStream(file);
+			fis = new FileInputStream(Kontora.FONBET.getName() + ".html");
 			// fis = new FileInputStream(JSON_FILE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -84,14 +76,9 @@ public class Events extends Koef {
 				if (jsArrOutComes.getJsonObject(i).getJsonString("name")
 						.getString().equalsIgnoreCase(kindOfSport.getString())) {
 					segmentId = jsArrOutComes.getJsonObject(i).getInt("id");
-					/*
-					 * System.out.println(jsArrOutComes.getJsonObject(i).getInt(
-					 * "id"));
-					 */
-
 				}
 			}
-			/* System.out.print("=================="); */
+
 			if (segmentId != null) {
 				for (int i = 0; i < jsArrOutComes.size(); i++) {
 					if (jsArrOutComes.getJsonObject(i).getJsonString("kind")
@@ -99,10 +86,6 @@ public class Events extends Koef {
 						if (jsArrOutComes.getJsonObject(i).getInt("parentId") == segmentId) {
 							listOfSportId.add(jsArrOutComes.getJsonObject(i)
 									.getInt("id"));
-							/*
-							 * System.out.println(jsArrOutComes.getJsonObject(i)
-							 * .getInt("id"));
-							 */
 						}
 					}
 				}
@@ -128,12 +111,6 @@ public class Events extends Koef {
 							fonbet.name_of_command2 = jsArrOutComes
 									.getJsonObject(i).getString("team2");
 							fonbetEventsList.add(fonbet);
-							/*
-							 * System.out.println(jsArrOutComes.getJsonObject(i)
-							 * .getString("team1"));
-							 * System.out.println(jsArrOutComes.getJsonObject(i)
-							 * .getString("team2"));
-							 */
 						}
 					}
 				}
@@ -147,7 +124,7 @@ public class Events extends Koef {
 
 		try {
 			files.downloadFile("favbetAllEvents",
-					"https://www.favbet.com/live/markets/?0." + Math.random());
+					Kontora.FAVBET.getLinkAllEvents());
 		} catch (IOException e1) { // TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

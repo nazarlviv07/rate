@@ -1,9 +1,9 @@
 package st.type;
 
 public enum Kontora {
-	FAVBET("favbet",null),
+	FAVBET("favbet","https://www.favbet.com/live/markets/"),
 	BETCITY("betcity",null),
-	FONBET("fonbet",null);
+	FONBET("fonbet","http://live.fonbet.com/live/currentLine/en/");
 
 	private String name;
 	private String linkAllEvents;
