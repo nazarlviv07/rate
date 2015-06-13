@@ -22,12 +22,13 @@ public class Events extends Koef {
 
 	}
 
-	public List<Koef> getAllEvents(Sport kindOfSport) {
+	public List<Koef> getAllEvents(Kontora kontora, Sport kindOfSport) {
 		Files files = new Files();
+		
 		try {
 			files.downloadFile(
-					Kontora.FONBET.getName() + "AllEvents",
-					Kontora.FONBET.getLinkAllEvents());
+					kontora.getName() + "AllEvents",
+					kontora.getLinkAllEvents());
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -36,7 +37,7 @@ public class Events extends Koef {
 		InputStream fis = null;
 		List<Koef> fonbetEventsList = new ArrayList<Koef>();
 		try {
-			fis = new FileInputStream(Kontora.FONBET.getName() + "AllEvents.html");
+			fis = new FileInputStream(kontora.getName() + "AllEvents.html");
 			// fis = new FileInputStream(JSON_FILE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -119,12 +120,12 @@ public class Events extends Koef {
 		return fonbetEventsList;
 	}
 
-	public List<Koef> getAllEventsFavbet(Sport kindOfSport) {
+	public List<Koef> getAllEventsFavbet(Kontora kontora,Sport kindOfSport) {
 		Files files = new Files();
 		
 		try {
-			files.downloadFile(Kontora.FAVBET.getName() + "AllEvents",
-					Kontora.FAVBET.getLinkAllEvents());
+			files.downloadFile(kontora.getName() + "AllEvents",
+					kontora.getLinkAllEvents());
 		} catch (IOException e1) { // TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
@@ -132,7 +133,7 @@ public class Events extends Koef {
 		InputStream fis = null;
 		List<Koef> favbetEventsList = new ArrayList<Koef>();
 		try {
-			fis = new FileInputStream(Kontora.FAVBET.getName() + "AllEvents.html");
+			fis = new FileInputStream(kontora.getName() + "AllEvents.html");
 			// fis = new FileInputStream(JSON_FILE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

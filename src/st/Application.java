@@ -15,19 +15,13 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
@@ -1398,8 +1392,8 @@ public class Application extends Applet implements Runnable {
 								// =======================================================
 								Events events = new Events();
 								
-                                List<Koef> fonbetKoefList = events.getAllEvents(Sport.FOOTBALL);
-                                List<Koef> favbetKoefList = events.getAllEventsFavbet(Sport.FOOTBALL);
+                                List<Koef> fonbetKoefList = events.getAllEvents(Kontora.FONBET, Sport.FOOTBALL);
+                                List<Koef> favbetKoefList = events.getAllEventsFavbet(Kontora.FAVBET, Sport.FOOTBALL);
                                 
                                 List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
                                 allEventsList.add(fonbetKoefList);
