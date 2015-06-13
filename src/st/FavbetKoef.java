@@ -13,7 +13,7 @@ import javax.json.JsonReader;
 public class FavbetKoef extends Koef {
 
 	public FavbetKoef() {
-		//file = "favbet.html";
+		file = "favbet.html";
 		link_to_download_file = "https://www.favbet.com/live/markets/event/";
 		name_of_kontora = "favbet";
 	}

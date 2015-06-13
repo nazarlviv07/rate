@@ -9,22 +9,10 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import st.type.Kontora;
 
-//==============================
-
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.URL;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import st.type.Sport;
 
@@ -45,7 +33,7 @@ public class Events extends Koef {
 		Files files = new Files();
 		try {
 			files.downloadFile(
-					"fonbet",
+					Kontora.FONBET.getName(),
 					"http://live.fonbet.com/live/currentLine/en/?"
 							+ Math.random());
 		} catch (IOException e1) {

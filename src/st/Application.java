@@ -450,7 +450,6 @@ public class Application extends Applet implements Runnable {
 				labelProgres.setText("Прогрес --> Тест розпочато");
 
 				analyze();
-				analyze();
 				// ====================================================================
 				labelProgres.setText("Прогрес --> Тест закінчено успішно");
 			}
