@@ -59,7 +59,7 @@ public class ParserTest {
 	}
 	
 	@Test
-	public void testNameOfCommandsFailTest() {
+	public void testNameOfCommandsFail1Test() {
 		Parser parser = new Parser();
 		Koef koef_favbet = new FavbetKoef();
 		Koef koef_fonbet = new FonbetKoef();
@@ -73,4 +73,18 @@ public class ParserTest {
 		Assert.assertFalse(parser.isNameOfCommandSame(koef_favbet, koef_fonbet));
 	}
 
+	@Test
+	public void testNameOfCommandsFail2Test() {
+		Parser parser = new Parser();
+		Koef koef_favbet = new FavbetKoef();
+		Koef koef_fonbet = new FonbetKoef();
+		
+		koef_favbet.name_of_command1 = "Denmark";
+		koef_favbet.name_of_command2 = "Serbia";
+		
+		koef_fonbet.name_of_command1 = "Denmark (corners)";
+		koef_fonbet.name_of_command2 = "Serbia (corners)";
+	
+		Assert.assertFalse(parser.isNameOfCommandSame(koef_favbet, koef_fonbet));
+	}
 }

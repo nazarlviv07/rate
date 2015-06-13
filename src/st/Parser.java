@@ -17,6 +17,9 @@ public class Parser {
 				return true;
 			}
 		}
+		if (kontora1.name_of_command1.contains("corners") || kontora2.name_of_command1.contains("corners"))
+			return false;
+		
 		if (kontora1.name_of_command1.length() >= 5
 				&& kontora1.name_of_command2.length() >= 5
 				&& kontora2.name_of_command1.length() >= 5
