@@ -66,9 +66,16 @@ public class Events extends Koef {
 		if (jsonObject.isEmpty())
 			return null;
 
+		switch (kontora) {
+		  case FONBET:
+		        
+		        break;
+		  default:
+		       
+		        break;
+		}
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("sports");
 		Integer segmentId = null;
-		Integer evendId = null;
 
 		List<Integer> listOfSportId = new ArrayList<Integer>();
 
@@ -134,12 +141,9 @@ public class Events extends Koef {
 		List<Koef> favbetEventsList = new ArrayList<Koef>();
 		try {
 			fis = new FileInputStream(kontora.getName() + "AllEvents.html");
-			// fis = new FileInputStream(JSON_FILE);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
-
 			e.printStackTrace();
-			// return 1;
 		}
 
 		// create JsonReader object
@@ -162,11 +166,7 @@ public class Events extends Koef {
 		if (jsonObject.isEmpty())
 			return null;
 
-		/* System.exit(1); */
-
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("markets");
-		Integer segmentId = null;
-		Integer evendId = null;
 
 		for (int i = 0; i < jsArrOutComes.size(); i++) {
 
