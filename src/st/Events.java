@@ -12,6 +12,7 @@ import javax.json.JsonReader;
 
 //==============================
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +25,8 @@ import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import st.type.Sport;
 
 public class Events extends Koef {
 
@@ -38,7 +41,7 @@ public class Events extends Koef {
 		name_of_kontora = "fonbet";
 	}
 
-	public List<Koef> getAllEvents(String kindOfSport) {
+	public List<Koef> getAllEvents(Sport kindOfSport) {
 		Files files = new Files();
 		try {
 			files.downloadFile(
@@ -91,7 +94,7 @@ public class Events extends Koef {
 		if (!jsArrOutComes.isEmpty()) {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
 				if (jsArrOutComes.getJsonObject(i).getJsonString("name")
-						.getString().equalsIgnoreCase(kindOfSport)) {
+						.getString().equalsIgnoreCase(kindOfSport.getString())) {
 					segmentId = jsArrOutComes.getJsonObject(i).getInt("id");
 					/*
 					 * System.out.println(jsArrOutComes.getJsonObject(i).getInt(
@@ -151,7 +154,7 @@ public class Events extends Koef {
 		return fonbetEventsList;
 	}
 
-	public List<Koef> getAllEventsFavbet(String kindOfSport) {
+	public List<Koef> getAllEventsFavbet(Sport kindOfSport) {
 		Files files = new Files();
 
 		try {

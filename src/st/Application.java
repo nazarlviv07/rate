@@ -45,6 +45,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 import st.type.Result;
+import st.type.Sport;
 
 public class Application extends Applet implements Runnable {
 	String[] kontoraStrings = { "betcity", "favbet", "fonbet" };
@@ -1413,8 +1414,8 @@ public class Application extends Applet implements Runnable {
 								// =======================================================
 								Events events = new Events();
 								
-                                List<Koef> fonbetKoefList = events.getAllEvents("Football");
-                                List<Koef> favbetKoefList = events.getAllEventsFavbet("Football");
+                                List<Koef> fonbetKoefList = events.getAllEvents(Sport.FOOTBALL);
+                                List<Koef> favbetKoefList = events.getAllEventsFavbet(Sport.FOOTBALL);
                                 
                                 List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
                                 allEventsList.add(fonbetKoefList);
