@@ -1,5 +1,6 @@
 package st;
 
+import st.type.Kontora;
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -48,7 +49,7 @@ import st.type.Result;
 import st.type.Sport;
 
 public class Application extends Applet implements Runnable {
-	String[] kontoraStrings = { "betcity", "favbet", "fonbet" };
+	String[] kontoraStrings = { Kontora.BETCITY.getName(), Kontora.FAVBET.getName(), Kontora.FONBET.getName() };
 
 	public static final long serialVersionUID = 42L;
 	public boolean isRunning = true;
@@ -250,15 +251,12 @@ public class Application extends Applet implements Runnable {
 				kontora1Number = kontora1TextField.getSelectedText();
 				kontora2Number = kontora2TextField.getSelectedText();
 				percentageNumber = percentageTextField.getSelectedText();
-				writeNumOfEventForFonbet();
 			}
 
 			public void insertUpdate(DocumentEvent documentEvent) {
 				kontora1Number = kontora1TextField.getText();
 				kontora2Number = kontora2TextField.getText();
 				percentageNumber = percentageTextField.getText();
-
-				writeNumOfEventForFonbet();
 
 				try {
 					writeToFile();
@@ -273,7 +271,6 @@ public class Application extends Applet implements Runnable {
 				 * kontora1Number = kontora1TextField.getSelectedText();
 				 * kontora2Number = kontora2TextField.getSelectedText();
 				 * percentageNumber = percentageTextField.getSelectedText();
-				 * writeNumOfEventForFonbet();
 				 */
 			}
 		};
@@ -401,13 +398,13 @@ public class Application extends Applet implements Runnable {
 			public void actionPerformed(ActionEvent e) {
 				JComboBox cb = (JComboBox) e.getSource();
 
-				if (cb.getSelectedItem() == "betcity") {
+				if (cb.getSelectedItem() == Kontora.BETCITY.getName()) {
 					kontora1List.setSelectedIndex(0);
 					koef_kontora1 = new BetcityKoef();
-				} else if (cb.getSelectedItem() == "favbet") {
+				} else if (cb.getSelectedItem() == Kontora.FAVBET.getName()) {
 					kontora1List.setSelectedIndex(1);
 					koef_kontora1 = new FavbetKoef();
-				} else if (cb.getSelectedItem() == "fonbet") {
+				} else if (cb.getSelectedItem() == Kontora.FONBET.getName()) {
 					kontora1List.setSelectedIndex(2);
 					koef_kontora1 = new FonbetKoef();
 					koef_kontora1.id = Integer
@@ -426,15 +423,15 @@ public class Application extends Applet implements Runnable {
 			public void actionPerformed(ActionEvent e) {
 				JComboBox cb = (JComboBox) e.getSource();
 
-				if (cb.getSelectedItem() == "betcity") {
+				if (cb.getSelectedItem() == Kontora.BETCITY.getName()) {
 					kontora2List.setSelectedIndex(0);
 					koef_kontora2 = new BetcityKoef();
 
-				} else if (cb.getSelectedItem() == "favbet") {
+				} else if (cb.getSelectedItem() == Kontora.FAVBET.getName()) {
 					kontora2List.setSelectedIndex(1);
 					koef_kontora2 = new FavbetKoef();
 
-				} else if (cb.getSelectedItem() == "fonbet") {
+				} else if (cb.getSelectedItem() == Kontora.FONBET.getName()) {
 					kontora2List.setSelectedIndex(2);
 					koef_kontora2 = new FonbetKoef();
 					koef_kontora2.id = Integer
@@ -1102,17 +1099,6 @@ public class Application extends Applet implements Runnable {
 		}
 	}
 
-	public void writeNumOfEventForFonbet() {
-		if (koef_kontora1.name_of_kontora == "fonbet") {
-			 koef_kontora1.id = Integer
-					.parseInt(kontora1Number);
-		}
-		if (koef_kontora2.name_of_kontora == "fonbet") {
-			koef_kontora2.id = Integer
-					.parseInt(kontora2Number);
-		}
-	}
-
 	public void setKoefToApplication() {
 		labelNameOfKontora1_1.setText(koef_kontora1.name_of_kontora);
 		labelNameOfKontora1_2.setText(koef_kontora1.name_of_kontora);
@@ -1321,7 +1307,6 @@ public class Application extends Applet implements Runnable {
 	}
 
 	public void analyze() {
-		/*writeNumOfEventForFonbet();*/
 		String temp_str = new String();
 		temp_str = koef_kontora1.getKoef();
 		if (temp_str != "") {
@@ -1421,10 +1406,6 @@ public class Application extends Applet implements Runnable {
                                 allEventsList.add(fonbetKoefList);
                                 allEventsList.add(favbetKoefList);
                                 
-                               /* Map<String, List<Koef>> map = new HashMap<String, List<Koef>>();
-                                map.put("fonbet", fonbetKoefList);
-                                map.put("favbet", favbetKoefList);*/
-                                
                                 Parser parser = new Parser();
                                 List<Koef> fonbetKoefSameEventsList = new ArrayList<Koef>();
                         		List<Koef> favbetKoefSameEventsList = new ArrayList<Koef>();
@@ -1435,7 +1416,6 @@ public class Application extends Applet implements Runnable {
                                 favbetKoefSameEventsList = onlySameEventsList.get(1);
                                 
 								for (int i = 0; i < fonbetKoefSameEventsList.size(); i++) {
-									/*for (int j = 0; j < favbetKoefSameEventsList.size(); j++) {*/
 
 										koef_kontora1 = fonbetKoefSameEventsList.get(i);
 										
@@ -1455,10 +1435,6 @@ public class Application extends Applet implements Runnable {
 										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
-								
-								/*}*/
-								
-								// =======================================================
 
 								p += 1;
 								}
