@@ -130,7 +130,7 @@ public class Events extends Koef {
 							.get(k)) {
 						if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
 							FonbetKoef fonbet = new FonbetKoef();
-							fonbet.num_of_event = jsArrOutComes
+							fonbet.id = jsArrOutComes
 									.getJsonObject(i).getInt("id");
 							fonbet.name_of_command1 = jsArrOutComes
 									.getJsonObject(i).getString("team1");
@@ -217,6 +217,7 @@ public class Events extends Koef {
 
 							FavbetKoef favbet = new FavbetKoef();
 
+							favbet.id = jsArrMarkets2.getJsonObject(k).getJsonNumber("event_id").intValue();
 							String nameOfTeams = jsArrMarkets2.getJsonObject(k)
 									.getJsonString("event_name").getString();
 

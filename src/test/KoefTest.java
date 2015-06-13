@@ -183,7 +183,7 @@ public class KoefTest {
 	public void testKoefFonbet() {
 		Koef koef_fonbet = new FonbetKoef();
 		koef_fonbet.file = "Test/koef/fonbet/fonbet1.html";
-		((FonbetKoef) koef_fonbet).num_of_event = 4327333;
+		koef_fonbet.id = 4327333;
 		try {
 			koef_fonbet.readFromFile();
 		} catch (IOException e) {

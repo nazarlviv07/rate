@@ -7,6 +7,7 @@
 			<class name="test.SearchForkGeneralKoefTest"></class>
 			<class name="test.SearchForkFirstTimeKoefTest"></class>
 			<class name="test.SearchForkInRealFilesTest"></class>
+			<class name="test.ParserTest"></class>
 			
 		</classes>
 	</test>

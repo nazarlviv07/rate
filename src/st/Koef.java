@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 public class Koef {
 
 	public String name_of_kontora = new String();
+	public int id;
 	public String link_to_download_file = new String();
 	public String strTotal = new String();
 	public String file = new String();

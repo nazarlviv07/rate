@@ -37,9 +37,7 @@ public class FonbetKoef extends Koef {
 		name_of_kontora = "fonbet";
 	}
 
-	public int id = 0;
 	public int id_perwuy_time = 0;
-	public int num_of_event;
 
 	public String getKoef() {
 
@@ -82,13 +80,11 @@ public class FonbetKoef extends Koef {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
 				// if (jsArrOutComes.getJsonObject(i).getInt("num") ==
 				// num_of_event) {
-				if (jsArrOutComes.getJsonObject(i).getInt("id") == num_of_event) {
+				if (jsArrOutComes.getJsonObject(i).getInt("id") == id) {
 					name_of_command1 = jsArrOutComes.getJsonObject(i)
 							.getString("team1");
 					name_of_command2 = jsArrOutComes.getJsonObject(i)
 							.getString("team2");
-					// id = jsArrOutComes.getJsonObject(i).getInt("id");
-					id = num_of_event;
 				}
 			}
 
