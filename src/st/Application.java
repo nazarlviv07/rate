@@ -20,7 +20,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import javax.sound.sampled.AudioInputStream;
@@ -53,7 +56,7 @@ public class Application extends Applet implements Runnable {
 	private Object event = new Object();
 
 	public JLabel labelVersionOfProgram = new JLabel(
-			"Версія Програми #: 1      Дата оновлення програми: 06-06-2015 ");
+			"Версія Програми #: 1      Дата оновлення програми: 13-06-2015 ");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
@@ -210,8 +213,8 @@ public class Application extends Applet implements Runnable {
 	JComboBox kontora1List = new JComboBox(kontoraStrings);
 	JComboBox kontora2List = new JComboBox(kontoraStrings);
 
-	Koef koef_kontora1 = new FavbetKoef();
-	Koef koef_kontora2 = new FonbetKoef();
+	Koef koef_kontora1 = new FonbetKoef();
+	Koef koef_kontora2 = new FavbetKoef();
 	DocumentListener documentListener;
 	public Thread thread = new Thread(this);
 
@@ -232,8 +235,8 @@ public class Application extends Applet implements Runnable {
 
 	public Application() throws IOException {
 
-		kontora1List.setSelectedIndex(1);
-		kontora2List.setSelectedIndex(2);
+		kontora1List.setSelectedIndex(2);
+		kontora2List.setSelectedIndex(1);
 
 		labelProgres.setForeground(Color.blue);
 		labelFork.setForeground(Color.red);
@@ -406,7 +409,7 @@ public class Application extends Applet implements Runnable {
 				} else if (cb.getSelectedItem() == "fonbet") {
 					kontora1List.setSelectedIndex(2);
 					koef_kontora1 = new FonbetKoef();
-					((FonbetKoef) koef_kontora1).id = Integer
+					koef_kontora1.id = Integer
 							.parseInt(kontora1Number);
 				}
 
@@ -433,7 +436,7 @@ public class Application extends Applet implements Runnable {
 				} else if (cb.getSelectedItem() == "fonbet") {
 					kontora2List.setSelectedIndex(2);
 					koef_kontora2 = new FonbetKoef();
-					((FonbetKoef) koef_kontora2).id = Integer
+					koef_kontora2.id = Integer
 							.parseInt(kontora2Number);
 
 				}
@@ -1100,11 +1103,11 @@ public class Application extends Applet implements Runnable {
 
 	public void writeNumOfEventForFonbet() {
 		if (koef_kontora1.name_of_kontora == "fonbet") {
-			((FonbetKoef) koef_kontora1).num_of_event = Integer
+			 koef_kontora1.id = Integer
 					.parseInt(kontora1Number);
 		}
 		if (koef_kontora2.name_of_kontora == "fonbet") {
-			((FonbetKoef) koef_kontora2).num_of_event = Integer
+			koef_kontora2.id = Integer
 					.parseInt(kontora2Number);
 		}
 	}
@@ -1401,24 +1404,47 @@ public class Application extends Applet implements Runnable {
 								koef_kontora1.link_to_download_file
 										+ kontora1Number) == true) {
 							// download info for kontora2
-							if (files.downloadFile(
+							/*if (files.downloadFile(
 									koef_kontora2.name_of_kontora,
 									koef_kontora2.link_to_download_file
-											+ kontora2Number + "/") == true) {
+											+ kontora2Number + "/") == true) {*/
 
 								/*analyze();*/
 								// =======================================================
 								Events events = new Events();
 								
                                 List<Koef> fonbetKoefList = events.getAllEvents("Football");
-								
-								for (int i = 0; i < fonbetKoefList.size(); i++) {
-									System.out.println(fonbetKoefList.get(i).name_of_command1);
-									System.out.println(fonbetKoefList.get(i).name_of_command2);
-									System.out.println(((FonbetKoef) fonbetKoefList.get(i)).num_of_event);
+                                List<Koef> favbetKoefList = events.getAllEventsFavbet("Football");
+                                
+                                List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
+                                allEventsList.add(fonbetKoefList);
+                                allEventsList.add(favbetKoefList);
+                                
+                               /* Map<String, List<Koef>> map = new HashMap<String, List<Koef>>();
+                                map.put("fonbet", fonbetKoefList);
+                                map.put("favbet", favbetKoefList);*/
+                                
+                                Parser parser = new Parser();
+                                List<Koef> fonbetKoefSameEventsList = new ArrayList<Koef>();
+                        		List<Koef> favbetKoefSameEventsList = new ArrayList<Koef>();
+                        		
+                                List<List<Koef>> onlySameEventsList = parser.compareNameOfCommands(allEventsList);
+                                
+                                fonbetKoefSameEventsList = onlySameEventsList.get(0);
+                                favbetKoefSameEventsList = onlySameEventsList.get(1);
+                                
+								for (int i = 0; i < fonbetKoefSameEventsList.size(); i++) {
+									/*for (int j = 0; j < favbetKoefSameEventsList.size(); j++) {*/
+
+										koef_kontora1 = fonbetKoefSameEventsList.get(i);
+										
+										koef_kontora2 = favbetKoefSameEventsList.get(i);
+
+										files.downloadFile(
+												koef_kontora2.name_of_kontora,
+												koef_kontora2.link_to_download_file
+														+ koef_kontora2.id + "/");
 									
-									koef_kontora1 = fonbetKoefList.get(i);
-									koef_kontora2 = fonbetKoefList.get(i);
 									
 									analyze();
 									
@@ -1429,12 +1455,13 @@ public class Application extends Applet implements Runnable {
 										e.printStackTrace();
 									}
 								
-								}
+								/*}*/
 								
 								// =======================================================
 
 								p += 1;
-							}
+								}
+							//}
 						}
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block

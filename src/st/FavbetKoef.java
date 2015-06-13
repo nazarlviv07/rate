@@ -15,7 +15,7 @@ public class FavbetKoef extends Koef {
 	public FavbetKoef() {
 		file = "favbet.html";
 		link_to_download_file = "https://www.favbet.com/live/markets/event/";
-		name_of_kontora = "Favbet";
+		name_of_kontora = "favbet";
 	}
 
 	public String getKoef() {

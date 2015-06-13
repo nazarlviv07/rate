@@ -42,10 +42,12 @@ public class Parser {
 		List<Koef> fonbetKoefSameEventsList = new ArrayList<Koef>();
 		List<Koef> favbetKoefSameEventsList = new ArrayList<Koef>();
 
+		System.out.println("  Favbet");
 		for (int i = 0; i < favbetKoefList.size(); i++) {
 			System.out.println("command1 "
 					+ favbetKoefList.get(i).name_of_command1 + " command2 "
-					+ favbetKoefList.get(i).name_of_command2);
+					+ favbetKoefList.get(i).name_of_command2 + " id "
+					+ favbetKoefList.get(i).id);
 		}
 
 		System.out.println("  Fonbet");
@@ -88,7 +90,7 @@ public class Parser {
 			;
 		}
 
-		System.exit(1);
+		/*System.exit(1);*/
 		return onlySameEventsList;
 	}
 }
