@@ -1393,7 +1393,7 @@ public class Application extends Applet implements Runnable {
 								Events events = new Events();
 								
                                 List<Koef> fonbetKoefList = events.getAllEvents(Kontora.FONBET, Sport.FOOTBALL);
-                                List<Koef> favbetKoefList = events.getAllEventsFavbet(Kontora.FAVBET, Sport.FOOTBALL);
+                                List<Koef> favbetKoefList = events.getAllEvents(Kontora.FAVBET, Sport.FOOTBALL);
                                 
                                 List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
                                 allEventsList.add(fonbetKoefList);

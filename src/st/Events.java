@@ -69,52 +69,17 @@ public class Events extends Koef {
 		switch (kontora) {
 		  case FONBET:
 		      return getEventsListFonbet(jsonObject,kindOfSport);
-		      
+		   
+		  case FAVBET:
+		      return getEventsListFavbet(jsonObject,kindOfSport);
 		  default:
 		       return null;
 		}
 		
 	}
 
-	public List<Koef> getAllEventsFavbet(Kontora kontora,Sport kindOfSport) {
-		Files files = new Files();
-		
-		try {
-			files.downloadFile(kontora.getName() + "AllEvents",
-					kontora.getLinkAllEvents());
-		} catch (IOException e1) { // TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		InputStream fis = null;
-		List<Koef> favbetEventsList = new ArrayList<Koef>();
-		try {
-			fis = new FileInputStream(kontora.getName() + "AllEvents.html");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// create JsonReader object
-		JsonReader jsonReader = Json.createReader(fis);
-
-		// get JsonObject from JsonReader
-		JsonObject jsonObject = jsonReader.readObject();
-
-		// we can close IO resource and JsonReader now
-		jsonReader.close();
-		try {
-			fis.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// Retrieve data from JsonObject
-
-		if (jsonObject.isEmpty())
-			return null;
-
+	private List<Koef> getEventsListFavbet(JsonObject jsonObject,Sport kindOfSport){
+		List<Koef> eventsList = new ArrayList<Koef>();
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("markets");
 
 		for (int i = 0; i < jsArrOutComes.size(); i++) {
@@ -145,19 +110,18 @@ public class Events extends Koef {
 							favbet.name_of_command2 = nameOfTeams
 									.substring(lastIndex + 3);
 
-							favbetEventsList.add(favbet);
+							eventsList.add(favbet);
 						}
 					}
 				}
 			}
 		}
 
-		return favbetEventsList;
+		return eventsList;
 	}
-
 	
 	private List<Koef> getEventsListFonbet(JsonObject jsonObject,Sport kindOfSport){
-		List<Koef> fonbetEventsList = new ArrayList<Koef>();
+		List<Koef> eventsList = new ArrayList<Koef>();
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("sports");
 		Integer segmentId = null;
 
@@ -202,12 +166,12 @@ public class Events extends Koef {
 									.getJsonObject(i).getString("team1");
 							fonbet.name_of_command2 = jsArrOutComes
 									.getJsonObject(i).getString("team2");
-							fonbetEventsList.add(fonbet);
+							eventsList.add(fonbet);
 						}
 					}
 				}
 			}
 		}
-		return fonbetEventsList;
+		return eventsList;
 	}
 }
