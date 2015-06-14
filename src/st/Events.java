@@ -35,7 +35,7 @@ public class Events extends Koef {
 		}
 
 		InputStream fis = null;
-		List<Koef> fonbetEventsList = new ArrayList<Koef>();
+		
 		try {
 			fis = new FileInputStream(kontora.getName() + "AllEvents.html");
 			// fis = new FileInputStream(JSON_FILE);
@@ -62,69 +62,18 @@ public class Events extends Koef {
 		}
 
 		// Retrieve data from JsonObject
-
+		
 		if (jsonObject.isEmpty())
 			return null;
 
 		switch (kontora) {
 		  case FONBET:
-		        
-		        break;
+		      return getEventsListFonbet(jsonObject,kindOfSport);
+		      
 		  default:
-		       
-		        break;
+		       return null;
 		}
-		JsonArray jsArrOutComes = jsonObject.getJsonArray("sports");
-		Integer segmentId = null;
-
-		List<Integer> listOfSportId = new ArrayList<Integer>();
-
-		if (!jsArrOutComes.isEmpty()) {
-			for (int i = 0; i < jsArrOutComes.size(); i++) {
-				if (jsArrOutComes.getJsonObject(i).getJsonString("name")
-						.getString().equalsIgnoreCase(kindOfSport.getString())) {
-					segmentId = jsArrOutComes.getJsonObject(i).getInt("id");
-				}
-			}
-
-			if (segmentId != null) {
-				for (int i = 0; i < jsArrOutComes.size(); i++) {
-					if (jsArrOutComes.getJsonObject(i).getJsonString("kind")
-							.getString().equalsIgnoreCase("segment")) {
-						if (jsArrOutComes.getJsonObject(i).getInt("parentId") == segmentId) {
-							listOfSportId.add(jsArrOutComes.getJsonObject(i)
-									.getInt("id"));
-						}
-					}
-				}
-			}
-
-		}
-
-		jsArrOutComes = jsonObject.getJsonArray("events");
-
-		if (!jsArrOutComes.isEmpty()) {
-			for (int i = 0; i < jsArrOutComes.size(); i++) {
-
-				for (int k = 0; k < listOfSportId.size(); k++) {
-
-					if (jsArrOutComes.getJsonObject(i).getInt("sportId") == listOfSportId
-							.get(k)) {
-						if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
-							FonbetKoef fonbet = new FonbetKoef();
-							fonbet.id = jsArrOutComes
-									.getJsonObject(i).getInt("id");
-							fonbet.name_of_command1 = jsArrOutComes
-									.getJsonObject(i).getString("team1");
-							fonbet.name_of_command2 = jsArrOutComes
-									.getJsonObject(i).getString("team2");
-							fonbetEventsList.add(fonbet);
-						}
-					}
-				}
-			}
-		}
-		return fonbetEventsList;
+		
 	}
 
 	public List<Koef> getAllEventsFavbet(Kontora kontora,Sport kindOfSport) {
@@ -206,4 +155,59 @@ public class Events extends Koef {
 		return favbetEventsList;
 	}
 
+	
+	private List<Koef> getEventsListFonbet(JsonObject jsonObject,Sport kindOfSport){
+		List<Koef> fonbetEventsList = new ArrayList<Koef>();
+		JsonArray jsArrOutComes = jsonObject.getJsonArray("sports");
+		Integer segmentId = null;
+
+		List<Integer> listOfSportId = new ArrayList<Integer>();
+
+		if (!jsArrOutComes.isEmpty()) {
+			for (int i = 0; i < jsArrOutComes.size(); i++) {
+				if (jsArrOutComes.getJsonObject(i).getJsonString("name")
+						.getString().equalsIgnoreCase(kindOfSport.getString())) {
+					segmentId = jsArrOutComes.getJsonObject(i).getInt("id");
+				}
+			}
+
+			if (segmentId != null) {
+				for (int i = 0; i < jsArrOutComes.size(); i++) {
+					if (jsArrOutComes.getJsonObject(i).getJsonString("kind")
+							.getString().equalsIgnoreCase("segment")) {
+						if (jsArrOutComes.getJsonObject(i).getInt("parentId") == segmentId) {
+							listOfSportId.add(jsArrOutComes.getJsonObject(i)
+									.getInt("id"));
+						}
+					}
+				}
+			}
+
+		}
+
+		jsArrOutComes = jsonObject.getJsonArray("events");
+
+		if (!jsArrOutComes.isEmpty()) {
+			for (int i = 0; i < jsArrOutComes.size(); i++) {
+
+				for (int k = 0; k < listOfSportId.size(); k++) {
+
+					if (jsArrOutComes.getJsonObject(i).getInt("sportId") == listOfSportId
+							.get(k)) {
+						if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
+							FonbetKoef fonbet = new FonbetKoef();
+							fonbet.id = jsArrOutComes
+									.getJsonObject(i).getInt("id");
+							fonbet.name_of_command1 = jsArrOutComes
+									.getJsonObject(i).getString("team1");
+							fonbet.name_of_command2 = jsArrOutComes
+									.getJsonObject(i).getString("team2");
+							fonbetEventsList.add(fonbet);
+						}
+					}
+				}
+			}
+		}
+		return fonbetEventsList;
+	}
 }
