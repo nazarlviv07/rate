@@ -779,6 +779,22 @@ public class FonbetKoef extends Koef {
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
 						break;
+					case 976:
+						name_IndTotalOfCommand1_perwuy[2] = Float
+								.parseFloat(jsArrOutComes.getJsonObject(i)
+										.getJsonString("pt").getString());
+						name_IndTotalMenweOfCommand1_perwuy[2] = Float
+								.parseFloat(jsArrOutComes.getJsonObject(i)
+										.getJsonNumber("v").toString());
+						break;
+					case 974:
+						name_IndTotalOfCommand1_perwuy[2] = Float
+								.parseFloat(jsArrOutComes.getJsonObject(i)
+										.getJsonString("pt").getString());
+						name_IndTotalBilweOfCommand1_perwuy[2] = Float
+								.parseFloat(jsArrOutComes.getJsonObject(i)
+										.getJsonNumber("v").toString());
+						break;
 					case 1813:
 						name_IndTotalOfCommand1_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
