@@ -92,11 +92,14 @@ public class Events extends Koef {
 				if (!tournaments.isEmpty()) {
 
 					for (int j = 0; j < tournaments.size(); j++) {
+						String tempStr = tournaments.getJsonObject(j)
+								.getJsonString("tournament_name").getString();
 
-						if (!tournaments.getJsonObject(j)
-								.getJsonString("tournament_name").getString()
-								.contains("Interval markets")) {
-
+						if (!(tempStr
+								.contains("Interval markets") || tempStr
+								.contains("Інтервали") || tempStr
+								.contains("Интервалы"))) {
+							
 							JsonArray jsArrMarkets2 = tournaments
 									.getJsonObject(j).getJsonArray("events");
 
