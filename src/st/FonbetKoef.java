@@ -12,6 +12,7 @@ import javax.json.JsonReader;
 
 //==============================
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,16 +26,15 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import st.type.Kontora;
+
 public class FonbetKoef extends Koef {
 
 	public FonbetKoef() {
-		file = "fonbet.html";
-		// link_to_download_file = "https://www.favbet.com/live/markets/event/";
-		// link_to_download_file =
-		// "http://live.fonbet.com/live/currentLine/ru/?"
+		file = Kontora.FONBET.getName() + ".html";
 		link_to_download_file = "http://live.fonbet.com/live/currentLine/en/?"
 				+ Math.random();
-		name_of_kontora = "fonbet";
+		name_of_kontora = Kontora.FONBET.getName();
 	}
 
 	public int id_perwuy_time = 0;
