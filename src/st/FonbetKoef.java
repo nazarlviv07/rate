@@ -92,7 +92,8 @@ public class FonbetKoef extends Koef {
 				if (jsArrOutComes.getJsonObject(i).containsKey("parentId")) {
 					if (jsArrOutComes.getJsonObject(i).getInt("parentId") == id) {
 						if (jsArrOutComes.getJsonObject(i).getString("name")
-								.equals("1-й тайм"))
+								.equals("1-й тайм")|| jsArrOutComes.getJsonObject(i).getString("name")
+								.equals("1st half"))
 
 							id_perwuy_time = jsArrOutComes.getJsonObject(i)
 									.getInt("id");
@@ -713,7 +714,7 @@ public class FonbetKoef extends Koef {
 					case 1696:
 						name_TOTAL_perwuy[1] = Float.parseFloat(jsArrOutComes
 								.getJsonObject(i).getJsonString("pt")
-								.toString());
+								.getString());
 						name_TOTAL_bilwe_perwuy[1] = Float
 								.parseFloat(jsArrOutComes.getJsonObject(i)
 										.getJsonNumber("v").toString());
