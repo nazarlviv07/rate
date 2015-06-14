@@ -24,10 +24,9 @@ public class Events extends Koef {
 
 	public List<Koef> getAllEvents(Kontora kontora, Sport kindOfSport) {
 		Files files = new Files();
-		
+
 		try {
-			files.downloadFile(
-					kontora.getName() + "AllEvents",
+			files.downloadFile(kontora.getName() + "AllEvents",
 					kontora.getLinkAllEvents());
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -35,7 +34,7 @@ public class Events extends Koef {
 		}
 
 		InputStream fis = null;
-		
+
 		try {
 			fis = new FileInputStream(kontora.getName() + "AllEvents.html");
 			// fis = new FileInputStream(JSON_FILE);
@@ -62,23 +61,24 @@ public class Events extends Koef {
 		}
 
 		// Retrieve data from JsonObject
-		
+
 		if (jsonObject.isEmpty())
 			return null;
 
 		switch (kontora) {
-		  case FONBET:
-		      return getEventsListFonbet(jsonObject,kindOfSport);
-		   
-		  case FAVBET:
-		      return getEventsListFavbet(jsonObject,kindOfSport);
-		  default:
-		       return null;
+		case FONBET:
+			return getEventsListFonbet(jsonObject, kindOfSport);
+
+		case FAVBET:
+			return getEventsListFavbet(jsonObject, kindOfSport);
+		default:
+			return null;
 		}
-		
+
 	}
 
-	private List<Koef> getEventsListFavbet(JsonObject jsonObject,Sport kindOfSport){
+	private List<Koef> getEventsListFavbet(JsonObject jsonObject,
+			Sport kindOfSport) {
 		List<Koef> eventsList = new ArrayList<Koef>();
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("markets");
 
@@ -87,30 +87,38 @@ public class Events extends Koef {
 			if (jsArrOutComes.getJsonObject(i).getString("sport_name")
 					.equals("Soccer")) {
 
-				JsonArray jsArrMarkets = jsArrOutComes.getJsonObject(i)
+				JsonArray tournaments = jsArrOutComes.getJsonObject(i)
 						.getJsonArray("tournaments");
-				if (!jsArrMarkets.isEmpty()) {
+				if (!tournaments.isEmpty()) {
 
-					for (int j = 0; j < jsArrMarkets.size(); j++) {
+					for (int j = 0; j < tournaments.size(); j++) {
 
-						JsonArray jsArrMarkets2 = jsArrMarkets.getJsonObject(j)
-								.getJsonArray("events");
+						if (!tournaments.getJsonObject(j)
+								.getJsonString("tournament_name").getString()
+								.contains("Interval markets")) {
 
-						for (int k = 0; k < jsArrMarkets2.size(); k++) {
+							JsonArray jsArrMarkets2 = tournaments
+									.getJsonObject(j).getJsonArray("events");
 
-							FavbetKoef favbet = new FavbetKoef();
+							for (int k = 0; k < jsArrMarkets2.size(); k++) {
 
-							favbet.id = jsArrMarkets2.getJsonObject(k).getJsonNumber("event_id").intValue();
-							String nameOfTeams = jsArrMarkets2.getJsonObject(k)
-									.getJsonString("event_name").getString();
+								FavbetKoef favbet = new FavbetKoef();
 
-							int lastIndex = nameOfTeams.lastIndexOf(" - ");
-							favbet.name_of_command1 = nameOfTeams.substring(0,
-									lastIndex);
-							favbet.name_of_command2 = nameOfTeams
-									.substring(lastIndex + 3);
+								favbet.id = jsArrMarkets2.getJsonObject(k)
+										.getJsonNumber("event_id").intValue();
+								String nameOfTeams = jsArrMarkets2
+										.getJsonObject(k)
+										.getJsonString("event_name")
+										.getString();
 
-							eventsList.add(favbet);
+								int lastIndex = nameOfTeams.lastIndexOf(" - ");
+								favbet.name_of_command1 = nameOfTeams
+										.substring(0, lastIndex);
+								favbet.name_of_command2 = nameOfTeams
+										.substring(lastIndex + 3);
+
+								eventsList.add(favbet);
+							}
 						}
 					}
 				}
@@ -119,8 +127,9 @@ public class Events extends Koef {
 
 		return eventsList;
 	}
-	
-	private List<Koef> getEventsListFonbet(JsonObject jsonObject,Sport kindOfSport){
+
+	private List<Koef> getEventsListFonbet(JsonObject jsonObject,
+			Sport kindOfSport) {
 		List<Koef> eventsList = new ArrayList<Koef>();
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("sports");
 		Integer segmentId = null;
@@ -160,8 +169,8 @@ public class Events extends Koef {
 							.get(k)) {
 						if (jsArrOutComes.getJsonObject(i).getInt("level") == 1) {
 							FonbetKoef fonbet = new FonbetKoef();
-							fonbet.id = jsArrOutComes
-									.getJsonObject(i).getInt("id");
+							fonbet.id = jsArrOutComes.getJsonObject(i).getInt(
+									"id");
 							fonbet.name_of_command1 = jsArrOutComes
 									.getJsonObject(i).getString("team1");
 							fonbet.name_of_command2 = jsArrOutComes
