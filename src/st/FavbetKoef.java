@@ -469,9 +469,10 @@ public class FavbetKoef extends Koef {
 					for (int j = 0; j < jsArrMarketGroups.size(); j++) {
 
 						if (jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Победа") ||
-								jsArrMarketGroups.getJsonObject(j)
-								.getString("market_name").equals("Money Line")) {
+								.getString("market_name").equals("Победа")
+								|| jsArrMarketGroups.getJsonObject(j)
+										.getString("market_name")
+										.equals("Money Line")) {
 							JsonArray jsArrMarkets = jsArrMarketGroups
 									.getJsonObject(j).getJsonArray("markets");
 							if (!jsArrMarkets.isEmpty()) {
@@ -496,11 +497,12 @@ public class FavbetKoef extends Koef {
 										} else if (jsArrOutComes
 												.getJsonObject(z)
 												.getString("outcome_name")
-												.equals("Ничья") ||
-												jsArrOutComes
-												.getJsonObject(z)
-												.getString("outcome_name")
-												.equals("Draw")) {
+												.equals("Ничья")
+												|| jsArrOutComes
+														.getJsonObject(z)
+														.getString(
+																"outcome_name")
+														.equals("Draw")) {
 
 											name_X_perwuy = Float
 													.parseFloat(jsArrOutComes
@@ -825,8 +827,18 @@ public class FavbetKoef extends Koef {
 		int pos_start, pos_end;
 		pos_start = str.indexOf("(");
 		pos_end = str.indexOf(")");
-		str = str.substring(pos_start + 1, pos_end);
-		return Float.parseFloat(str);
+		String strNew = str.substring(pos_start + 1, pos_end);
+		Float tempNum = null;
+		try {
+			tempNum = Float.parseFloat(strNew);
+		} catch (NumberFormatException e) {
+			str = str.substring(pos_end + 1);
+			pos_start = str.indexOf("(");
+			pos_end = str.indexOf(")");
+			str = str.substring(pos_start + 1, pos_end);
+			tempNum = Float.parseFloat(str);
+		}
+		return tempNum;
 	}
 
 	// Результат без ничьи - Draw no bet
