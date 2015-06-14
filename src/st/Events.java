@@ -109,6 +109,7 @@ public class Events extends Koef {
 
 								favbet.id = jsArrMarkets2.getJsonObject(k)
 										.getJsonNumber("event_id").intValue();
+								
 								String nameOfTeams = jsArrMarkets2
 										.getJsonObject(k)
 										.getJsonString("event_name")
