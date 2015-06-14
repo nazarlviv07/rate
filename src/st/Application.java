@@ -1304,14 +1304,7 @@ public class Application extends Applet implements Runnable {
 		temp_str = koef_kontora1.getKoef();
 		if (temp_str != "") {
 			labelProgres.setText("Прогрес --> " + koef_kontora1.name_of_kontora
-					+ " Помилка - " + temp_str);
-			try {
-
-				TimeUnit.MILLISECONDS.sleep(10000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+					+ " - " + temp_str);
 		}
 
 		labelProgres.setText("Прогрес --> З " + koef_kontora1.name_of_kontora
@@ -1321,13 +1314,6 @@ public class Application extends Applet implements Runnable {
 		if (temp_str != "") {
 			labelProgres.setText("Прогрес --> " + koef_kontora2.name_of_kontora
 					+ " Помилка - " + temp_str);
-
-			try {
-				TimeUnit.MILLISECONDS.sleep(10000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		} else {
 			labelProgres.setText("Progress --> З "
 					+ koef_kontora2.name_of_kontora + " Коефіцієнти отримані");
@@ -1473,4 +1459,11 @@ public class Application extends Applet implements Runnable {
 		label_name_of_command_2_kontora1.setText("---");
 		label_name_of_command_2_kontora2.setText("---");
 	}
+	
+	/*try {
+		TimeUnit.MILLISECONDS.sleep(10000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}*/
 }
