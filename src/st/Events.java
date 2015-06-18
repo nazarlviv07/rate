@@ -95,11 +95,10 @@ public class Events extends Koef {
 						String tempStr = tournaments.getJsonObject(j)
 								.getJsonString("tournament_name").getString();
 
-						if (!(tempStr
-								.contains("Interval markets") || tempStr
-								.contains("Інтервали") || tempStr
-								.contains("Интервалы"))) {
-							
+						if (!(tempStr.contains("Interval markets")
+								|| tempStr.contains("Інтервали") || tempStr
+									.contains("Интервалы"))) {
+
 							JsonArray jsArrMarkets2 = tournaments
 									.getJsonObject(j).getJsonArray("events");
 
@@ -109,19 +108,26 @@ public class Events extends Koef {
 
 								favbet.id = jsArrMarkets2.getJsonObject(k)
 										.getJsonNumber("event_id").intValue();
-								
+
 								String nameOfTeams = jsArrMarkets2
 										.getJsonObject(k)
 										.getJsonString("event_name")
 										.getString();
 
 								int lastIndex = nameOfTeams.lastIndexOf(" - ");
+
 								favbet.name_of_command1 = nameOfTeams
 										.substring(0, lastIndex);
 								favbet.name_of_command2 = nameOfTeams
 										.substring(lastIndex + 3);
 
-								eventsList.add(favbet);
+								if (!(nameOfTeams.contains("yellow cards")
+										|| nameOfTeams
+												.contains("желтые карточки") || nameOfTeams
+											.contains("угловые") || nameOfTeams
+											.contains("corners") )) {
+									eventsList.add(favbet);
+								}
 							}
 						}
 					}
