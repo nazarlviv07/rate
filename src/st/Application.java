@@ -240,6 +240,7 @@ public class Application extends Applet implements Runnable {
 
 		kontora1List.setSelectedIndex(2);
 		kontora2List.setSelectedIndex(1);
+		checkboxFootball.setSelected(true);
 
 		labelProgres.setForeground(Color.blue);
 		labelFork.setForeground(Color.red);
@@ -1386,14 +1387,7 @@ public class Application extends Applet implements Runnable {
 						if (files.downloadFile(koef_kontora1.name_of_kontora,
 								koef_kontora1.link_to_download_file
 										+ kontora1Number) == true) {
-							// download info for kontora2
-							/*if (files.downloadFile(
-									koef_kontora2.name_of_kontora,
-									koef_kontora2.link_to_download_file
-											+ kontora2Number + "/") == true) {*/
-
-								/*analyze();*/
-								// =======================================================
+							
 								Events events = new Events();
 								
                                 List<Koef> fonbetKoefList = null;

@@ -91,7 +91,6 @@ public class Parser {
 			;
 		}
 
-		/*System.exit(1);*/
 		return onlySameEventsList;
 	}
 }
