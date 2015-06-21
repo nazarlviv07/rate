@@ -45,7 +45,8 @@ import st.type.Result;
 import st.type.Sport;
 
 public class Application extends Applet implements Runnable {
-	String[] kontoraStrings = { Kontora.BETCITY.getName(), Kontora.FAVBET.getName(), Kontora.FONBET.getName() };
+	String[] kontoraStrings = { Kontora.BETCITY.getName(),
+			Kontora.FAVBET.getName(), Kontora.FONBET.getName() };
 
 	public static final long serialVersionUID = 42L;
 	public boolean isRunning = true;
@@ -55,8 +56,7 @@ public class Application extends Applet implements Runnable {
 
 	public JLabel labelVersionOfProgram = new JLabel(
 			"Версія Програми #: 1      Дата оновлення програми: 13-06-2015 ");
-	public JLabel labelSportFootbal = new JLabel(
-			"Football");
+	public JLabel labelSportFootbal = new JLabel("Football");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
@@ -103,8 +103,7 @@ public class Application extends Applet implements Runnable {
 	public JTextField kontora1TextField = new JTextField();
 	public JTextField kontora2TextField = new JTextField();
 	public JTextField percentageTextField = new JTextField("0.1");
-	
-	
+
 	public JCheckBox checkboxFootball = new JCheckBox();
 
 	// Koefizientu
@@ -409,8 +408,7 @@ public class Application extends Applet implements Runnable {
 				} else if (cb.getSelectedItem() == Kontora.FONBET.getName()) {
 					kontora1List.setSelectedIndex(2);
 					koef_kontora1 = new FonbetKoef();
-					koef_kontora1.id = Integer
-							.parseInt(kontora1Number);
+					koef_kontora1.id = Integer.parseInt(kontora1Number);
 				}
 
 			}
@@ -436,8 +434,7 @@ public class Application extends Applet implements Runnable {
 				} else if (cb.getSelectedItem() == Kontora.FONBET.getName()) {
 					kontora2List.setSelectedIndex(2);
 					koef_kontora2 = new FonbetKoef();
-					koef_kontora2.id = Integer
-							.parseInt(kontora2Number);
+					koef_kontora2.id = Integer.parseInt(kontora2Number);
 
 				}
 
@@ -482,33 +479,32 @@ public class Application extends Applet implements Runnable {
 
 		c.gridy = c.gridy + 1;
 
-		/*gridbag.setConstraints(kontora1List, c);
-		add(kontora1List);
+		/*
+		 * gridbag.setConstraints(kontora1List, c); add(kontora1List);
+		 * 
+		 * c.gridx = 1;
+		 * 
+		 * gridbag.setConstraints(kontora1TextField, c); add(kontora1TextField);
+		 */
 
-		c.gridx = 1;
-
-		gridbag.setConstraints(kontora1TextField, c);
-		add(kontora1TextField);*/
-		
 		c.gridx = 2;
 
 		gridbag.setConstraints(labelSportFootbal, c);
 		add(labelSportFootbal);
-		
+
 		c.gridx = 3;
 
 		gridbag.setConstraints(checkboxFootball, c);
 		add(checkboxFootball);
-		
-		
-		c.gridy = c.gridy + 1;
-		/*c.gridx = 0;
-		gridbag.setConstraints(kontora2List, c);
-		add(kontora2List);
 
-		c.gridx = 1;
-		gridbag.setConstraints(kontora2TextField, c);
-		add(kontora2TextField);*/
+		c.gridy = c.gridy + 1;
+		/*
+		 * c.gridx = 0; gridbag.setConstraints(kontora2List, c);
+		 * add(kontora2List);
+		 * 
+		 * c.gridx = 1; gridbag.setConstraints(kontora2TextField, c);
+		 * add(kontora2TextField);
+		 */
 
 		c.gridx = 0;
 		c.gridy = c.gridy + 1;
@@ -1343,13 +1339,14 @@ public class Application extends Applet implements Runnable {
 
 			setKoefToApplication();
 			if (result.fork) {
-				/*if (forkHaveBeenFoundInPreviousAttempt) {*/
-					forkIsValid();
-				/*} else
-					forkHaveBeenFoundInPreviousAttempt = true;*/
+				/* if (forkHaveBeenFoundInPreviousAttempt) { */
+				forkIsValid();
+				/*
+				 * } else forkHaveBeenFoundInPreviousAttempt = true;
+				 */
 
 			} else {
-				/*forkHaveBeenFoundInPreviousAttempt = false;*/
+				/* forkHaveBeenFoundInPreviousAttempt = false; */
 				forkIsNotValid();
 			}
 		}
@@ -1387,53 +1384,63 @@ public class Application extends Applet implements Runnable {
 						if (files.downloadFile(koef_kontora1.name_of_kontora,
 								koef_kontora1.link_to_download_file
 										+ kontora1Number) == true) {
-							
-								Events events = new Events();
-								
-                                List<Koef> fonbetKoefList = null;
-                                List<Koef> favbetKoefList = null;
-                                List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
-                                
-                                if (checkboxFootball.isSelected()){
-                                	fonbetKoefList = events.getAllEvents(Kontora.FONBET, Sport.FOOTBALL);
-                                    favbetKoefList = events.getAllEvents(Kontora.FAVBET, Sport.FOOTBALL);
-                                    allEventsList.add(fonbetKoefList);
-                                    allEventsList.add(favbetKoefList);
-                                }
-                                
-                                Parser parser = new Parser();
-                                List<Koef> fonbetKoefSameEventsList = null;
-                        		List<Koef> favbetKoefSameEventsList = null;
-                        		
-                                List<List<Koef>> onlySameEventsList = parser.compareNameOfCommands(allEventsList);
-                                
-                                fonbetKoefSameEventsList = onlySameEventsList.get(0);
-                                favbetKoefSameEventsList = onlySameEventsList.get(1);
-                                
-								for (int i = 0; i < fonbetKoefSameEventsList.size(); i++) {
 
-										koef_kontora1 = fonbetKoefSameEventsList.get(i);
-										
-										koef_kontora2 = favbetKoefSameEventsList.get(i);
+							Events events = new Events();
+
+							List<Koef> fonbetKoefList = null;
+							List<Koef> favbetKoefList = null;
+							List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
+
+							if (checkboxFootball.isSelected()) {
+								fonbetKoefList = events.getAllEvents(
+										Kontora.FONBET, Sport.FOOTBALL);
+								favbetKoefList = events.getAllEvents(
+										Kontora.FAVBET, Sport.FOOTBALL);
+								if ((fonbetKoefList.size() != 0)
+										&& (favbetKoefList.size() != 0)) {
+									allEventsList.add(fonbetKoefList);
+									allEventsList.add(favbetKoefList);
+
+									Parser parser = new Parser();
+									List<Koef> fonbetKoefSameEventsList = null;
+									List<Koef> favbetKoefSameEventsList = null;
+
+									List<List<Koef>> onlySameEventsList = parser
+											.compareNameOfCommands(allEventsList);
+
+									fonbetKoefSameEventsList = onlySameEventsList
+											.get(0);
+									favbetKoefSameEventsList = onlySameEventsList
+											.get(1);
+
+									for (int i = 0; i < fonbetKoefSameEventsList
+											.size(); i++) {
+
+										koef_kontora1 = fonbetKoefSameEventsList
+												.get(i);
+
+										koef_kontora2 = favbetKoefSameEventsList
+												.get(i);
 
 										files.downloadFile(
 												koef_kontora2.name_of_kontora,
 												koef_kontora2.link_to_download_file
-														+ koef_kontora2.id + "/");
-									
-									
-									analyze();
-									
-									try {
-										TimeUnit.MILLISECONDS.sleep(3000);
-									} catch (InterruptedException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
-									}
+														+ koef_kontora2.id
+														+ "/");
 
-								p += 1;
+										analyze();
+
+										try {
+											TimeUnit.MILLISECONDS.sleep(3000);
+										} catch (InterruptedException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+									}
 								}
-							//}
+								p += 1;
+							}
+							// }
 						}
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -1452,34 +1459,35 @@ public class Application extends Applet implements Runnable {
 	}
 
 	void playMusic() {
-		
-			Clip clip;
+
+		Clip clip;
+		try {
+			clip = AudioSystem.getClip();
 			try {
-				clip = AudioSystem.getClip();
-				try {
-					clip.open(AudioSystem.getAudioInputStream(
-						    new BufferedInputStream(getClass().getResourceAsStream("/resources/music/sound.wav"))));
-				} catch (IOException | UnsupportedAudioFileException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				clip.start( );
-			} catch (LineUnavailableException e) {
+				clip.open(AudioSystem
+						.getAudioInputStream(new BufferedInputStream(getClass()
+								.getResourceAsStream(
+										"/resources/music/sound.wav"))));
+			} catch (IOException | UnsupportedAudioFileException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}		
+			}
+			clip.start();
+		} catch (LineUnavailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	};
+
 	void clearLabel() {
 		label_name_of_command_1_kontora1.setText("---");
 		label_name_of_command_1_kontora2.setText("---");
 		label_name_of_command_2_kontora1.setText("---");
 		label_name_of_command_2_kontora2.setText("---");
 	}
-	
-	/*try {
-		TimeUnit.MILLISECONDS.sleep(10000);
-	} catch (InterruptedException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}*/
+
+	/*
+	 * try { TimeUnit.MILLISECONDS.sleep(10000); } catch (InterruptedException
+	 * e) { // TODO Auto-generated catch block e.printStackTrace(); }
+	 */
 }
