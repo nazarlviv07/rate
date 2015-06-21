@@ -1342,13 +1342,13 @@ public class Application extends Applet implements Runnable {
 
 			setKoefToApplication();
 			if (result.fork) {
-				if (forkHaveBeenFoundInPreviousAttempt) {
+				/*if (forkHaveBeenFoundInPreviousAttempt) {*/
 					forkIsValid();
-				} else
-					forkHaveBeenFoundInPreviousAttempt = true;
+				/*} else
+					forkHaveBeenFoundInPreviousAttempt = true;*/
 
 			} else {
-				forkHaveBeenFoundInPreviousAttempt = false;
+				/*forkHaveBeenFoundInPreviousAttempt = false;*/
 				forkIsNotValid();
 			}
 		}
@@ -1396,12 +1396,16 @@ public class Application extends Applet implements Runnable {
 								// =======================================================
 								Events events = new Events();
 								
-                                List<Koef> fonbetKoefList = events.getAllEvents(Kontora.FONBET, Sport.FOOTBALL);
-                                List<Koef> favbetKoefList = events.getAllEvents(Kontora.FAVBET, Sport.FOOTBALL);
-                                
+                                List<Koef> fonbetKoefList = null;
+                                List<Koef> favbetKoefList = null;
                                 List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
-                                allEventsList.add(fonbetKoefList);
-                                allEventsList.add(favbetKoefList);
+                                
+                                if (checkboxFootball.isSelected()){
+                                	fonbetKoefList = events.getAllEvents(Kontora.FONBET, Sport.FOOTBALL);
+                                    favbetKoefList = events.getAllEvents(Kontora.FAVBET, Sport.FOOTBALL);
+                                    allEventsList.add(fonbetKoefList);
+                                    allEventsList.add(favbetKoefList);
+                                }
                                 
                                 Parser parser = new Parser();
                                 List<Koef> fonbetKoefSameEventsList = new ArrayList<Koef>();
