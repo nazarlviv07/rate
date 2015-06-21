@@ -1385,67 +1385,15 @@ public class Application extends Applet implements Runnable {
 								koef_kontora1.link_to_download_file
 										+ kontora1Number) == true) {
 
-							Events events = new Events();
-
-							List<Koef> fonbetKoefList = null;
-							List<Koef> favbetKoefList = null;
-							List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
-
 							if (checkboxFootball.isSelected()) {
-								fonbetKoefList = events.getAllEvents(
-										Kontora.FONBET, Sport.FOOTBALL);
-								favbetKoefList = events.getAllEvents(
-										Kontora.FAVBET, Sport.FOOTBALL);
-								if ((fonbetKoefList.size() != 0)
-										&& (favbetKoefList.size() != 0)) {
-									allEventsList.add(fonbetKoefList);
-									allEventsList.add(favbetKoefList);
-
-									Parser parser = new Parser();
-									List<Koef> fonbetKoefSameEventsList = null;
-									List<Koef> favbetKoefSameEventsList = null;
-
-									List<List<Koef>> onlySameEventsList = parser
-											.compareNameOfCommands(allEventsList);
-
-									fonbetKoefSameEventsList = onlySameEventsList
-											.get(0);
-									favbetKoefSameEventsList = onlySameEventsList
-											.get(1);
-
-									for (int i = 0; i < fonbetKoefSameEventsList
-											.size(); i++) {
-
-										koef_kontora1 = fonbetKoefSameEventsList
-												.get(i);
-
-										koef_kontora2 = favbetKoefSameEventsList
-												.get(i);
-
-										files.downloadFile(
-												koef_kontora2.name_of_kontora,
-												koef_kontora2.link_to_download_file
-														+ koef_kontora2.id
-														+ "/");
-
-										analyze();
-
-										try {
-											TimeUnit.MILLISECONDS.sleep(3000);
-										} catch (InterruptedException e) {
-											// TODO Auto-generated catch block
-											e.printStackTrace();
-										}
-									}
-								}
-								p += 1;
-							}
-							// }
+								checkboxSport(Sport.FOOTBALL);
+							}	 
 						}
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+					p += 1;
 				} else {
 					try {
 						event.wait();
@@ -1486,6 +1434,71 @@ public class Application extends Applet implements Runnable {
 		label_name_of_command_2_kontora2.setText("---");
 	}
 
+	private void checkboxSport(Sport sport){
+
+
+		List<Koef> fonbetKoefList = null;
+		List<Koef> favbetKoefList = null;
+		Events events = new Events();
+		List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
+		
+		fonbetKoefList = events.getAllEvents(
+				Kontora.FONBET, sport);
+		favbetKoefList = events.getAllEvents(
+				Kontora.FAVBET, sport);
+		if ((fonbetKoefList.size() != 0)
+				&& (favbetKoefList.size() != 0)) {
+			allEventsList.add(fonbetKoefList);
+			allEventsList.add(favbetKoefList);
+
+			Parser parser = new Parser();
+			Files files = new Files();
+			List<Koef> fonbetKoefSameEventsList = null;
+			List<Koef> favbetKoefSameEventsList = null;
+
+			List<List<Koef>> onlySameEventsList = parser
+					.compareNameOfCommands(allEventsList);
+
+			if (onlySameEventsList.size() != 0) {
+				fonbetKoefSameEventsList = onlySameEventsList
+						.get(0);
+				favbetKoefSameEventsList = onlySameEventsList
+						.get(1);
+
+				for (int i = 0; i < fonbetKoefSameEventsList
+						.size(); i++) {
+
+					koef_kontora1 = fonbetKoefSameEventsList
+							.get(i);
+
+					koef_kontora2 = favbetKoefSameEventsList
+							.get(i);
+
+					try {
+						files.downloadFile(
+								koef_kontora2.name_of_kontora,
+								koef_kontora2.link_to_download_file
+										+ koef_kontora2.id
+										+ "/");
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+
+					analyze();
+
+					try {
+						TimeUnit.MILLISECONDS
+								.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch
+						// block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+	}
 	/*
 	 * try { TimeUnit.MILLISECONDS.sleep(10000); } catch (InterruptedException
 	 * e) { // TODO Auto-generated catch block e.printStackTrace(); }
