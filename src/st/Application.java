@@ -1,6 +1,7 @@
 package st;
 
 import st.type.Kontora;
+
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -28,6 +29,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -53,6 +55,8 @@ public class Application extends Applet implements Runnable {
 
 	public JLabel labelVersionOfProgram = new JLabel(
 			"Версія Програми #: 1      Дата оновлення програми: 13-06-2015 ");
+	public JLabel labelSportFootbal = new JLabel(
+			"Football");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
@@ -99,6 +103,9 @@ public class Application extends Applet implements Runnable {
 	public JTextField kontora1TextField = new JTextField();
 	public JTextField kontora2TextField = new JTextField();
 	public JTextField percentageTextField = new JTextField("0.1");
+	
+	
+	public JCheckBox checkboxFootball = new JCheckBox();
 
 	// Koefizientu
 	public JLabel label_kontora1 = new JLabel("---");
@@ -481,7 +488,18 @@ public class Application extends Applet implements Runnable {
 
 		gridbag.setConstraints(kontora1TextField, c);
 		add(kontora1TextField);
+		
+		c.gridx = 2;
 
+		gridbag.setConstraints(labelSportFootbal, c);
+		add(labelSportFootbal);
+		
+		c.gridx = 3;
+
+		gridbag.setConstraints(checkboxFootball, c);
+		add(checkboxFootball);
+		
+		
 		c.gridx = 0;
 		c.gridy = c.gridy + 1;
 		gridbag.setConstraints(kontora2List, c);
