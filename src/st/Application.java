@@ -482,13 +482,13 @@ public class Application extends Applet implements Runnable {
 
 		c.gridy = c.gridy + 1;
 
-		gridbag.setConstraints(kontora1List, c);
+		/*gridbag.setConstraints(kontora1List, c);
 		add(kontora1List);
 
 		c.gridx = 1;
 
 		gridbag.setConstraints(kontora1TextField, c);
-		add(kontora1TextField);
+		add(kontora1TextField);*/
 		
 		c.gridx = 2;
 
@@ -501,14 +501,14 @@ public class Application extends Applet implements Runnable {
 		add(checkboxFootball);
 		
 		
-		c.gridx = 0;
 		c.gridy = c.gridy + 1;
+		/*c.gridx = 0;
 		gridbag.setConstraints(kontora2List, c);
 		add(kontora2List);
 
 		c.gridx = 1;
 		gridbag.setConstraints(kontora2TextField, c);
-		add(kontora2TextField);
+		add(kontora2TextField);*/
 
 		c.gridx = 0;
 		c.gridy = c.gridy + 1;
