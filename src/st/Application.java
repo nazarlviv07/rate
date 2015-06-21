@@ -1408,8 +1408,8 @@ public class Application extends Applet implements Runnable {
                                 }
                                 
                                 Parser parser = new Parser();
-                                List<Koef> fonbetKoefSameEventsList = new ArrayList<Koef>();
-                        		List<Koef> favbetKoefSameEventsList = new ArrayList<Koef>();
+                                List<Koef> fonbetKoefSameEventsList = null;
+                        		List<Koef> favbetKoefSameEventsList = null;
                         		
                                 List<List<Koef>> onlySameEventsList = parser.compareNameOfCommands(allEventsList);
                                 
