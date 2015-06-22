@@ -83,16 +83,15 @@ public class Events extends Koef {
 		JsonArray jsArrOutComes = jsonObject.getJsonArray("markets");
 
 		for (int i = 0; i < jsArrOutComes.size(); i++) {
-
-			if (jsArrOutComes.getJsonObject(i).getString("sport_name")
-					.equals("Soccer")) {
-
+			String tempStr = jsArrOutComes.getJsonObject(i).getString("sport_name");
+			if (tempStr.equals("Soccer") || tempStr.equals("Футбол")) {
+				
 				JsonArray tournaments = jsArrOutComes.getJsonObject(i)
 						.getJsonArray("tournaments");
 				if (!tournaments.isEmpty()) {
 
 					for (int j = 0; j < tournaments.size(); j++) {
-						String tempStr = tournaments.getJsonObject(j)
+						tempStr = tournaments.getJsonObject(j)
 								.getJsonString("tournament_name").getString();
 
 						if (!(tempStr.contains("Interval markets")
