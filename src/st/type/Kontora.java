@@ -3,6 +3,9 @@ package st.type;
 public enum Kontora {
 	FAVBET("favbet","https://www.favbet.com/live/markets/"),
 	BETCITY("betcity",null),
+	/*FONBET("fonbet","http://live.fonbet.com/live/currentLine/en/");
+	  FONBET("fonbet","http://live.fonbet.com/live/currentLine/ru/");
+	 */
 	FONBET("fonbet","http://live.fonbet.com/live/currentLine/en/");
 
 	private String name;

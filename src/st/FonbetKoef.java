@@ -32,8 +32,7 @@ public class FonbetKoef extends Koef {
 
 	public FonbetKoef() {
 		file = Kontora.FONBET.getName() + ".html";
-		link_to_download_file = "http://live.fonbet.com/live/currentLine/ru/";
-		/*link_to_download_file = "http://live.fonbet.com/live/currentLine/en/";*/
+		link_to_download_file = Kontora.FONBET.getLinkAllEvents();
 		name_of_kontora = Kontora.FONBET.getName();
 	}
 
