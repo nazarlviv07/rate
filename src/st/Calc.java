@@ -13,7 +13,7 @@ public class Calc {
 		result_value = new Result();
 		result_value.fork = false;
 		result_value.nameOfKoefKontora1 = "";
-		result_value.nameOfKoefKontora1 = "";
+		result_value.nameOfKoefKontora2 = "";
 		result_value.KoefKontora1 = 0;
 		result_value.KoefKontora2 = 0;
 	}
