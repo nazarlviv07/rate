@@ -1246,10 +1246,10 @@ public class Application extends Applet implements Runnable {
 
 	public void forkIsNotValid() {
 		labelResultFork.setText("Nema");
-		labelResultNameOfKoefKontora1.setText("-----");
+		/*labelResultNameOfKoefKontora1.setText("-----");
 		labelResultNameOfKoefKontora2.setText("-----");
 		labelKoefKontora1.setText("-----");
-		labelKoefKontora2.setText("-----");
+		labelKoefKontora2.setText("-----");*/
 	}
 
 	public void forkIsValid() {
@@ -1311,7 +1311,7 @@ public class Application extends Applet implements Runnable {
 			playMusic();
 		}
 
-		changeStateToWaiting();
+		//changeStateToWaiting();
 	}
 
 	public void analyze() {
