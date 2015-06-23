@@ -22,6 +22,7 @@ public class Koef {
 	public int minute;
 	public String name_of_command1 = new String();
 	public String name_of_command2 = new String();
+	public String event_result = new String();
 	public float name_1;
 	public float name_X;
 	public float name_2;
@@ -127,6 +128,7 @@ public class Koef {
 		minute = 0;
 		name_of_command1 = "";
 		name_of_command2 = "";
+		event_result = "";
 		name_1 = 0;
 		name_X = 0;
 		name_2 = 0;
