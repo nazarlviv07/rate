@@ -4,12 +4,12 @@ import st.type.Result;
 
 public class Calc {
 
-	/*
-	 * public class Result { boolean fork; String nameOfKoefKontora1; float
-	 * KoefKontora1; String nameOfKoefKontora2; float KoefKontora2; }
-	 */
+	
 
+	Koef data1 = null;
+	Koef data2 = null;
 	public Calc() {
+		
 		result_value = new Result();
 		result_value.fork = false;
 		result_value.nameOfKoefKontora1 = "";
@@ -32,6 +32,10 @@ public class Calc {
 			result_check.nameOfKoefKontora2 = name_data2;
 			result_check.KoefKontora1 = dat1;
 			result_check.KoefKontora2 = dat2;
+			result_check.nameOfCommand1Kontora1 = data1.name_of_command1;
+			result_check.nameOfCommand2Kontora1 = data1.name_of_command2;
+			result_check.nameOfCommand1Kontora2 = data2.name_of_command1;
+			result_check.nameOfCommand2Kontora2 = data2.name_of_command2;
 			return result_check;
 		}
 
@@ -39,6 +43,9 @@ public class Calc {
 	}
 
 	public Result checkFork(Koef data1, Koef data2) {
+		this.data1 = data1;
+		this.data2 = data2;
+		
 		Result result_value = new Result();
 
 		// 1 - X2

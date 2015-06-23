@@ -63,6 +63,15 @@ public class FavbetKoef extends Koef {
 		name_of_command1 = nameOfTeams.substring(0, lastIndex);
 		name_of_command2 = nameOfTeams.substring(lastIndex + 3);
 
+		String eventResultTotal = jsonObject.getString("event_result_total");
+		if (eventResultTotal.contains("(")){
+			lastIndex = eventResultTotal.lastIndexOf("(");
+			event_result = eventResultTotal.substring(0, lastIndex - 1);
+		}else{
+			event_result = eventResultTotal;
+		}
+		
+		
 		JsonArray jsArrOutComes;
 
 		JsonObject jsObjHeadMarket = jsonObject.getJsonObject("head_market");

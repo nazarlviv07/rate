@@ -25,6 +25,7 @@ public class KoefTest {
 		koef_favbet.getKoef();
 		Assert.assertEquals(koef_favbet.name_of_command1, "Queensland Lions");
 		Assert.assertEquals(koef_favbet.name_of_command2, "Logan Lightning");
+		Assert.assertEquals(koef_favbet.event_result , "0:1");
 		
 		Assert.assertEquals(koef_favbet.name_1, 2.7f);
 		Assert.assertEquals(koef_favbet.name_X, 3.4f);
