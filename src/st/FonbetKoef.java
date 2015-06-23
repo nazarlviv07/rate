@@ -77,8 +77,6 @@ public class FonbetKoef extends Koef {
 
 		if (!jsArrOutComes.isEmpty()) {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
-				// if (jsArrOutComes.getJsonObject(i).getInt("num") ==
-				// num_of_event) {
 				if (jsArrOutComes.getJsonObject(i).getInt("id") == id) {
 					name_of_command1 = jsArrOutComes.getJsonObject(i)
 							.getString("team1");
@@ -930,6 +928,18 @@ public class FonbetKoef extends Koef {
 			}
 
 		}
+		
+		jsArrOutComes = jsonObject.getJsonArray("eventMiscs");
+
+		if (!jsArrOutComes.isEmpty()) {
+			for (int i = 0; i < jsArrOutComes.size(); i++) {
+				if (jsArrOutComes.getJsonObject(i).getInt("id") == id) {
+					event_result = jsArrOutComes.getJsonObject(i)
+							.getString("comment");
+				}
+			}
+		}
+		
 	/*	print();*/
 		return "";
 	}
