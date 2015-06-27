@@ -60,6 +60,7 @@ public class Application extends Applet implements Runnable {
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
 	public JLabel labelEmpty_3 = new JLabel(" ");
+	public JLabel labelEmpty_4 = new JLabel(" ");
 	public String kontora1Number = new String();
 	public String kontora2Number = new String();
 	public String percentageNumber = new String("1");
@@ -80,10 +81,12 @@ public class Application extends Applet implements Runnable {
 	public JLabel labelNameOfKontora1_2 = new JLabel("-----");
 	public JLabel labelNameOfKontora1_3 = new JLabel("-----");
 	public JLabel labelNameOfKontora1_4 = new JLabel("-----");
+	public JLabel labelNameOfKontora1_5 = new JLabel("-----");
 	public JLabel labelNameOfKontora2_1 = new JLabel("-----");
 	public JLabel labelNameOfKontora2_2 = new JLabel("-----");
 	public JLabel labelNameOfKontora2_3 = new JLabel("-----");
 	public JLabel labelNameOfKontora2_4 = new JLabel("-----");
+	public JLabel labelNameOfKontora2_5 = new JLabel("-----");
 	public JLabel labelStavkaKontora1 = new JLabel("------");
 	public JLabel labelStavkaKontora2 = new JLabel("------");
 	public JLabel labelVugrawKontora1 = new JLabel("------");
@@ -283,7 +286,7 @@ public class Application extends Applet implements Runnable {
 
 	public void createFrame() throws IOException {
 
-		frame.setPreferredSize(new Dimension(1350, 470));
+		frame.setPreferredSize(new Dimension(1350, 520));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Where the GUI is created:
@@ -650,30 +653,8 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_X2, c);
 		add(label_X2);
 
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_1, c);
-		add(label_Total_1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Menwe_1, c);
-		add(label_Total_Menwe_1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Bilwe_1, c);
-		add(label_Total_Bilwe_1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_2, c);
-		add(label_Total_2);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Menwe_2, c);
-		add(label_Total_Menwe_2);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Bilwe_2, c);
-		add(label_Total_Bilwe_2);
-
+		
+		
 		c.gridx = 0;
 		c.gridy += 1;
 		gridbag.setConstraints(label_kontora1, c);
@@ -711,29 +692,7 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_X2_kontora1, c);
 		add(label_X2_kontora1);
 
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_1_kontora1, c);
-		add(label_Total_1_kontora1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Menwe_1_kontora1, c);
-		add(label_Total_Menwe_1_kontora1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Bilwe_1_kontora1, c);
-		add(label_Total_Bilwe_1_kontora1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_2_kontora1, c);
-		add(label_Total_2_kontora1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Menwe_2_kontora1, c);
-		add(label_Total_Menwe_2_kontora1);
-
-		c.gridx += 1;
-		gridbag.setConstraints(label_Total_Bilwe_2_kontora1, c);
-		add(label_Total_Bilwe_2_kontora1);
+		
 
 		c.gridx = 0;
 		c.gridy += 1;
@@ -772,6 +731,79 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_X2_kontora2, c);
 		add(label_X2_kontora2);
 
+		
+
+		// =============================================================
+        // Total label
+		
+		c.gridy += 1;
+		gridbag.setConstraints(labelEmpty_3, c);
+		add(labelEmpty_3);
+
+		c.gridy += 1;
+		c.gridx = 1;
+		gridbag.setConstraints(label_Total_1, c);
+		add(label_Total_1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Menwe_1, c);
+		add(label_Total_Menwe_1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Bilwe_1, c);
+		add(label_Total_Bilwe_1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_2, c);
+		add(label_Total_2);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Menwe_2, c);
+		add(label_Total_Menwe_2);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Bilwe_2, c);
+		add(label_Total_Bilwe_2);
+		
+
+		// =========================================
+		// Total kontora 1
+		c.gridx = 0;
+		c.gridy += 1;
+		gridbag.setConstraints(labelNameOfKontora1_5, c);
+		add(labelNameOfKontora1_5);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_1_kontora1, c);
+		add(label_Total_1_kontora1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Menwe_1_kontora1, c);
+		add(label_Total_Menwe_1_kontora1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Bilwe_1_kontora1, c);
+		add(label_Total_Bilwe_1_kontora1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_2_kontora1, c);
+		add(label_Total_2_kontora1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Menwe_2_kontora1, c);
+		add(label_Total_Menwe_2_kontora1);
+
+		c.gridx += 1;
+		gridbag.setConstraints(label_Total_Bilwe_2_kontora1, c);
+		add(label_Total_Bilwe_2_kontora1);
+		
+		// =========================================
+		// Total kontora 2
+		c.gridx = 0;
+		c.gridy += 1;
+		gridbag.setConstraints(labelNameOfKontora2_5, c);
+		add(labelNameOfKontora2_5);
+
 		c.gridx += 1;
 		gridbag.setConstraints(label_Total_1_kontora2, c);
 		add(label_Total_1_kontora2);
@@ -795,7 +827,6 @@ public class Application extends Applet implements Runnable {
 		c.gridx += 1;
 		gridbag.setConstraints(label_Total_Bilwe_2_kontora2, c);
 		add(label_Total_Bilwe_2_kontora2);
-
 		// =========================================
 
 		c.gridy += 1;
@@ -1112,10 +1143,12 @@ public class Application extends Applet implements Runnable {
 		labelNameOfKontora1_2.setText(koef_kontora1.name_of_kontora);
 		labelNameOfKontora1_3.setText(koef_kontora1.name_of_kontora);
 		labelNameOfKontora1_4.setText(koef_kontora1.name_of_kontora);
+		labelNameOfKontora1_5.setText(koef_kontora1.name_of_kontora);
 		labelNameOfKontora2_1.setText(koef_kontora2.name_of_kontora);
 		labelNameOfKontora2_2.setText(koef_kontora2.name_of_kontora);
 		labelNameOfKontora2_3.setText(koef_kontora2.name_of_kontora);
 		labelNameOfKontora2_4.setText(koef_kontora2.name_of_kontora);
+		labelNameOfKontora2_5.setText(koef_kontora2.name_of_kontora);
 		label_kontora1.setText(koef_kontora1.name_of_kontora);
 		label_kontora2.setText(koef_kontora2.name_of_kontora);
 		label_name_of_command_1_kontora1
@@ -1246,10 +1279,12 @@ public class Application extends Applet implements Runnable {
 
 	public void forkIsNotValid() {
 		labelResultFork.setText("Nema");
-		/*labelResultNameOfKoefKontora1.setText("-----");
-		labelResultNameOfKoefKontora2.setText("-----");
-		labelKoefKontora1.setText("-----");
-		labelKoefKontora2.setText("-----");*/
+		/*
+		 * labelResultNameOfKoefKontora1.setText("-----");
+		 * labelResultNameOfKoefKontora2.setText("-----");
+		 * labelKoefKontora1.setText("-----");
+		 * labelKoefKontora2.setText("-----");
+		 */
 	}
 
 	public void forkIsValid() {
@@ -1311,7 +1346,7 @@ public class Application extends Applet implements Runnable {
 			playMusic();
 		}
 
-		//changeStateToWaiting();
+		// changeStateToWaiting();
 	}
 
 	public void analyze() {
@@ -1387,7 +1422,7 @@ public class Application extends Applet implements Runnable {
 
 							if (checkboxFootball.isSelected()) {
 								checkboxSport(Sport.FOOTBALL);
-							}	 
+							}
 						}
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
@@ -1434,20 +1469,16 @@ public class Application extends Applet implements Runnable {
 		label_name_of_command_2_kontora2.setText("---");
 	}
 
-	private void checkboxSport(Sport sport){
-
+	private void checkboxSport(Sport sport) {
 
 		List<Koef> fonbetKoefList = null;
 		List<Koef> favbetKoefList = null;
 		Events events = new Events();
 		List<List<Koef>> allEventsList = new ArrayList<List<Koef>>();
-		
-		fonbetKoefList = events.getAllEvents(
-				Kontora.FONBET, sport);
-		favbetKoefList = events.getAllEvents(
-				Kontora.FAVBET, sport);
-		if ((fonbetKoefList.size() != 0)
-				&& (favbetKoefList.size() != 0)) {
+
+		fonbetKoefList = events.getAllEvents(Kontora.FONBET, sport);
+		favbetKoefList = events.getAllEvents(Kontora.FAVBET, sport);
+		if ((fonbetKoefList.size() != 0) && (favbetKoefList.size() != 0)) {
 			allEventsList.add(fonbetKoefList);
 			allEventsList.add(favbetKoefList);
 
@@ -1460,26 +1491,19 @@ public class Application extends Applet implements Runnable {
 					.compareNameOfCommands(allEventsList);
 
 			if (onlySameEventsList.size() != 0) {
-				fonbetKoefSameEventsList = onlySameEventsList
-						.get(0);
-				favbetKoefSameEventsList = onlySameEventsList
-						.get(1);
+				fonbetKoefSameEventsList = onlySameEventsList.get(0);
+				favbetKoefSameEventsList = onlySameEventsList.get(1);
 
-				for (int i = 0; i < fonbetKoefSameEventsList
-						.size(); i++) {
+				for (int i = 0; i < fonbetKoefSameEventsList.size(); i++) {
 
-					koef_kontora1 = fonbetKoefSameEventsList
-							.get(i);
+					koef_kontora1 = fonbetKoefSameEventsList.get(i);
 
-					koef_kontora2 = favbetKoefSameEventsList
-							.get(i);
+					koef_kontora2 = favbetKoefSameEventsList.get(i);
 
 					try {
-						files.downloadFile(
-								koef_kontora2.name_of_kontora,
+						files.downloadFile(koef_kontora2.name_of_kontora,
 								koef_kontora2.link_to_download_file
-										+ koef_kontora2.id
-										+ "/");
+										+ koef_kontora2.id + "/");
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -1488,8 +1512,7 @@ public class Application extends Applet implements Runnable {
 					analyze();
 
 					try {
-						TimeUnit.MILLISECONDS
-								.sleep(3000);
+						TimeUnit.MILLISECONDS.sleep(3000);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch
 						// block
