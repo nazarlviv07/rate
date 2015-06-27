@@ -118,6 +118,9 @@ public class Application extends Applet implements Runnable {
 	public JLabel label_name_of_command_2 = new JLabel("Команда2");
 	public JLabel label_name_of_command_2_kontora1 = new JLabel("---");
 	public JLabel label_name_of_command_2_kontora2 = new JLabel("---");
+	public JLabel label_event_result = new JLabel("Рахунок");
+	public JLabel label_event_result_kontora1 = new JLabel("---");
+	public JLabel label_event_result_kontora2 = new JLabel("---");
 	public JLabel label_1 = new JLabel("1");
 	public JLabel label_1_kontora1 = new JLabel("---");
 	public JLabel label_1_kontora2 = new JLabel("---");
@@ -620,6 +623,8 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label4ustuyVugrawKontora2, c);
 		add(label4ustuyVugrawKontora2);
 
+		
+		// label nane of commands
 		c.gridy += 1;
 		c.gridx = 1;
 		gridbag.setConstraints(label_name_of_command_1, c);
@@ -629,6 +634,10 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_name_of_command_2, c);
 		add(label_name_of_command_2);
 
+		c.gridx += 1;
+		gridbag.setConstraints(label_event_result, c);
+		add(label_event_result);
+		
 		c.gridx += 1;
 		gridbag.setConstraints(label_1, c);
 		add(label_1);
@@ -654,7 +663,7 @@ public class Application extends Applet implements Runnable {
 		add(label_X2);
 
 		
-		
+		// name of commands kontora 1
 		c.gridx = 0;
 		c.gridy += 1;
 		gridbag.setConstraints(label_kontora1, c);
@@ -668,6 +677,10 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_name_of_command_2_kontora1, c);
 		add(label_name_of_command_2_kontora1);
 
+		c.gridx += 1;
+		gridbag.setConstraints(label_event_result_kontora1, c);
+		add(label_event_result_kontora1);
+		
 		c.gridx += 1;
 		gridbag.setConstraints(label_1_kontora1, c);
 		add(label_1_kontora1);
@@ -693,7 +706,7 @@ public class Application extends Applet implements Runnable {
 		add(label_X2_kontora1);
 
 		
-
+        // name of commands kontora 2
 		c.gridx = 0;
 		c.gridy += 1;
 		gridbag.setConstraints(label_kontora2, c);
@@ -707,6 +720,10 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_name_of_command_2_kontora2, c);
 		add(label_name_of_command_2_kontora2);
 
+		c.gridx += 1;
+		gridbag.setConstraints(label_event_result_kontora2, c);
+		add(label_event_result_kontora2);
+		
 		c.gridx += 1;
 		gridbag.setConstraints(label_1_kontora2, c);
 		add(label_1_kontora2);
@@ -1159,6 +1176,8 @@ public class Application extends Applet implements Runnable {
 				.setText(koef_kontora1.name_of_command2);
 		label_name_of_command_2_kontora2
 				.setText(koef_kontora2.name_of_command2);
+		label_event_result_kontora1.setText(koef_kontora1.event_result);
+		label_event_result_kontora2.setText(koef_kontora2.event_result);
 		label_1_kontora1.setText(Float.toString(koef_kontora1.name_1));
 		label_1_kontora2.setText(Float.toString(koef_kontora2.name_1));
 		label_X_kontora1.setText(Float.toString(koef_kontora1.name_X));
