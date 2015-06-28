@@ -47,7 +47,12 @@ public class Calc {
 		this.data2 = data2;
 		
 		Result result_value = new Result();
-
+      
+		if (!data1.event_result.equalsIgnoreCase(data2.event_result) ){
+			result_value.fork = false;
+			return result_value;
+		}		
+			
 		// 1 - X2
 		result_value = check(data1.name_1, data2.name_X2, "1", "X2");
 		if (result_value.fork == true)
