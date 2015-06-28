@@ -72,11 +72,17 @@ public class Application extends Applet implements Runnable {
 	public JLabel labelStavka = new JLabel(" Ставка");
 	public JLabel labelVugraw = new JLabel(" Виграш");
 	public JLabel label4ustuyVugraw = new JLabel(" Чистий виграш");
+	public JLabel labelNameOfCommand1 = new JLabel(" Команда1");
+	public JLabel labelNameOfCommand2 = new JLabel(" Команда2");
 	public JLabel labelResultFork = new JLabel("------");
 	public JLabel labelResultNameOfKoefKontora1 = new JLabel("------");
 	public JLabel labelResultNameOfKoefKontora2 = new JLabel("------");
 	public JLabel labelKoefKontora1 = new JLabel("------");
 	public JLabel labelKoefKontora2 = new JLabel("------");
+	public JLabel labelNameOfCommand1Kontora1 = new JLabel("------");
+	public JLabel labelNameOfCommand2Kontora1 = new JLabel("------");
+	public JLabel labelNameOfCommand1Kontora2 = new JLabel("------");
+	public JLabel labelNameOfCommand2Kontora2 = new JLabel("------");
 	public JLabel labelNameOfKontora1_1 = new JLabel("-----");
 	public JLabel labelNameOfKontora1_2 = new JLabel("-----");
 	public JLabel labelNameOfKontora1_3 = new JLabel("-----");
@@ -289,7 +295,7 @@ public class Application extends Applet implements Runnable {
 
 	public void createFrame() throws IOException {
 
-		frame.setPreferredSize(new Dimension(1350, 520));
+		frame.setPreferredSize(new Dimension(1350, 560));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Where the GUI is created:
@@ -558,6 +564,34 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(labelNameOfKontora2_1, c);
 		add(labelNameOfKontora2_1);
 
+		// name of command1 for fork
+		c.gridx = 0;
+		c.gridy = c.gridy + 1;
+		gridbag.setConstraints(labelNameOfCommand1, c);
+		add(labelNameOfCommand1);
+
+		c.gridx = 1;
+		gridbag.setConstraints(labelNameOfCommand1Kontora1, c);
+		add(labelNameOfCommand1Kontora1);
+
+		c.gridx = 2;
+		gridbag.setConstraints(labelNameOfCommand1Kontora2, c);
+		add(labelNameOfCommand1Kontora2);
+
+		// name of command2 for fork
+		c.gridx = 0;
+		c.gridy = c.gridy + 1;
+		gridbag.setConstraints(labelNameOfCommand2, c);
+		add(labelNameOfCommand2);
+
+		c.gridx = 1;
+		gridbag.setConstraints(labelNameOfCommand2Kontora1, c);
+		add(labelNameOfCommand2Kontora1);
+
+		c.gridx = 2;
+		gridbag.setConstraints(labelNameOfCommand2Kontora2, c);
+		add(labelNameOfCommand2Kontora2);
+
 		c.gridx = 0;
 		c.gridy = c.gridy + 1;
 		gridbag.setConstraints(labelNameOfFork, c);
@@ -623,8 +657,7 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label4ustuyVugrawKontora2, c);
 		add(label4ustuyVugrawKontora2);
 
-		
-		// label nane of commands
+		// label name of commands
 		c.gridy += 1;
 		c.gridx = 1;
 		gridbag.setConstraints(label_name_of_command_1, c);
@@ -637,7 +670,7 @@ public class Application extends Applet implements Runnable {
 		c.gridx += 1;
 		gridbag.setConstraints(label_event_result, c);
 		add(label_event_result);
-		
+
 		c.gridx += 1;
 		gridbag.setConstraints(label_1, c);
 		add(label_1);
@@ -662,7 +695,6 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_X2, c);
 		add(label_X2);
 
-		
 		// name of commands kontora 1
 		c.gridx = 0;
 		c.gridy += 1;
@@ -680,7 +712,7 @@ public class Application extends Applet implements Runnable {
 		c.gridx += 1;
 		gridbag.setConstraints(label_event_result_kontora1, c);
 		add(label_event_result_kontora1);
-		
+
 		c.gridx += 1;
 		gridbag.setConstraints(label_1_kontora1, c);
 		add(label_1_kontora1);
@@ -705,8 +737,7 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_X2_kontora1, c);
 		add(label_X2_kontora1);
 
-		
-        // name of commands kontora 2
+		// name of commands kontora 2
 		c.gridx = 0;
 		c.gridy += 1;
 		gridbag.setConstraints(label_kontora2, c);
@@ -723,7 +754,7 @@ public class Application extends Applet implements Runnable {
 		c.gridx += 1;
 		gridbag.setConstraints(label_event_result_kontora2, c);
 		add(label_event_result_kontora2);
-		
+
 		c.gridx += 1;
 		gridbag.setConstraints(label_1_kontora2, c);
 		add(label_1_kontora2);
@@ -748,11 +779,9 @@ public class Application extends Applet implements Runnable {
 		gridbag.setConstraints(label_X2_kontora2, c);
 		add(label_X2_kontora2);
 
-		
-
 		// =============================================================
-        // Total label
-		
+		// Total label
+
 		c.gridy += 1;
 		gridbag.setConstraints(labelEmpty_3, c);
 		add(labelEmpty_3);
@@ -781,7 +810,6 @@ public class Application extends Applet implements Runnable {
 		c.gridx += 1;
 		gridbag.setConstraints(label_Total_Bilwe_2, c);
 		add(label_Total_Bilwe_2);
-		
 
 		// =========================================
 		// Total kontora 1
@@ -813,7 +841,7 @@ public class Application extends Applet implements Runnable {
 		c.gridx += 1;
 		gridbag.setConstraints(label_Total_Bilwe_2_kontora1, c);
 		add(label_Total_Bilwe_2_kontora1);
-		
+
 		// =========================================
 		// Total kontora 2
 		c.gridx = 0;
@@ -1313,7 +1341,7 @@ public class Application extends Applet implements Runnable {
 		float chust_vugraw1;
 		float chust_vugraw2;
 		Float stavka_bilwuy_koef;
-
+		
 		if (result.KoefKontora1 < result.KoefKontora2) {
 			labelStavkaKontora1.setText("1000");
 			// Stavka2 = Stavka1 * Koef1 /Koef2
@@ -1350,6 +1378,12 @@ public class Application extends Applet implements Runnable {
 
 		if ((stavka_bilwuy_koef + 1000) * 0.01
 				* Float.parseFloat(percentageNumber) <= chust_vugraw1) {
+			
+			labelNameOfCommand1Kontora1.setText(result.nameOfCommand1Kontora1);
+			labelNameOfCommand2Kontora1.setText(result.nameOfCommand2Kontora1);
+			labelNameOfCommand1Kontora2.setText(result.nameOfCommand1Kontora2);
+			labelNameOfCommand2Kontora2.setText(result.nameOfCommand2Kontora2);
+			
 			labelResultFork.setText("Je");
 			labelResultNameOfKoefKontora1.setText(result.nameOfKoefKontora1);
 			labelResultNameOfKoefKontora2.setText(result.nameOfKoefKontora2);
@@ -1363,6 +1397,9 @@ public class Application extends Applet implements Runnable {
 			label4ustuyVugrawKontora2.setText(Integer.toString(Math
 					.round(chust_vugraw2)));
 			playMusic();
+		}else{
+			labelStavkaKontora1.setText("-------");
+			labelStavkaKontora2.setText("-------");
 		}
 
 		// changeStateToWaiting();
