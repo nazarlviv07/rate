@@ -55,7 +55,7 @@ public class Application extends Applet implements Runnable {
 	private Object event = new Object();
 
 	public JLabel labelVersionOfProgram = new JLabel(
-			"Версія Програми #: 1      Дата оновлення програми: 13-06-2015 ");
+			"Версія Програми #: 1      Дата оновлення програми: 28-06-2015 ");
 	public JLabel labelSportFootbal = new JLabel("Football");
 	public JLabel labelEmpty_1 = new JLabel(" ");
 	public JLabel labelEmpty_2 = new JLabel(" ");
@@ -1397,9 +1397,6 @@ public class Application extends Applet implements Runnable {
 			label4ustuyVugrawKontora2.setText(Integer.toString(Math
 					.round(chust_vugraw2)));
 			playMusic();
-		}else{
-			labelStavkaKontora1.setText("-------");
-			labelStavkaKontora2.setText("-------");
 		}
 
 		// changeStateToWaiting();
