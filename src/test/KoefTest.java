@@ -195,6 +195,7 @@ public class KoefTest {
 		
 		Assert.assertEquals(koef_fonbet.name_of_command1, "Brumunddal");
 		Assert.assertEquals(koef_fonbet.name_of_command2, "Rodde");
+		Assert.assertEquals(koef_fonbet.event_result, "2:0");
 		
 		Assert.assertEquals(koef_fonbet.name_1, 1.05f);
 		Assert.assertEquals(koef_fonbet.name_X, 11.00f);

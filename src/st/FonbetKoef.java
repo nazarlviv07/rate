@@ -12,7 +12,6 @@ import javax.json.JsonReader;
 
 //==============================
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -89,8 +88,9 @@ public class FonbetKoef extends Koef {
 				if (jsArrOutComes.getJsonObject(i).containsKey("parentId")) {
 					if (jsArrOutComes.getJsonObject(i).getInt("parentId") == id) {
 						if (jsArrOutComes.getJsonObject(i).getString("name")
-								.equals("1-й тайм")|| jsArrOutComes.getJsonObject(i).getString("name")
-								.equals("1st half"))
+								.equals("1-й тайм")
+								|| jsArrOutComes.getJsonObject(i)
+										.getString("name").equals("1st half"))
 
 							id_perwuy_time = jsArrOutComes.getJsonObject(i)
 									.getInt("id");
@@ -928,19 +928,22 @@ public class FonbetKoef extends Koef {
 			}
 
 		}
-		
+
 		jsArrOutComes = jsonObject.getJsonArray("eventMiscs");
 
 		if (!jsArrOutComes.isEmpty()) {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
 				if (jsArrOutComes.getJsonObject(i).getInt("id") == id) {
-					event_result = jsArrOutComes.getJsonObject(i)
-							.getString("comment");
+					event_result = String.valueOf(jsArrOutComes
+							.getJsonObject(i).getInt("score1"))
+							+ ":"
+							+ String.valueOf(jsArrOutComes.getJsonObject(i)
+									.getInt("score2"));
 				}
 			}
 		}
-		
-	/*	print();*/
+
+		/* print(); */
 		return "";
 	}
 
