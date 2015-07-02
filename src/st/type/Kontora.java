@@ -6,7 +6,7 @@ public enum Kontora {
 	/*FONBET("fonbet","http://live.fonbet.com/live/currentLine/en/");
 	  FONBET("fonbet","http://live.fonbet.com/live/currentLine/ru/");
 	 */
-	FONBET("fonbet","http://live.fonbet.com/live/currentLine/en/");
+	FONBET("fonbet","http://live.fonbet.com/live/currentLine/ru/");
 
 	private String name;
 	private String linkAllEvents;
