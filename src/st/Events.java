@@ -147,8 +147,10 @@ public class Events extends Koef {
 
 		if (!jsArrOutComes.isEmpty()) {
 			for (int i = 0; i < jsArrOutComes.size(); i++) {
-				if (jsArrOutComes.getJsonObject(i).getJsonString("name")
-						.getString().equalsIgnoreCase(kindOfSport.getString())) {
+				String name = jsArrOutComes.getJsonObject(i).getJsonString("name")
+						.getString();
+				if (name.equalsIgnoreCase("Футбол") || 
+						name.equalsIgnoreCase("Football")) {
 					segmentId = jsArrOutComes.getJsonObject(i).getInt("id");
 				}
 			}
